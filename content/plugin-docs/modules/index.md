@@ -1,7 +1,7 @@
 ---
 description: ''
 sidebar: 'plugins'
-prev: '/plugins/json/themes/'
+prev: '/plugin-docs/json/themes/'
 ---
 
 # Plugin Modules

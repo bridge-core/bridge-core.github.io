@@ -1,7 +1,7 @@
 ---
 description: ''
 sidebar: 'editor'
-next: '/plugins/'
+next: '/plugin-docs/'
 ---
 
 # Projects

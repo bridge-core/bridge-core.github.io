@@ -56,4 +56,4 @@ sidebar: 'editor'
 -   Hook into a variety of different events
 -   Develop your own custom add-on syntax
 -   [Library](https://github.com/solvedDev/bridge-plugins) with existing plugins to download from within bridge.
--   [More about plugins for bridge.](/plugins/)
+-   [More about plugins for bridge.](/plugin-docs/)

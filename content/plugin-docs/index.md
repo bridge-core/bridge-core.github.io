@@ -16,7 +16,7 @@ bridge. loads plugins per project. This means that every workspace can have an u
 
 Navigate to the directory where bridge. stores your behavior packs. There is a button inside the explorer toolbar to open the folder. Choose the project to which you want to add a plugin and navigate to the `bridge/plugins` folder. If this folder does not exist yet, create a new one.
 
-Inside this directory, you can create a new folder per plugin you want to add. Create a new JSON file in the root of your plugin called _manifest.json_ (`bridge/plugins/<PLUGIN NAME>/manifest.json`).
+Inside this directory, you can create a new folder per plugin you want to add. Create a new JSON file in the root of your plugin called _manifest.json_ (`bridge/plugin-docs/<PLUGIN NAME>/manifest.json`).
 
 ## Plugin Manifest
 
@@ -48,4 +48,4 @@ Scripts are loaded from the `<PLUGIN NAME>/scripts` folder. Scripts are written 
 
 ### Script API v1:
 
-[Documentation](https://github.com/solvedDev/bridge./blob/master/plugins/getting-started.md)
+[Documentation](https://github.com/solvedDev/bridge./blob/master/plugin-docs/getting-started.md)

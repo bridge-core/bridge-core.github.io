@@ -125,12 +125,12 @@ An example of custom syntax is the `bridge:item_equipped_sensor` component which
 
 bridge. features a plugin api which allows you to customize UI add new snippets, presets, themes and much more!
 
-You can either [create your own plugins](/plugins/) or download plugins made by others from the extension store.
+You can either [create your own plugins](/plugin-docs/) or download plugins made by others from the extension store.
 This can be found by clicking the extensions tab on the sidebar and the pressing **View Extensions**. From here you can download from a collection of plugins to modify your experience with bridge.
 
 ![Open extension store](./getting-started-16.png)
 
-bridge. also has a powerful feature for experienced users that allows you to write Javascript to create your own [Custom Components](/plugins/custom-components/), which can be used in entity behavior files to quickly re-use behaviors and [Custom Commands](/plugins/custom-commands/), which can be used inside .mcfunction files to make writing long and complex functions easier.
+bridge. also has a powerful feature for experienced users that allows you to write Javascript to create your own [Custom Components](/plugin-docs/custom-components/), which can be used in entity behavior files to quickly re-use behaviors and [Custom Commands](/plugin-docs/custom-commands/), which can be used inside .mcfunction files to make writing long and complex functions easier.
 
 ## Need Help?
 

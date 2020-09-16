@@ -1,7 +1,7 @@
 ---
 description: ''
 sidebar: 'plugins'
-next: '/plugins/modules/'
+next: '/plugin-docs/modules/'
 ---
 
 # Themes
