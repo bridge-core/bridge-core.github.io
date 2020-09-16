@@ -1,7 +1,7 @@
 ---
 description: ''
 sidebar: 'plugins'
-prev: '/editor/projects/'
+prev: '/editor/other/molang/'
 ---
 
 # Plugin API

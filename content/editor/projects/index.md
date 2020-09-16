@@ -1,7 +1,7 @@
 ---
 description: ''
 sidebar: 'editor'
-next: '/plugin-docs/'
+next: '/editor/other/molang/'
 ---
 
 # Projects
