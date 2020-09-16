@@ -22,17 +22,17 @@
 					</strong>
 				</p>
 
-				<div class="flex justify-center mt-8">
+				<div class="flex justify-center mt-8 flex-wrap -mx-4">
 					<g-link
 						to="https://github.com/bridge-core/bridge./releases/latest"
-						class="flex items-center px-6 py-4 ml-auto text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+						class="flex items-center px-6 py-4  text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
 					>
 						Download
 						<DownloadCloudIcon class="ml-4" size="1x" />
 					</g-link>
 					<g-link
 						to="/editor/"
-						class="flex items-center px-6 py-4 ml-6 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+						class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
 					>
 						Read More
 						<ChevronRightIcon class="ml-4" size="1x" />
