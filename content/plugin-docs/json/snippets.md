@@ -53,6 +53,8 @@ Plugins can also add new snippets by providing them inside a `<PLUGIN NAME>/snip
 }
 ```
 
-### More Examples: [`static/snippets`](https://github.com/solvedDev/bridge./tree/master/static/snippets)
+### More Examples:
+
+-   [`static/snippets`](https://github.com/solvedDev/bridge./tree/master/static/snippets)
 
 Please note that the internal format linked above loads snippets as an array and therefor only one JSON file per file type exists. You will have to add the `file_type` attribute if you copy from these files and create a new file per array index.

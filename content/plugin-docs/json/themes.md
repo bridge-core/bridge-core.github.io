@@ -157,4 +157,6 @@ bridge. applies the default color theme first and then overwrites it with the th
 }
 ```
 
-### More Examples: [`static/themes`](https://github.com/solvedDev/bridge./tree/master/static/themes)
+### More Examples:
+
+-   [`static/themes`](https://github.com/solvedDev/bridge./tree/master/static/themes)

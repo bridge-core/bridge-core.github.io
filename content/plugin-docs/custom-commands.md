@@ -23,7 +23,7 @@ JavaScript files placed inside of this folder have access to the `Bridge` object
 
 ### `onPropose(): JSONObject`
 
-`onPropose()` must return an auto-completion object. It should only have one property (named your custom command name) which should replicate the structure of the command. [Read more about bridge.'s auto-completion JSON format.](https://github.com/solvedDev/bridge./blob/master/plugin_docs/auto_completions/main.md)
+`onPropose()` must return an auto-completion object. It should only have one property (named your custom command name) which should replicate the structure of the command. [Read more about bridge.'s auto-completion JSON format.](/plugin-docs/auto-completions/)
 
 ### `onCacheHook(commandArgs: string[]): [[string, [string]]]`
 

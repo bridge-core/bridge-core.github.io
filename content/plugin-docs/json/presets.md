@@ -94,4 +94,6 @@ Variables can be referenced by using them inside of two curly brackets: `{{VARIA
 }
 ```
 
-### More Examples: [`static/presets`](https://github.com/solvedDev/bridge./tree/master/static/presets)
+### More Examples:
+
+-   [`static/presets`](https://github.com/solvedDev/bridge./tree/master/static/presets)
