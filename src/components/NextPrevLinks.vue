@@ -27,7 +27,6 @@ import { ArrowLeftIcon, ArrowRightIcon } from 'vue-feather-icons'
 import Sidebars from '../sidebars.js'
 
 function findPageArray(pagePath) {
-	console.log(Sidebars)
 	for (let sidebar of Sidebars) {
 		for (let section of sidebar.sections) {
 			const index = section.items.indexOf(pagePath)
