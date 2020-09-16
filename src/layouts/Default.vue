@@ -269,14 +269,14 @@ code {
 	@apply px-1 py-1 text-ui-typo bg-ui-sidebar font-mono border-b border-r border-ui-border text-sm rounded;
 }
 
-pre[class*='language-'] {
+pre {
 	@apply max-w-full overflow-x-auto rounded;
 
 	& + p {
 		@apply mt-4;
 	}
 
-	& > code[class*='language-'] {
+	& > code {
 		@apply border-none leading-relaxed;
 	}
 }

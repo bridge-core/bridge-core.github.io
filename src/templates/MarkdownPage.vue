@@ -100,11 +100,11 @@ export default {
 </script>
 
 <style>
-@import 'prism-themes/themes/prism-material-dark.css';
+@import 'prism-themes/themes/prism-material-light.css';
 
 pre,
 code {
-	background: var(--color-ui-sidebar);
-	color: var(--color-ui-typo);
+	background: var(--color-ui-sidebar) !important;
+	color: var(--color-ui-typo) !important;
 }
 </style>
