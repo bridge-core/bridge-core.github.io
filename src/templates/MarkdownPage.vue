@@ -100,7 +100,7 @@ export default {
 </script>
 
 <style>
-@import 'prism-themes/themes/prism-darcula.css';
+@import 'prism-themes/themes/prism-material-dark.css';
 
 pre,
 code {
