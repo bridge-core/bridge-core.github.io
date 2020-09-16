@@ -46,6 +46,13 @@ module.exports = [
 					'/plugin-docs/modules/windows/',
 				],
 			},
+			{
+				title: 'Auto-Completions',
+				items: [
+					'/plugin-docs/auto-completions/',
+					'/plugin-docs/auto-completions/dynamic-references/',
+				],
+			},
 		],
 	},
 ]

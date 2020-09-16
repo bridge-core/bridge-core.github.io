@@ -1,3 +1,8 @@
+---
+description: ''
+sidebar: 'plugins'
+---
+
 # Dynamic References
 
 Dynamic references can be used to provide context sensitive data to users such as array indices, the name of the opened file or available family names.
