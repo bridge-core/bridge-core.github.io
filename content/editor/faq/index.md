@@ -1,3 +1,8 @@
+---
+description: ''
+sidebar: 'editor'
+---
+
 # FAQ
 
 There are many questions that are asked frequently within the bridge. Discord, and this document goes through them.
