@@ -13,7 +13,7 @@ module.exports = [
 				],
 			},
 			{
-				title: 'Related',
+				title: 'Other',
 				items: ['/editor/other/molang/'],
 			},
 		],
