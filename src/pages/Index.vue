@@ -30,6 +30,13 @@
 						Download
 						<DownloadCloudIcon class="ml-4" size="1x" />
 					</g-link>
+					<g-link
+						to="/editor/"
+						class="flex items-center px-6 py-4 ml-6 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+					>
+						Read More
+						<ChevronRightIcon class="ml-4" size="1x" />
+					</g-link>
 				</div>
 
 				<p class="mt-8 text-center">
@@ -115,7 +122,7 @@
 <script>
 import Logo from '@/components/Logo'
 import {
-	ArrowRightCircleIcon,
+	ChevronRightIcon,
 	ZapIcon,
 	CodeIcon,
 	SlidersIcon,
@@ -126,7 +133,7 @@ import {
 export default {
 	components: {
 		Logo,
-		ArrowRightCircleIcon,
+		ChevronRightIcon,
 		DownloadCloudIcon,
 		ZapIcon,
 		CodeIcon,
