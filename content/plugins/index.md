@@ -1,6 +1,7 @@
 ---
 description: ''
 sidebar: 'plugins'
+prev: '/editor/projects/'
 ---
 
 # Plugin API
