@@ -1,6 +1,6 @@
 <template>
 	<div :style="`width: ${width};`">
-		<g-image src="~/assets/logo.png" />
+		<g-image alt="bridge. Logo" src="~/assets/logo.png" />
 	</div>
 </template>
 
