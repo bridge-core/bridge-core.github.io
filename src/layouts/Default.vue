@@ -137,6 +137,18 @@ export default {
 	--color-ui-primary: #1778d2;
 }
 
+main *::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+main *::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+main *::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.35);
+	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
 html[lights-out] {
 	--color-ui-background: #121212;
 	--color-ui-typo: theme('colors.gray.100');
