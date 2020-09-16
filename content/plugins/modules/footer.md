@@ -7,4 +7,6 @@ sidebar: 'plugins'
 
 Module that allows plugins to create notifications.
 
-_This documentation is a WIP_
+### `create({icon?: string, message?: string, color?: string, textColor?: string, disposeOnMiddleClick?: boolean, onClick?: () => void, onMiddleClick?: () => void})`
+
+### `createError(error: Error)`
