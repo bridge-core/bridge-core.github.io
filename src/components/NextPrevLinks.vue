@@ -62,7 +62,6 @@ export default {
 		},
 		next() {
 			let next = this.page.next || findNext(this.page.path)
-			console.log(this.pages, this.page, next)
 			if (this.pages && !next) {
 				return false
 			}
