@@ -8,6 +8,7 @@ module.exports = [
 					'/editor/',
 					'/editor/features/',
 					'/editor/getting-started/',
+					'/editor/faq/',
 					'/editor/projects/',
 				],
 			},
