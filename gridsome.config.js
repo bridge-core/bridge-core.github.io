@@ -71,7 +71,7 @@ module.exports = {
 
 				// Manifest
 				manifestPath: 'manifest.json',
-				title: 'bridge.',
+				title: 'bridge',
 				scope: '/',
 				startUrl: '/',
 				display: 'standalone',
