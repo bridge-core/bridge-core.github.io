@@ -143,11 +143,6 @@ html[lights-out] {
 	--color-ui-sidebar: #1f1f1f;
 	--color-ui-border: #1f1f1f;
 	--color-ui-primary: #1778d2;
-
-	pre[class*='language-'],
-	code[class*='language-'] {
-		@apply bg-ui-border;
-	}
 }
 
 * {

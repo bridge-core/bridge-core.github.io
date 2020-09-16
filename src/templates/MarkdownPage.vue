@@ -100,5 +100,11 @@ export default {
 </script>
 
 <style>
-@import 'prism-themes/themes/prism-material-oceanic.css';
+@import 'prism-themes/themes/prism-darcula.css';
+
+pre[class*='language-'],
+code[class*='language-'] {
+	background: var(--color-ui-sidebar);
+	color: var(--color-ui-typo);
+}
 </style>
