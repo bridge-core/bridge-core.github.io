@@ -137,6 +137,10 @@ export default {
 	--color-ui-primary: #1778d2;
 }
 
+body {
+	background-color: var(--color-ui-primary);
+}
+
 main *::-webkit-scrollbar {
 	width: 6px;
 	height: 6px;

@@ -14,7 +14,7 @@ module.exports = {
 	settings: {
 		web: process.env.URL_WEB || false,
 		twitter: process.env.URL_TWITTER || false,
-		github: process.env.URL_GITHUB || false,
+		github: 'https://github.com/bridge-core/',
 		nav: {
 			links: [
 				{ path: '/editor/', title: 'Editor' },
@@ -59,6 +59,27 @@ module.exports = {
 		{
 			use: '@gridsome/plugin-sitemap',
 			options: {},
+		},
+
+		{
+			use: 'gridsome-plugin-pwa',
+			options: {
+				// Service Worker
+				disableServiceWorker: false,
+				serviceWorkerPath: 'service-worker.js',
+				cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
+
+				// Manifest
+				manifestPath: 'manifest.json',
+				title: 'bridge.',
+				scope: '/',
+				startUrl: '/',
+				display: 'standalone',
+				statusBarStyle: 'black-translucent',
+				themeColor: '#1778d2',
+				backgroundColor: '#ffffff',
+				icon: './static/logo.png',
+			},
 		},
 	],
 }
