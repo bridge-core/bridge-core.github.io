@@ -81,6 +81,7 @@ module.exports = {
 				themeColor: '#1778d2',
 				backgroundColor: '#ffffff',
 				icon: './static/logo.png',
+				maskableIcon: true,
 			},
 		},
 	],
