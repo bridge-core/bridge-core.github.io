@@ -72,6 +72,8 @@ module.exports = {
 				// Manifest
 				manifestPath: 'manifest.json',
 				title: 'bridge',
+				shortName: 'bridge',
+				description: 'The IDE for Minecraft Add-Ons',
 				scope: '/',
 				startUrl: '/',
 				display: 'standalone',
