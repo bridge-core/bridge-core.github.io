@@ -17,9 +17,13 @@
 					We strive to provide the best development experience
 					possible
 					<br />
-					<strong class="text-ui-primary">
-						Try out bridge. now!
-					</strong>
+					<g-link
+						to="https://github.com/bridge-core/bridge./releases/latest"
+					>
+						<strong class="text-ui-primary">
+							Try out bridge. now!
+						</strong>
+					</g-link>
 				</p>
 
 				<div class="flex justify-center mt-8 flex-wrap -mx-4">
@@ -34,7 +38,7 @@
 						to="/editor/"
 						class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
 					>
-						Read More
+						Documentation
 						<ChevronRightIcon class="ml-4" size="1x" />
 					</g-link>
 				</div>
@@ -78,11 +82,14 @@
 					class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3"
 				>
 					<CodeIcon size="3x" class="mb-6 text-ui-primary" />
-					<h3
-						class="font-bold tracking-wide uppercase text-ui-primary"
-					>
-						Plugin Support
-					</h3>
+					<g-link to="/plugins/">
+						<h3
+							class="font-bold tracking-wide uppercase text-ui-primary"
+						>
+							Plugin Support
+						</h3>
+					</g-link>
+
 					<p class="text-lg text-left">
 						Custom components, custom commands, file presets and
 						themes: You can do
