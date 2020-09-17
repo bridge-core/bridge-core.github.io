@@ -163,12 +163,12 @@ export default {
 				{
 					key: 'og:title',
 					name: 'og:title',
-					content: title,
+					content: title + ' - bridge.',
 				},
 				{
 					key: 'twitter:title',
 					name: 'twitter:title',
-					content: title,
+					content: title + ' - bridge.',
 				},
 				{
 					key: 'og:description',

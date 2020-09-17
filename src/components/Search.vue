@@ -78,7 +78,7 @@
 
 <static-query>
 query Search {
-   allMarkdownPage{
+   allMarkdownPage {
     edges {
       node {
         id
@@ -86,8 +86,8 @@ query Search {
         title
         headings {
         	depth
-          value
-          anchor
+          	value
+          	anchor
       	}
       }
     }
