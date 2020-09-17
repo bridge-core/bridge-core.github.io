@@ -80,7 +80,7 @@ module.exports = {
 				statusBarStyle: 'default',
 				themeColor: '#1778d2',
 				backgroundColor: '#ffffff',
-				icon: './static/logo.png',
+				icon: './static/touch-icon.png',
 				maskableIcon: true,
 			},
 		},
