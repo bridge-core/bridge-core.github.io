@@ -17,7 +17,7 @@ module.exports = {
 		github: 'https://github.com/bridge-core/',
 		nav: {
 			links: [
-				{ path: '/editor/', title: 'Editor' },
+				{ path: '/editor-docs/', title: 'Editor' },
 				{ path: '/plugin-docs/', title: 'Plugins' },
 			],
 		},

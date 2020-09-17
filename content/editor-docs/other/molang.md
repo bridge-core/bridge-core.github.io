@@ -2,7 +2,7 @@
 description: ''
 sidebar: 'editor'
 next: '/plugin-docs/'
-prev: '/editor/projects/'
+prev: '/editor-docs/projects/'
 ---
 
 # MoLang

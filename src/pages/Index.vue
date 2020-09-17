@@ -35,7 +35,7 @@
 						<DownloadCloudIcon class="ml-4" size="1x" />
 					</g-link>
 					<g-link
-						to="/editor/"
+						to="/editor-docs/"
 						class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
 					>
 						Documentation

@@ -5,16 +5,16 @@ module.exports = [
 			{
 				title: 'Editor',
 				items: [
-					'/editor/',
-					'/editor/features/',
-					'/editor/getting-started/',
-					'/editor/faq/',
-					'/editor/projects/',
+					'/editor-docs/',
+					'/editor-docs/features/',
+					'/editor-docs/getting-started/',
+					'/editor-docs/faq/',
+					'/editor-docs/projects/',
 				],
 			},
 			{
 				title: 'Other',
-				items: ['/editor/other/molang/'],
+				items: ['/editor-docs/other/molang/'],
 			},
 		],
 	},
