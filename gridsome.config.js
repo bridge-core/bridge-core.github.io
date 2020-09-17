@@ -77,7 +77,7 @@ module.exports = {
 				scope: '/',
 				startUrl: '/',
 				display: 'standalone',
-				statusBarStyle: 'black-translucent',
+				statusBarStyle: 'default',
 				themeColor: '#1778d2',
 				backgroundColor: '#ffffff',
 				icon: './static/logo.png',
