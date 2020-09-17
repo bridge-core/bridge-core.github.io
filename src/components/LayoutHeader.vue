@@ -2,7 +2,7 @@
 	<div class="py-2 border-t-2 border-ui-primary">
 		<div class="container">
 			<div class="flex items-center justify-between -mx-2 sm:-mx-4">
-				<div
+				<nav
 					class="flex flex-col items-center px-2 mr-auto sm:px-4 sm:flex-row"
 				>
 					<g-link
@@ -18,20 +18,17 @@
 						</span>
 					</g-link>
 
-					<div
-						v-if="settings.nav.links.length > 0"
-						class="hidden ml-2 mr-5 sm:block sm:ml-8"
-					>
+					<span class="hidden ml-2 mr-3 sm:flex sm:ml-8">
 						<g-link
 							v-for="link in settings.nav.links"
 							:key="link.path"
 							:to="link.path"
-							class="block p-1 font-medium nav-link text-ui-typo hover:text-ui-primary"
+							class="block p-1 mr-2 font-medium nav-link text-ui-typo hover:text-ui-primary"
 						>
 							{{ link.title }}
 						</g-link>
-					</div>
-				</div>
+					</span>
+				</nav>
 
 				<div class="w-full px-2 sm:px-4 max-w-screen-xs">
 					<ClientOnly>
@@ -40,18 +37,6 @@
 				</div>
 
 				<div class="flex items-center justify-end px-2 sm:px-4">
-					<a
-						v-if="settings.web"
-						:href="settings.web"
-						class="hidden ml-3 sm:block"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Website"
-						name="Website"
-					>
-						<GlobeIcon size="1.5x" />
-					</a>
-
 					<a
 						v-if="settings.twitter"
 						:href="settings.twitter"
@@ -74,6 +59,17 @@
 						name="Github"
 					>
 						<GithubIcon size="1.5x" />
+					</a>
+					<a
+						v-if="settings.web"
+						:href="settings.web"
+						class="hidden ml-3 sm:block"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Discord"
+						name="Discord"
+					>
+						<DiscordIcon size="1.5" />
 					</a>
 
 					<ToggleDarkMode class="ml-2 sm:ml-8">
@@ -117,6 +113,7 @@ import {
 	GithubIcon,
 	TwitterIcon,
 } from 'vue-feather-icons'
+import DiscordIcon from './DiscordIcon.vue'
 
 const Search = () =>
 	import(/* webpackChunkName: "search" */ '@/components/Search').catch(
@@ -133,6 +130,7 @@ export default {
 		GlobeIcon,
 		GithubIcon,
 		TwitterIcon,
+		DiscordIcon,
 	},
 
 	computed: {
@@ -140,6 +138,7 @@ export default {
 			return this.$static.metadata
 		},
 		settings() {
+			console.log(this.meta.settings)
 			return this.meta.settings
 		},
 	},
@@ -156,8 +155,10 @@ header {
 }
 
 .nav-link {
+	padding-bottom: 2px;
 	&.active {
-		@apply text-ui-primary font-bold border-ui-primary;
+		@apply text-ui-primary font-bold border-ui-primary border-b-2;
+		padding-bottom: 0px;
 	}
 }
 </style>

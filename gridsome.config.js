@@ -12,7 +12,7 @@ module.exports = {
 	},
 	siteUrl: 'https://bridge-core.github.io',
 	settings: {
-		web: process.env.URL_WEB || false,
+		web: 'https://discord.gg/uj8K2S9',
 		twitter: process.env.URL_TWITTER || false,
 		github: 'https://github.com/bridge-core/',
 		nav: {
@@ -24,6 +24,14 @@ module.exports = {
 		sidebar: require('./src/sidebars.js'),
 	},
 	plugins: [
+		{
+			use: '@gridsome/plugin-critical',
+			options: {
+				paths: ['/'],
+				width: 1300,
+				height: 900,
+			},
+		},
 		{
 			use: '@gridsome/source-filesystem',
 			options: {

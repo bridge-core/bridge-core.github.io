@@ -5,8 +5,8 @@
 		@keydown.enter="go"
 		class="relative"
 	>
-		<label class="relative block">
-			<span class="sr-only">Search Documentation</span>
+		<label class="relative block truncate">
+			<span class="sr-only truncate">Search Documentation</span>
 			<div
 				class="absolute inset-y-0 left-0 flex items-center justify-center px-3 py-2 opacity-50"
 			>
@@ -16,7 +16,7 @@
 				ref="input"
 				type="search"
 				:value="query"
-				class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg bg-ui-sidebar border-ui-sidebar focus:bg-ui-background"
+				class="block w-full py-2 pl-10 pr-4 border-2 rounded-lg bg-ui-sidebar border-ui-sidebar focus:bg-ui-background truncate"
 				:class="{ 'rounded-b-none': showResult }"
 				placeholder="Search Documentation..."
 				@focus="focused = true"
@@ -30,13 +30,13 @@
 		</label>
 		<div
 			v-if="showResult"
-			class="fixed inset-x-0 z-50 overflow-y-auto border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-sidebar"
+			class="fixed inset-x-0 z-50 overflow-y-auto overflow-x-hidden border-2 border-t-0 rounded-lg rounded-t-none shadow-lg results bg-ui-background bottom:0 sm:bottom-auto sm:absolute border-ui-sidebar"
 			style="max-height: calc(100vh - 120px)"
 		>
 			<ul class="px-4 py-2 m-0">
 				<li v-if="results.length === 0" class="px-2">
-					No results for <span class="font-bold">{{ query }}</span
-					>.
+					No results for
+					<span class="font-bold"> {{ query }} </span> .
 				</li>
 
 				<li
@@ -52,7 +52,7 @@
 				>
 					<g-link
 						:to="result.path + result.anchor"
-						class="block p-2 -mx-2 text-base font-bold rounded-lg"
+						class="block p-2 -mx-2 text-base font-bold rounded-lg truncate"
 						:class="{
 							'bg-ui-sidebar text-ui-primary':
 								focusIndex === index,
@@ -65,9 +65,9 @@
 						<span v-else class="flex items-center">
 							{{ result.title }}
 							<ChevronRightIcon size="1x" class="mx-1" />
-							<span class="font-normal opacity-75">{{
-								result.value
-							}}</span>
+							<span class="font-normal opacity-75 truncate">
+								{{ result.value }}
+							</span>
 						</span>
 					</g-link>
 				</li>
