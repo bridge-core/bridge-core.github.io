@@ -11,9 +11,21 @@
 			<div class="order-1 w-full md:w-2/3">
 				<div class="content" v-html="$page.markdownPage.content" />
 
-				<div
-					class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border"
+				<a
+					:href="githubLink"
+					class="inline-block mt-8 mb-4 lg:mt-12 lg:mb-6 text-ui-primary"
+					target="_blank"
+					rel="noopener noreferrer"
+					title="Edit on GitHub"
+					name="Edit on GitHub"
 				>
+					<GithubIcon class="inline mr-1" size="1.0x" />
+					<span class="border-b border-dashed border-ui-primary pr-1">
+						Edit this page on GitHub
+					</span>
+				</a>
+
+				<div class="pt-8 lg:pt-12 border-t border-ui-border">
 					<NextPrevLinks />
 				</div>
 			</div>
@@ -38,8 +50,11 @@ query ($id: ID!) {
       value
       anchor
     }
+	fileInfo {
+		path
+	}
   }
-  allMarkdownPage{
+  allMarkdownPage {
     edges {
       node {
         path
@@ -53,11 +68,12 @@ query ($id: ID!) {
 <script>
 import OnThisPage from '@/components/OnThisPage.vue'
 import NextPrevLinks from '@/components/NextPrevLinks.vue'
-
+import { GithubIcon } from 'vue-feather-icons'
 export default {
 	components: {
 		OnThisPage,
 		NextPrevLinks,
+		GithubIcon,
 	},
 
 	metaInfo() {
@@ -96,6 +112,18 @@ export default {
 				},
 			],
 		}
+	},
+	computed: {
+		githubLink() {
+			console.log(
+				this.$page.markdownPage.fileInfo.path,
+				this.$page.markdownPage.timeToRead
+			)
+			return (
+				'https:github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
+				this.$page.markdownPage.fileInfo.path
+			)
+		},
 	},
 }
 </script>

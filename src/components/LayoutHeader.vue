@@ -138,7 +138,6 @@ export default {
 			return this.$static.metadata
 		},
 		settings() {
-			console.log(this.meta.settings)
 			return this.meta.settings
 		},
 	},

@@ -5,9 +5,11 @@ sidebar: 'plugins'
 
 # Custom Commands
 
+## General
+
 bridge. allows you to define new commands that can be used in mcfunction files. In order to get started, create a `commands/` folder inside of your project or a `<PLUGIN NAME>/commands` inside of your plugin folder and place a first JavaScript (.js) file inside of it. The name of the file does not matter.
 
-### Execution Scope
+## Execution Scope
 
 JavaScript files placed inside of this folder have access to the `Bridge` object. Available methods:
 
@@ -29,7 +31,7 @@ JavaScript files placed inside of this folder have access to the `Bridge` object
 
 `onCacheHook(commandArgs)` allows you to add data to bridge.'s lightning cache. Implementation of this method is optional.
 
-### Example
+## Example
 
 ```javascript
 Bridge.register(

@@ -5,9 +5,11 @@ sidebar: 'plugins'
 
 # Custom Components
 
+## General
+
 bridge. allows you to define new entity components. In order to get started, create a `components/` folder inside of your project or a `<PLUGIN NAME>/components` inside of your plugin folder and place a first JavaScript (.js) file inside of it. The name of the file does not matter.
 
-### Execution Scope
+## Execution Scope
 
 JavaScript files placed inside of this folder have access to the `Bridge` object. Available methods:
 
@@ -22,7 +24,7 @@ JavaScript files placed inside of this folder have access to the `Bridge` object
 
 `onPropose()` must return an auto-completion object. It should only have one property (named your custom component name) which should replicate the structure of the custom component. [Read more about bridge.'s auto-completion JSON format.](/plugin-docs/auto-completions/)
 
-### Example
+## Example
 
 ```javascript
 Bridge.register(
