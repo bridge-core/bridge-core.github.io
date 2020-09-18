@@ -9,73 +9,73 @@
   "scope": "/",
   "icons": [
     {
-      "src": "assets\\static\\touch-icon-512x512.png",
+      "src": "assets/static/touch-icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-384x384.png",
+      "src": "assets/static/touch-icon-384x384.png",
       "type": "image/png",
       "sizes": "384x384",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-192x192.png",
+      "src": "assets/static/touch-icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-180x180.png",
+      "src": "assets/static/touch-icon-180x180.png",
       "type": "image/png",
       "sizes": "180x180",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-152x152.png",
+      "src": "assets/static/touch-icon-152x152.png",
       "type": "image/png",
       "sizes": "152x152",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-144x144.png",
+      "src": "assets/static/touch-icon-144x144.png",
       "type": "image/png",
       "sizes": "144x144",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-128x128.png",
+      "src": "assets/static/touch-icon-128x128.png",
       "type": "image/png",
       "sizes": "128x128",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-120x120.png",
+      "src": "assets/static/touch-icon-120x120.png",
       "type": "image/png",
       "sizes": "120x120",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-96x96.png",
+      "src": "assets/static/touch-icon-96x96.png",
       "type": "image/png",
       "sizes": "96x96",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-72x72.png",
+      "src": "assets/static/touch-icon-72x72.png",
       "type": "image/png",
       "sizes": "72x72",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-48x48.png",
+      "src": "assets/static/touch-icon-48x48.png",
       "type": "image/png",
       "sizes": "48x48",
       "purpose": "maskable any"
     },
     {
-      "src": "assets\\static\\touch-icon-16x16.png",
+      "src": "assets/static/touch-icon-16x16.png",
       "type": "image/png",
       "sizes": "16x16",
       "purpose": "maskable any"
