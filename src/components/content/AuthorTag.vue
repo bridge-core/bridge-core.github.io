@@ -1,5 +1,13 @@
 <template>
-	<g-link :to="path" class="flex items-center">
+	<g-link
+		:to="path"
+		:class="
+			`flex items-center p-2 rounded-lg transition-all duration-200 ease-out transform hover:shadow-md hover:-translate-y-1 hover:${
+				!card ? 'bg-ui-sidebar' : 'bg-ui-background'
+			}`
+		"
+		style="width: fit-content;"
+	>
 		<g-image
 			class="w-8 h-8 rounded-full mr-4"
 			:src="image"
@@ -22,6 +30,7 @@ export default {
 	name: 'AuthorTag',
 	props: {
 		author: Object,
+		card: Boolean,
 	},
 	computed: {
 		path() {

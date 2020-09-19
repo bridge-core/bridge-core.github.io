@@ -11,7 +11,7 @@
 				/>
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2">{{ title }}</div>
-					<AuthorTag :author="author" />
+					<AuthorTag :author="author" :card="true" />
 					<p class="text-base mt-4">
 						{{ excerpt }}
 					</p>
