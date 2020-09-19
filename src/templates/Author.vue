@@ -1,10 +1,25 @@
 <template>
 	<Layout :showSidebars="false">
-		<div class="mt-12 mx-12">
-			<h1>{{ author.title }}</h1>
-			<h2>{{ author.position }}</h2>
+		<div class="mt-12 lg:mx-12">
+			<div class="flex items-center">
+				<g-image
+					class="w-20 h-20 rounded-full mr-4"
+					:src="author.image"
+					:alt="`Logo of ${author.title}`"
+				/>
+
+				<div>
+					<h1>{{ author.title }}</h1>
+					<h2>{{ author.position }}</h2>
+				</div>
+			</div>
 
 			<div class="content" v-html="author.content" />
+			<GithubEdit
+				class="mt-8 mb-4"
+				:githubLink="githubLink"
+				:smallIcon="true"
+			/>
 
 			<h2
 				v-if="contentByAuthor.length > 0"
@@ -27,19 +42,6 @@
 					:author="author"
 				/>
 			</div>
-			<!-- <a
-					:href="githubLink"
-					class="inline-block mt-8 mb-4 lg:mt-12 lg:mb-6 text-ui-primary"
-					target="_blank"
-					rel="noopener noreferrer"
-					title="Edit on GitHub"
-					name="Edit on GitHub"
-				>
-					<GithubIcon class="inline mr-1" size="1.0x" />
-					<span class="border-b border-dashed border-ui-primary pr-1">
-						Edit this page on GitHub
-					</span>
-				</a> -->
 		</div>
 	</Layout>
 </template>
@@ -52,6 +54,9 @@ query ($id: ID!) {
         title
         position
         content
+		fileInfo {
+			path
+		}
 		belongsTo {
         	edges {
 				node {
@@ -75,13 +80,21 @@ query ($id: ID!) {
 </page-query>
 
 <script>
-import Card from '~/components/content/Card.vue'
+import Card from '@/components/content/Card.vue'
+import GithubEdit from '@/components/content/GithubEdit.vue'
 
 export default {
 	components: {
 		Card,
+		GithubEdit,
 	},
 	computed: {
+		githubLink() {
+			return (
+				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
+				this.$page.author.fileInfo.path
+			)
+		},
 		author() {
 			return this.$page.author
 		},

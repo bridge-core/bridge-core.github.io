@@ -16,19 +16,7 @@
 					<span v-if="author" class="mx-8 border-r border-ui-border">
 						&nbsp;
 					</span>
-					<a
-						:href="githubLink"
-						class="flex items-center text-ui-primary"
-						target="_blank"
-						rel="noopener noreferrer"
-						title="Edit on GitHub"
-						name="Edit on GitHub"
-					>
-						<GithubIcon class="inline mr-1" size="1.5x" />
-						<span class="underline pr-1 text-center">
-							Edit this page on GitHub
-						</span>
-					</a>
+					<GithubEdit :githubLink="githubLink" />
 				</div>
 
 				<div class="pt-8 lg:pt-12 border-t border-ui-border">
@@ -80,12 +68,13 @@ query ($id: ID!) {
 <script>
 import OnThisPage from '@/components/OnThisPage.vue'
 import NextPrevLinks from '@/components/NextPrevLinks.vue'
-import { GithubIcon } from 'vue-feather-icons'
+import GithubEdit from '@/components/content/GithubEdit.vue'
+
 export default {
 	components: {
 		OnThisPage,
 		NextPrevLinks,
-		GithubIcon,
+		GithubEdit,
 	},
 
 	metaInfo() {

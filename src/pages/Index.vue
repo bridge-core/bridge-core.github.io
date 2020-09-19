@@ -56,7 +56,7 @@
 
 			<div
 				class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
-			></div>
+			/>
 
 			<div class="flex flex-wrap justify-center -mx-4">
 				<div
@@ -122,6 +122,12 @@
 					</p>
 				</div>
 			</div>
+
+			<div
+				class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
+			/>
+
+			<Team />
 		</div>
 	</Layout>
 </template>
@@ -136,10 +142,12 @@ import {
 	SearchIcon,
 	DownloadCloudIcon,
 } from 'vue-feather-icons'
+import Team from '@/components/collection/Team.vue'
 
 export default {
 	components: {
 		Logo,
+		Team,
 		ChevronRightIcon,
 		DownloadCloudIcon,
 		ZapIcon,
