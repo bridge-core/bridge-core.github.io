@@ -5,7 +5,7 @@ sidebar: 'plugins'
 
 # @bridge/ui
 
-Module that provides programmatic access to Vue components defined of the plugin's `ui/` folder
+Module that provides programmatic access to Vue components defined inside of the plugin's `ui/` folder
 
 ## `UI.BuiltIn`
 
