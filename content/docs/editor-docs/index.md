@@ -1,6 +1,7 @@
 ---
 description: ''
 sidebar: 'editor'
+author: 'solveddev'
 ---
 
 # Editor
