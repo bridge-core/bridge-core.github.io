@@ -116,7 +116,7 @@ export default {
 	computed: {
 		githubLink() {
 			return (
-				'https:github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
+				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
 				this.$page.markdownPage.fileInfo.path
 			)
 		},
