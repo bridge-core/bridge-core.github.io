@@ -11,20 +11,21 @@
 				/>
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2">{{ title }}</div>
-					<ContentAuthor :author="author" />
+					<AuthorTag :author="author" />
 					<p class="text-base mt-4">
 						{{ excerpt }}
 					</p>
 				</div>
 			</g-link>
 			<div class="px-6 pt-4 pb-2">
-				<span
+				<g-link
 					v-for="tag in tags"
 					:key="tag.id"
+					:to="tag.path"
 					class="inline-block bg-ui-background rounded-full px-3 py-1 text-sm font-semibold opacity-75 mr-2 mb-2"
 				>
 					#{{ tag.title }}
-				</span>
+				</g-link>
 			</div>
 		</div>
 	</div>

@@ -58,7 +58,7 @@ module.exports = {
 			use: '@gridsome/source-filesystem',
 			options: {
 				baseDir: './content/authors',
-				pathPrefix: '',
+				pathPrefix: 'author/',
 				path: '**/*.md',
 				typeName: 'Author',
 				remark: {
@@ -133,4 +133,12 @@ module.exports = {
 			},
 		},
 	],
+	templates: {
+		Tag: [
+			{
+				path: '/tags/:title',
+				component: '~/templates/Tag.vue',
+			},
+		],
+	},
 }

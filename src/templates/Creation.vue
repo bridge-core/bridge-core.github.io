@@ -2,7 +2,7 @@
 	<Layout :showSidebars="false">
 		<div class="mt-12 mx-12">
 			<h1>{{ creation.title }}</h1>
-			<ContentAuthor :author="author" />
+			<AuthorTag :author="author" />
 
 			<div class="content" v-html="creation.content" />
 
@@ -30,7 +30,7 @@ query ($id: ID!) {
         title
         content
         author {
-            id
+            path
             title
             image
             position

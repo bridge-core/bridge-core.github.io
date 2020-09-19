@@ -29,13 +29,14 @@ query {
         image
         excerpt
         author {
-            id
+            path
             title
             image
             position
         }
         tags {
-            id,
+            id
+            path
             title
         }
       }
