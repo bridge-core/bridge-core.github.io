@@ -11,19 +11,13 @@
 			<div class="order-1 w-full md:w-2/3">
 				<div class="content" v-html="$page.markdownPage.content" />
 
-				<a
-					:href="githubLink"
-					class="inline-block mt-8 mb-4 lg:mt-12 lg:mb-6 text-ui-primary"
-					target="_blank"
-					rel="noopener noreferrer"
-					title="Edit on GitHub"
-					name="Edit on GitHub"
-				>
-					<GithubIcon class="inline mr-1" size="1.0x" />
-					<span class="border-b border-dashed border-ui-primary pr-1">
-						Edit this page on GitHub
+				<div class="flex items-center mt-8 mb-4 lg:mt-12 lg:mb-6">
+					<AuthorTag v-if="author" :author="author" />
+					<span v-if="author" class="mx-8 border-r border-ui-border">
+						&nbsp;
 					</span>
-				</a>
+					<GithubEdit :githubLink="githubLink" />
+				</div>
 
 				<div class="pt-8 lg:pt-12 border-t border-ui-border">
 					<NextPrevLinks />
@@ -45,6 +39,12 @@ query ($id: ID!) {
     sidebar
     next
     prev
+	author {
+		path
+		title
+		image
+		position
+	}
     headings {
       depth
       value
@@ -68,12 +68,13 @@ query ($id: ID!) {
 <script>
 import OnThisPage from '@/components/OnThisPage.vue'
 import NextPrevLinks from '@/components/NextPrevLinks.vue'
-import { GithubIcon } from 'vue-feather-icons'
+import GithubEdit from '@/components/content/GithubEdit.vue'
+
 export default {
 	components: {
 		OnThisPage,
 		NextPrevLinks,
-		GithubIcon,
+		GithubEdit,
 	},
 
 	metaInfo() {
@@ -115,14 +116,13 @@ export default {
 	},
 	computed: {
 		githubLink() {
-			console.log(
-				this.$page.markdownPage.fileInfo.path,
-				this.$page.markdownPage.timeToRead
-			)
 			return (
 				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
 				this.$page.markdownPage.fileInfo.path
 			)
+		},
+		author() {
+			return this.$page.markdownPage.author
 		},
 	},
 }

@@ -1,6 +1,7 @@
 ---
 description: ''
 sidebar: 'editor'
+author: 'solveddev'
 next: '/plugin-docs/'
 prev: '/editor-docs/projects/'
 ---

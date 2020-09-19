@@ -7,9 +7,9 @@ module.exports = [
 				items: [
 					'/editor-docs/',
 					'/editor-docs/features/',
+					'/editor-docs/team/',
 					'/editor-docs/getting-started/',
 					'/editor-docs/faq/',
-					'/editor-docs/projects/',
 				],
 			},
 			{

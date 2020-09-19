@@ -38,6 +38,17 @@
 
 				<div class="flex items-center justify-end px-2 sm:px-4">
 					<a
+						v-if="settings.web"
+						:href="settings.web"
+						class="hidden ml-3 sm:block"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Discord"
+						name="Discord"
+					>
+						<GlobeIcon size="1.5" />
+					</a>
+					<a
 						v-if="settings.twitter"
 						:href="settings.twitter"
 						class="hidden ml-3 sm:block"
@@ -61,8 +72,8 @@
 						<GithubIcon size="1.5x" />
 					</a>
 					<a
-						v-if="settings.web"
-						:href="settings.web"
+						v-if="settings.discord"
+						:href="settings.discord"
 						class="hidden ml-3 sm:block"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -92,6 +103,7 @@ query {
       web
       github
       twitter
+	  discord
       nav {
         links {
           path

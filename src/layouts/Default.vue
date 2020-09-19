@@ -13,7 +13,7 @@
 				class="container relative flex flex-wrap justify-start flex-1 w-full bg-ui-background"
 			>
 				<aside
-					v-if="hasSidebar"
+					v-if="showSidebars && hasSidebar"
 					class="sidebar"
 					:class="{ open: sidebarOpen }"
 					:style="sidebarStyle"
@@ -25,7 +25,9 @@
 
 				<div
 					class="w-full pb-24"
-					:class="{ 'pl-0 lg:pl-12 lg:w-3/4': hasSidebar }"
+					:class="{
+						'pl-0 lg:pl-12 lg:w-3/4': showSidebars && hasSidebar,
+					}"
 				>
 					<slot />
 				</div>
@@ -33,7 +35,7 @@
 		</div>
 
 		<div
-			v-if="hasSidebar"
+			v-if="showSidebars && hasSidebar"
 			class="fixed bottom-0 right-0 z-50 p-8 lg:hidden"
 		>
 			<button
@@ -66,6 +68,12 @@ export default {
 		LayoutHeader,
 		MenuIcon,
 		XIcon,
+	},
+	props: {
+		showSidebars: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	data() {
 		return {
@@ -132,7 +140,7 @@ export default {
 :root {
 	--color-ui-background: theme('colors.white');
 	--color-ui-typo: #1a1a1a;
-	--color-ui-sidebar: theme('colors.gray.200');
+	--color-ui-sidebar: #f4f4f4;
 	--color-ui-border: theme('colors.gray.300');
 	--color-ui-primary: #1778d2;
 }
