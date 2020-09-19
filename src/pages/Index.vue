@@ -128,6 +128,26 @@
 			/>
 
 			<Team />
+
+			<div
+				class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
+			/>
+
+			<div class="text-center">
+				<h1>Getting Inspired</h1>
+				<p>
+					bridge. has been used to create various awesome projects.
+				</p>
+				<div class="flex justify-center mt-8 flex-wrap -mx-4">
+					<g-link
+						to="/creations/"
+						class="flex items-center px-6 py-2 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
+					>
+						Take a Peek
+						<ChevronRightIcon class="ml-4" size="1x" />
+					</g-link>
+				</div>
+			</div>
 		</div>
 	</Layout>
 </template>
