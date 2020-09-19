@@ -2,9 +2,9 @@
 	<g-link
 		:to="path"
 		:class="
-			`flex items-center p-2 rounded-lg transition-all duration-200 ease-out transform hover:shadow-md hover:-translate-y-1 hover:${
-				!card ? 'bg-ui-sidebar' : 'bg-ui-background'
-			}`
+			`author-tag${
+				card ? '-card' : ''
+			} flex items-center p-2 rounded-lg transition-all duration-200 ease-out transform hover:shadow-md hover:-translate-y-1`
 		"
 	>
 		<g-image
@@ -48,4 +48,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.author-tag:hover {
+	background: var(--color-ui-sidebar);
+}
+.author-tag-card:hover {
+	background: var(--color-ui-background);
+}
+</style>
