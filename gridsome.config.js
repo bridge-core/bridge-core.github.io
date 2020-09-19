@@ -12,12 +12,14 @@ module.exports = {
 	},
 	siteUrl: 'https://bridge-core.github.io',
 	settings: {
-		web: 'https://discord.gg/uj8K2S9',
+		web: false,
+		discord: 'https://discord.gg/uj8K2S9',
 		twitter: process.env.URL_TWITTER || false,
 		github: 'https://github.com/bridge-core/',
 		nav: {
 			links: [
 				{ path: '/editor-docs/', title: 'Editor' },
+				{ path: '/creations/', title: 'Creations' },
 				{ path: '/plugin-docs/', title: 'Plugins' },
 			],
 		},
@@ -35,9 +37,47 @@ module.exports = {
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
-				baseDir: './content',
+				baseDir: './content/creations',
+				path: '**/*.md',
+				typeName: 'Creation',
+				refs: {
+					author: 'Author',
+					tags: {
+						typeName: 'Tag',
+						create: true,
+					},
+				},
+				remark: {
+					externalLinksTarget: '_blank',
+					externalLinksRel: ['noopener', 'noreferrer'],
+					plugins: ['@gridsome/remark-prismjs'],
+				},
+			},
+		},
+		{
+			use: '@gridsome/source-filesystem',
+			options: {
+				baseDir: './content/authors',
+				pathPrefix: '',
+				path: '**/*.md',
+				typeName: 'Author',
+				remark: {
+					externalLinksTarget: '_blank',
+					externalLinksRel: ['noopener', 'noreferrer'],
+					plugins: ['@gridsome/remark-prismjs'],
+				},
+			},
+		},
+		{
+			use: '@gridsome/source-filesystem',
+			options: {
+				baseDir: './content/docs',
+				pathPrefix: '',
 				path: '**/*.md',
 				typeName: 'MarkdownPage',
+				refs: {
+					author: 'Author',
+				},
 				remark: {
 					externalLinksTarget: '_blank',
 					externalLinksRel: ['noopener', 'noreferrer'],

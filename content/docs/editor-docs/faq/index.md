@@ -1,6 +1,7 @@
 ---
 description: 'Find answers for frequently asked questions on addons and bridge.'
 sidebar: 'editor'
+next: '/editor-docs/other/molang/'
 ---
 
 # FAQ

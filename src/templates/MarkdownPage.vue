@@ -115,10 +115,6 @@ export default {
 	},
 	computed: {
 		githubLink() {
-			console.log(
-				this.$page.markdownPage.fileInfo.path,
-				this.$page.markdownPage.timeToRead
-			)
 			return (
 				'https:github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
 				this.$page.markdownPage.fileInfo.path

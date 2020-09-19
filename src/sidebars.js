@@ -9,7 +9,6 @@ module.exports = [
 					'/editor-docs/features/',
 					'/editor-docs/getting-started/',
 					'/editor-docs/faq/',
-					'/editor-docs/projects/',
 				],
 			},
 			{
