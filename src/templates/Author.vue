@@ -6,13 +6,18 @@
 
 			<div class="content" v-html="author.content" />
 
-			<h2>Content by {{ author.title }}</h2>
+			<h2
+				v-if="contentByAuthor.length > 0"
+				class="mt-8 lg:mt-12 pt-4 border-t border-ui-border w-auto"
+			>
+				Content by {{ author.title }}
+			</h2>
 			<div class="mt-12 -mx-2 flex flex-wrap">
 				<Card
 					class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
 					v-for="{
 						node: { id, image, path, title, excerpt, tags },
-					} in author.belongsTo.edges"
+					} in contentByAuthor"
 					:key="id"
 					:to="path"
 					:image="image"
@@ -79,6 +84,11 @@ export default {
 	computed: {
 		author() {
 			return this.$page.author
+		},
+		contentByAuthor() {
+			return this.author.belongsTo.edges.filter(
+				({ node }) => node.id !== undefined
+			)
 		},
 	},
 }
