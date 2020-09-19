@@ -91,7 +91,7 @@ export default {
 	computed: {
 		githubLink() {
 			return (
-				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
+				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/authors/' +
 				this.$page.author.fileInfo.path
 			)
 		},
