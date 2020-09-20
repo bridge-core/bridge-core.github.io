@@ -45,7 +45,6 @@ query($page: Int) {
 				image
 				excerpt
 				author {
-					path
 					title
 					image
 					position

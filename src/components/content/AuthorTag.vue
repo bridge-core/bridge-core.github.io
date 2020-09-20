@@ -1,10 +1,12 @@
 <template>
-	<g-link
+	<component
+		:is="path ? 'g-link' : 'span'"
 		:to="path"
-		class="flex items-center p-2 rounded-lg transition-all duration-200 ease-out transform hover:shadow-md hover:-translate-y-1"
+		class="flex items-center p-2 rounded-lg transition-all duration-200 ease-out transform"
 		:class="{
-			'author-tag': !card,
-			'author-tag-card': card,
+			'hover:shadow-md hover:-translate-y-1': path,
+			'author-tag': !card && path,
+			'author-tag-card': card && path,
 		}"
 	>
 		<g-image
@@ -21,7 +23,7 @@
 				{{ position }}
 			</p>
 		</div>
-	</g-link>
+	</component>
 </template>
 
 <script>

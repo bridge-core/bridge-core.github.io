@@ -2,6 +2,16 @@
 	<Layout :showSidebars="false">
 		<div class="mt-12 mx-12">
 			<h1>{{ creation.title }}</h1>
+			<div class="pb-2">
+				<g-link
+					v-for="tag in creation.tags"
+					:key="tag.id"
+					:to="tag.path"
+					class="inline-block bg-ui-sidebar rounded-full px-3 py-1 text-sm font-semibold opacity-75 mr-2 mb-2 transition-all duration-200 ease-out transform hover:shadow-md hover:-translate-y-1"
+				>
+					#{{ tag.title }}
+				</g-link>
+			</div>
 			<AuthorTag
 				class="mb-4"
 				style="width: fit-content;"
@@ -36,6 +46,11 @@ query ($id: ID!) {
         image
         content
         download
+        tags {
+            id
+            path
+            title
+        }
         author {
             path
             title

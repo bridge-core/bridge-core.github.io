@@ -17,16 +17,25 @@
 					:author="author"
 				/>
 			</div>
+			<Pager
+				linkClass="pager__link"
+				class="pager text-xl"
+				:info="tag.belongsTo.pageInfo"
+			/>
 		</div>
 	</Layout>
 </template>
 
 <page-query>
-query ($id: ID!) {
+query ($id: ID!, $page: Int) {
     tag(id: $id) {
         id
         title
-		belongsTo {
+		belongsTo(perPage: 20, page: $page) @paginate {
+			pageInfo {
+				totalPages
+				currentPage
+			}
         	edges {
 				node {
 					... on Creation {
@@ -36,13 +45,13 @@ query ($id: ID!) {
 						excerpt
 						path
 						author {
-							path
 							title
 							image
 							position
 						}
 						tags {
 							id
+							path
 							title
 						}
               		}
@@ -55,10 +64,12 @@ query ($id: ID!) {
 
 <script>
 import Card from '~/components/content/Card.vue'
+import { Pager } from 'gridsome'
 
 export default {
 	components: {
 		Card,
+		Pager,
 	},
 	computed: {
 		tag() {
@@ -67,3 +78,29 @@ export default {
 	},
 }
 </script>
+
+<style lang="scss">
+.pager {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+
+	&__link {
+		text-align: center;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		margin-left: 4px;
+
+		&:hover:not(.active) {
+			background-color: var(--color-ui-sidebar);
+			border-radius: 5px;
+			color: var(--color-ui-primary);
+		}
+	}
+
+	.active {
+		background-color: var(--color-ui-primary);
+		border-radius: 5px;
+	}
+}
+</style>
