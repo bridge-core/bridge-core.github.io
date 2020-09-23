@@ -26,19 +26,19 @@ interface IFileDefinition {
 	// How to display a file of this type; Default: File viewer determined by file extension
 	file_viewer?: 'json' | 'text' | 'model' | 'mcstructure'
 	// Lightning cache definition for this file type
-	lightning_cache: string
+	lightning_cache?: string
 	// Highlighter definition for this file type
-	highlighter: string
+	highlighter?: string
 	// Start state for the auto-completions
-	start_state: string
+	start_state?: string
 	// Build array exceptions -explicit exception to bridge.'s is_array detection
-	build_array_exceptions: string[]
+	build_array_exceptions?: string[]
 	// Comment character
-	comment_character: string
+	comment_character?: string
 	// File creator
-	file_creator: IFileCreator
+	file_creator?: IFileCreator
 	// Documentation lookup data
-	documentation: {
+	documentation?: {
 		base: string
 		extend: string
 	}
@@ -59,7 +59,7 @@ interface IFileCreator {
 	path: string
 	// Templates
 	templates: {
-		$default_pack: {
+		$default_pack?: {
 			// Where to load vanilla templates from
 			path: string
 		}
