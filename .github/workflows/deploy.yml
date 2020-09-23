@@ -13,6 +13,8 @@ jobs:
                   persist-credentials: false
 
             - name: Install and Build 🔧
+              env:
+                  GA_ID: ${{ secrets.GA_ID }}
               run: |
                   npm install
                   npm run build
