@@ -21,7 +21,7 @@ module.exports = {
 				{ path: '/editor-docs/', title: 'Editor' },
 				{ path: '/plugin-docs/', title: 'Docs' },
 				{ path: '/creations/', title: 'Creations' },
-				{ path: '/plugins/', title: 'Plugins' },
+				{ path: '/created-plugins/', title: 'Plugins' },
 			],
 		},
 		sidebar: require('./src/sidebars.js'),
