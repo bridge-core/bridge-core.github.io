@@ -87,6 +87,7 @@ module.exports = function(api) {
 
 				plugins.addNode({
 					...other,
+					path: `/plugins/${other.id}/`,
 					author: store.createReference(contributor),
 					tags: store.createReference(
 						'Tag',
