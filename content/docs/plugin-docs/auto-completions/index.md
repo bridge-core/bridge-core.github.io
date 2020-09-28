@@ -33,7 +33,9 @@ The folder in which you place a auto-completion file matters because auto-comple
 
 You simulate the actual structure of a file with the JSON format "bridge." uses. It may not contain arrays so you need to use the [dynamic reference](/plugin-docs/auto-completions/dynamic-references.md) `$dynamic.list.next_index` if you want to propose array indices. Only string arrays are valid and they are only allowed in order to define values. (See example 2)
 
-### Example 1 from [`packages/auto_completions/recipe/main`](https://github.com/bridge-core/data/blob/master/packages/auto_completions/recipe/main.json)
+### Example 1
+
+See: [`packages/auto_completions/recipe/main`](https://github.com/bridge-core/data/blob/master/packages/auto_completions/recipe/main.json)
 
 ```javascript
 {
@@ -51,7 +53,9 @@ You simulate the actual structure of a file with the JSON format "bridge." uses.
 }
 ```
 
-### Example 2 from [`packages/auto_completions/recipe/general`](https://github.com/bridge-core/data/blob/master/packages/auto_completions/recipe/general.json)
+### Example 2
+
+See: [`packages/auto_completions/recipe/general`](https://github.com/bridge-core/data/blob/master/packages/auto_completions/recipe/general.json)
 
 ```javascript
 {
