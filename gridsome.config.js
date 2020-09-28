@@ -19,8 +19,9 @@ module.exports = {
 		nav: {
 			links: [
 				{ path: '/editor-docs/', title: 'Editor' },
+				{ path: '/plugin-docs/', title: 'Docs' },
 				{ path: '/creations/', title: 'Creations' },
-				{ path: '/plugin-docs/', title: 'Plugins' },
+				{ path: '/plugins/', title: 'Plugins' },
 			],
 		},
 		sidebar: require('./src/sidebars.js'),

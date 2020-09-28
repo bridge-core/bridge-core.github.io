@@ -11,7 +11,7 @@
 	>
 		<g-image
 			class="w-8 h-8 rounded-full mr-4"
-			:src="image"
+			:src="image || altImage"
 			:alt="`Logo of ${title}`"
 		/>
 
@@ -39,6 +39,9 @@ export default {
 		},
 		image() {
 			return this.author.image
+		},
+		altImage() {
+			return this.author.altImage
 		},
 		title() {
 			return this.author.title

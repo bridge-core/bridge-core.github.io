@@ -137,6 +137,34 @@ export default {
 </script>
 
 <style lang="scss">
+.pager {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-top: 2rem;
+
+	&__link {
+		text-align: center;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		margin-left: 4px;
+
+		&:hover:not(.active) {
+			background-color: var(--color-ui-sidebar);
+			border-radius: 5px;
+			color: var(--color-ui-primary);
+		}
+	}
+
+	.active {
+		background-color: var(--color-ui-primary);
+		color: white;
+		border-radius: 5px;
+	}
+}
+</style>
+
+<style lang="scss">
 :root {
 	--color-ui-background: theme('colors.white');
 	--color-ui-typo: #1a1a1a;

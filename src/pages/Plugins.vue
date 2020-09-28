@@ -1,20 +1,30 @@
 <template>
 	<Layout :showSidebars="false">
 		<div class="mt-12 mx-12">
-			<h1>Creations</h1>
+			<h1>Plugins</h1>
 			<p>
-				bridge. has been used to create various awesome projects. Here
-				are some of our favorites...
+				bridge. has a rich plugin API that has been used to create
+				amazing extensions for the editor. You can find all officially
+				available plugins here!
 			</p>
 			<div class="mt-12 -mx-2 flex flex-wrap">
 				<Card
 					class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
 					v-for="{
-						node: { id, image, path, title, excerpt, tags, author },
+						node: {
+							id,
+							image,
+							image2,
+							path,
+							title,
+							excerpt,
+							tags,
+							author,
+						},
 					} in edges"
 					:key="id"
 					:to="path"
-					:image="image"
+					:image="image || image2"
 					:title="title"
 					:excerpt="excerpt"
 					:tags="tags"
@@ -24,7 +34,7 @@
 			<Pager
 				linkClass="pager__link"
 				class="pager text-xl"
-				:info="$page.allCreation.pageInfo"
+				:info="$page.allPlugin.pageInfo"
 			/>
 		</div>
 	</Layout>
@@ -32,7 +42,7 @@
 
 <page-query>
 query($page: Int) {
-	allCreation(perPage: 12, page: $page) @paginate {
+	allPlugin(perPage: 12, page: $page) @paginate {
 		pageInfo {
 			totalPages
 			currentPage
@@ -41,13 +51,18 @@ query($page: Int) {
 			node {
 				id
 				path   
-				title
-				image
-				excerpt
+				title: name
+				excerpt: description
 				author {
-					title
-					image
-					position
+					... on Author {
+						title
+						image
+						position
+					}
+					... on Contributor {
+						title
+						altImage: image
+					}
 				}
 				tags {
 					id
@@ -71,7 +86,7 @@ export default {
 	},
 	computed: {
 		edges() {
-			return this.$page.allCreation.edges
+			return this.$page.allPlugin.edges
 		},
 	},
 }

@@ -5,6 +5,7 @@
 		>
 			<g-link :to="to">
 				<g-image
+					v-if="image"
 					class="w-full"
 					:src="image"
 					:alt="`Image of ${title}`"

@@ -35,9 +35,9 @@ query {
 			node {
 				id
 				type
-				path: html_url
-				title: login
-				image: avatar_url
+				path
+				title
+				image
 			}
 		}
 	}
