@@ -5,11 +5,7 @@ sidebar: 'plugins'
 
 # Auto-Completions
 
-bridge.'s auto-completions are fully data-driven with JSON files. The internal files are located inside the `static/auto_completions` folder. As always, it can be of great help to browse through the files to understand how the format works. This JSON format is also in use for text auto-completions but data is interpreted differently.
-
-## Basics
-
-In order for newly added files to get loaded, they must be added to the `static/auto_completions/files.json` file.
+bridge.'s auto-completions are fully data-driven with JSON files. The internal files are located inside the [`packages/auto_completions`](https://github.com/bridge-core/data/tree/master/packages/auto_completions) folder. As always, it can be of great help to browse through the files to understand how the format works. This JSON format is also in use for text auto-completions but data is interpreted differently.
 
 ## Folder Structure
 
@@ -17,7 +13,7 @@ The folder in which you place a auto-completion file matters because auto-comple
 
 ### Example
 
-#### File 1: `static/auto_completions/my_file_type/main`
+#### File 1: `auto_completions/my_file_type/main`
 
 ```javascript
 {
@@ -25,7 +21,7 @@ The folder in which you place a auto-completion file matters because auto-comple
 }
 ```
 
-#### File 1: `static/auto_completions/reference/main`
+#### File 1: `auto_completions/reference/main`
 
 ```javascript
 {
@@ -37,7 +33,7 @@ The folder in which you place a auto-completion file matters because auto-comple
 
 You simulate the actual structure of a file with the JSON format "bridge." uses. It may not contain arrays so you need to use the [dynamic reference](/plugin-docs/auto-completions/dynamic-references.md) `$dynamic.list.next_index` if you want to propose array indices. Only string arrays are valid and they are only allowed in order to define values. (See example 2)
 
-### Example 1 from `static/auto_completions/recipe/main`
+### Example 1 from [`packages/auto_completions/recipe/main`](https://github.com/bridge-core/data/blob/master/packages/auto_completions/recipe/main.json)
 
 ```javascript
 {
@@ -55,7 +51,7 @@ You simulate the actual structure of a file with the JSON format "bridge." uses.
 }
 ```
 
-### Example 2 from `static/auto_completions/recipe/general`
+### Example 2 from [`packages/auto_completions/recipe/general`](https://github.com/bridge-core/data/blob/master/packages/auto_completions/recipe/general.json)
 
 ```javascript
 {

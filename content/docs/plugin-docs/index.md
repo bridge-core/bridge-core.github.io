@@ -43,9 +43,3 @@ The plugin manifest stores important data on your add-on like its version number
 ## Scripts
 
 Scripts are loaded from the `<PLUGIN NAME>/scripts` folder. Scripts are written in JavaScript and allow plugins to deeply hook into bridge.'s functionality. You can add new dynamic auto-completions, create new windows, add support for new file types and do many more things.
-
-## Old JavaScript API Docs:
-
-### Script API v1:
-
-[Documentation](https://github.com/solvedDev/bridge./blob/master/plugin-docs/getting-started.md)

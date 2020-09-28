@@ -71,4 +71,4 @@ interface IFileCreator {
 
 ## Examples
 
--   [`static/data/file_definitions.json`](https://github.com/bridge-core/bridge./blob/master/static/data/file_definitions.json)
+-   [`packages/data/file_definitions.json`](https://github.com/bridge-core/data/blob/master/packages/data/file_definitions.json)
