@@ -7,7 +7,9 @@ sidebar: 'plugins'
 
 Module that allows plugins to create sidebar tabs.
 
-## `create(config: ISidebarConfig): ISidebarInstance`
+## Creating a sidebar
+
+**Function Signature:** create(config: ISidebarConfig): ISidebarInstance
 
 Creates a new sidebar and adds it to the current workspace.
 
@@ -15,35 +17,78 @@ Creates a new sidebar and adds it to the current workspace.
 
 ```typescript
 interface ISidebarConfig {
-	id?: string // Id of the sidebar (omit to automatically generate it)
-	displayName: string // Name of the sidebar
-	component: string // UI component that should be rendered for the sidebar
-	icon: string // Icon to display within the sidebar navigation
+	// Id of the sidebar (omit to automatically generate it)
+	id?: string
+	// Name of the sidebar
+	displayName: string
+	// UI component that should be rendered for the sidebar
+	component: string
+	// Icon to display within the sidebar navigation
+	icon: string
 }
 ```
 
 ### ISidebarInstance
 
 ```typescript
-export interface ISidebarInstance extends ISidebarConfig {
-	readonly uuid: string // Id of the sidebar
-	readonly isSelected: boolean // Whether the sidebar is selected
-	readonly opacity: number // Icon opacity
+export interface ISidebarInstance extends ISidebarConfig, IDisposable {
+	// Id of the sidebar
+	readonly uuid: string
+	// Whether the sidebar is selected
+	readonly isSelected: boolean
+	// Icon opacity
+	readonly opacity: number
 
-	select: () => ISidebarInstance // Select & show this sidebar
-	toggle: () => void // Toggle sidebar visibility
-	dispose: () => void // Remove the sidebar
+	// Select & show this sidebar
+	select: () => ISidebarInstance
+	// Toggle sidebar visibility
+	toggle: () => void
 }
 ```
 
-## `getSelected(): ISidebarInstance`
+## Getting the currently selected sidebar
+
+**Function Signature:** getSelected(): ISidebarInstance
 
 Returns the currently selected sidebar instance.
 
-## `select(id: string): void`
+## Selecting a sidebar
+
+**Function Signature:** select(id: string): void
 
 Select the sidebar with the provided id.
 
-## `onChange(cb: (prev: ISidebarInstance, curr: ISidebarInstance) => void)`
+### Alternative
 
-Listen to changes to the currently selected sidebar.
+Given that you have access to the `ISidebarInstance` that you want to select, you can also call `select()` on it.
+
+#### Example
+
+```typescript
+const { create } = await require('@bridge/sidebar')
+
+const sidebar = create(...)
+
+sidebar.select()
+```
+
+## Listening to changes
+
+**Function Signature:** onChange(cb: (prev: ISidebarInstance, curr: ISidebarInstance) => void)
+
+Registers a handler that fires whenever the currently selected sidebar changes.
+
+## Removing a sidebar
+
+In order to remove a sidebar, you need to have a reference to the `ISidebarInstance`. Calling `dispose()` on it will remove the sidebar from the app.
+
+### Example
+
+```typescript
+const { create } = await require('@bridge/sidebar')
+
+const sidebar = create(...)
+
+// Later...
+sidebar.dispose()
+```

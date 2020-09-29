@@ -7,7 +7,10 @@ sidebar: 'plugins'
 
 Grants access to the lightning cache database
 
-## `fetchDefinition(fileType: string, fetchDefs: string[], fetchSearch: string, fetchAll = false): Promise<string[]>`
+## Fetching lightning cache data
+
+**Function Signature:**
+fetchDefinition(fileType: string, fetchDefs: string[], fetchSearch: string, fetchAll = false): Promise<string[]>
 
 Search through the definitions `fetchDefs` in `fileType` files for `fetchSearch`. Available definitions can be found by browsing the lightning cache files [here](plugin-docs/json/lightning-cache/). Valid built-in file types are listed [here](/plugin-docs/other/default-file-types/).
 
@@ -31,7 +34,7 @@ const walkAnimations = await fetchDefinition(
 	false
 )
 
-// With fetchAll=true you still get a string[] even though it only has one entry
+// With fetchAll=false you still get a string[] even though it only has one entry
 // => Consistency
 const walkAnimation = walkAnimations[0]
 ```
