@@ -7,6 +7,7 @@
 const fetch = require('node-fetch')
 const GitHub = require('github-api')
 const uuid = require('uuid').v4
+const marked = require('marked')
 
 module.exports = function(api) {
 	api.loadSource(
@@ -58,43 +59,56 @@ module.exports = function(api) {
 			})
 			const tagCollection = getCollection('Tag')
 			const authorCollection = getCollection('Author')
-			;(await pluginRepo.getContents(
+			const ghPluginData = (await pluginRepo.getContents(
 				'master',
 				'plugins.json',
 				true
-			)).data.forEach(({ author, tags, ...other }) => {
-				tags.forEach(
-					t =>
-						tagCollection.findNode({
-							title: t.toLowerCase(),
-						}) ||
-						tagCollection.addNode({
-							title: t.toLowerCase(),
-							id: t.toLowerCase(),
-						})
-				)
-				const contributor =
-					authorCollection.findNode({
-						id: author.replace(/\s+/g, '').toLowerCase(),
-					}) ||
-					contributors.findNode({
-						title: author.replace(/\s+/g, ''),
-					}) ||
-					contributors.addNode({
-						title: author,
-						image: `https://robohash.org/${author}`,
-					})
+			)).data
 
-				plugins.addNode({
-					...other,
-					path: `/plugins/${other.id}/`,
-					author: store.createReference(contributor),
-					tags: store.createReference(
-						'Tag',
-						tags.map(t => t.toLowerCase())
-					),
+			await Promise.all(
+				ghPluginData.map(async ({ author, tags, ...other }) => {
+					let readmeLink = other.link.split(/\\|\//g)
+					readmeLink.pop()
+					readmeLink = readmeLink.concat(['README.md']).join('/')
+					const readme = (await pluginRepo
+						.getContents('master', readmeLink, true)
+						.catch(() => ({}))).data
+
+					tags.unshift(`v${other.version.replace(/\./g, '-')}`)
+					tags.forEach(
+						t =>
+							tagCollection.findNode({
+								title: t.toLowerCase(),
+							}) ||
+							tagCollection.addNode({
+								title: t.toLowerCase(),
+								id: t.toLowerCase(),
+							})
+					)
+					const contributor =
+						authorCollection.findNode({
+							id: author.replace(/\s+/g, '').toLowerCase(),
+						}) ||
+						contributors.findNode({
+							title: author.replace(/\s+/g, ''),
+						}) ||
+						contributors.addNode({
+							title: author,
+							image: `https://robohash.org/${author}`,
+						})
+
+					plugins.addNode({
+						...other,
+						content: readme ? marked(readme) : readme,
+						path: `/plugins/${other.id}/`,
+						author: store.createReference(contributor),
+						tags: store.createReference(
+							'Tag',
+							tags.map(t => t.toLowerCase())
+						),
+					})
 				})
-			})
+			)
 		}
 	)
 

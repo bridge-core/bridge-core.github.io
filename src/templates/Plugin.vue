@@ -21,10 +21,16 @@
 
 			<div class="content" v-text="plugin.excerpt" />
 
-			<!-- <div class="flex mt-8 pt-4 border-t border-ui-border">
+			<div class="content" v-html="plugin.content" />
+
+			<div class="flex mt-8 pt-4 border-t border-ui-border">
 				<g-link
-					:to="plugin.download"
-					class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+					:to="
+						`https://github.com/bridge-core/plugins/raw/master${
+							plugin.link
+						}`
+					"
+					class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-white rounded-lg shadow-lg bg-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
 					:style="
 						`background: ${author.themeColor ||
 							'var(--color-ui-primary)'};`
@@ -33,7 +39,7 @@
 					Download
 					<DownloadCloudIcon class="ml-4" size="1x" />
 				</g-link>
-			</div> -->
+			</div>
 		</div>
 	</Layout>
 </template>
@@ -44,8 +50,11 @@ query ($id: ID!) {
         id
         title: name
 		excerpt: description
+		link
+		content
         author {
             ... on Author {
+				themeColor
 				title
 				image
 				position

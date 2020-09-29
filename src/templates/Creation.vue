@@ -24,7 +24,7 @@
 			<div class="flex mt-8 pt-4 border-t border-ui-border">
 				<g-link
 					:to="creation.download"
-					class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+					class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-white rounded-lg shadow-lg bg-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
 					:style="
 						`background: ${author.themeColor ||
 							'var(--color-ui-primary)'};`

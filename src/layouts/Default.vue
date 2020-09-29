@@ -137,6 +137,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'prism-themes/themes/prism-material-light.css';
+
+pre,
+code {
+	background: var(--color-ui-sidebar) !important;
+	color: var(--color-ui-typo) !important;
+	overflow-y: hidden;
+}
+
 .pager {
 	display: inline-block;
 	width: 100%;

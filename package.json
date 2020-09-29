@@ -20,6 +20,7 @@
 		"github-api": "^3.3.0",
 		"gridsome-plugin-pwa": "0.0.18",
 		"gridsome-plugin-tailwindcss": "^2.2.36",
+		"marked": "^1.2.0",
 		"node-fetch": "^2.6.1",
 		"node-sass": "^4.13.1",
 		"prism-themes": "^1.3.0",

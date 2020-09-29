@@ -3,7 +3,7 @@
 		<div class="mt-12 mx-12">
 			<h1>Plugins</h1>
 			<p>
-				bridge. has a rich plugin API that has been used to create
+				bridge. has a powerful plugin API that has been used to create
 				amazing extensions for the editor. You can find all officially
 				available plugins here!
 			</p>
