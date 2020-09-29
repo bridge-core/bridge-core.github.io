@@ -10,7 +10,7 @@ This is the documentation for bridge.'s new Plugin API. We are still working on 
 
 ## General
 
-bridge. loads plugins per project. This means that every workspace can have an unique set of plugins. Plugins are a composition of JSON and JavaScript files.
+bridge. loads plugins per project. This means that every workspace can have an unique set of plugins. Plugins are a composition of JSON and JavaScript files. Publicly available plugins can be found [here](/created-plugins/).
 
 ## Getting Started
 

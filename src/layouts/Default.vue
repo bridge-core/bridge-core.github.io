@@ -150,7 +150,7 @@ code {
 	display: inline-block;
 	width: 100%;
 	text-align: center;
-	margin-top: 2rem;
+	margin: 2rem 0;
 
 	&__link {
 		text-align: center;

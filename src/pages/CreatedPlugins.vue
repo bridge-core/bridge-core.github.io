@@ -7,6 +7,22 @@
 				amazing extensions for the editor. You can find all officially
 				available plugins here!
 			</p>
+			<h2>Submission</h2>
+			<p>
+				<span>
+					You can submit your plugins to the official extension store
+				</span>
+				<g-link
+					class="border-b border-dashed border-ui-primary text-ui-primary"
+					to="https://github.com/bridge-core/plugins"
+					>here</g-link
+				>
+				<span
+					>. Accepted plugins appear inside of bridge.'s extension
+					store and on this page.</span
+				>
+			</p>
+
 			<div class="mt-12 -mx-2 flex flex-wrap">
 				<Card
 					class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
