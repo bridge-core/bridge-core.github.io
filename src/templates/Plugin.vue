@@ -19,9 +19,12 @@
 			/>
 			<g-image v-if="plugin.image" class="mb-8" :src="plugin.image" />
 
-			<div class="content" v-text="plugin.excerpt" />
-
-			<div class="content" v-html="plugin.content" />
+			<div
+				v-if="!plugin.content"
+				class="content"
+				v-text="plugin.excerpt"
+			/>
+			<div v-else class="content" v-html="plugin.content" />
 
 			<div class="flex mt-8 pt-4 border-t border-ui-border">
 				<g-link
