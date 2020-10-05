@@ -31,7 +31,7 @@ query ($id: ID!, $page: Int) {
     tag(id: $id) {
         id
         title
-		belongsTo(perPage: 20, page: $page) @paginate {
+		belongsTo(perPage: 12, page: $page) @paginate {
 			pageInfo {
 				totalPages
 				currentPage
