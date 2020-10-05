@@ -9,7 +9,7 @@ const GitHub = require('github-api')
 const uuid = require('uuid').v4
 const marked = require('marked')
 
-module.exports = function(api) {
+module.exports = function (api) {
 	api.loadSource(
 		async ({
 			addCollection,
@@ -38,6 +38,15 @@ module.exports = function(api) {
 					!filteredContributors.find(({ login }) => d.login === login)
 				)
 					filteredContributors.push(d)
+			})
+
+			// Release data
+			const releases = addCollection({
+				typeName: 'Release'
+			})
+			const releaseData = (await bridgeRepo.listReleases()).data
+			releaseData.forEach(release => {
+				releases.addNode(release)
 			})
 
 			const contributors = addCollection({
