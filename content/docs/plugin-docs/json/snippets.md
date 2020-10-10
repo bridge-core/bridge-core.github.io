@@ -29,7 +29,7 @@ Plugins can also add new snippets by providing them inside a `<PLUGIN NAME>/snip
 | --------------------- | ---------------- | -------------------------------------------- |
 | `data_path`           | `String`         | The default path to add the template to      |
 | `force_default_scope` | `Boolean`        | Whether to enforce usage of the default path |
-| `data`                | `Object\|String` | Snippet data                                 |
+| `data`                | `Object|String` | Snippet data                                 |
 
 ## Example
 
