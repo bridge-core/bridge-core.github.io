@@ -21,6 +21,8 @@ interface IFileDefinition {
 	id: string
 	// Matcher to recognize your file type
 	includes: string
+	// Conditionally change availability of file type
+	target_version?: string
 	// Whether this file is a RP or BP file; Default: BP file
 	rp_definition?: boolean
 	// How to display a file of this type; Default: File viewer determined by file extension
