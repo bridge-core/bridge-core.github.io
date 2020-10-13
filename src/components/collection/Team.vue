@@ -5,7 +5,7 @@
 			bridge. would not be possible without its amazing developers and
 			contributors!
 		</p>
-		<div class="mt-12 -mx-2 flex flex-wrap">
+		<div class="mt-12 -mx-2 flex flex-wrap justify-items-center">
 			<AuthorTag
 				class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
 				v-for="user in all"
@@ -35,9 +35,9 @@ query {
 			node {
 				id
 				type
-				path: html_url
-				title: login
-				image: avatar_url
+				path
+				title
+				image
 			}
 		}
 	}
@@ -54,7 +54,10 @@ export default {
 					teamMember: true,
 					position: 'Contributor',
 				}))
-				.filter(({ type }) => type !== 'Bot')
+				.filter(
+					({ type, title }) =>
+						type !== 'Bot' && title !== 'actions-user'
+				)
 		},
 		teamMembers() {
 			return this.$static.allAuthor.edges

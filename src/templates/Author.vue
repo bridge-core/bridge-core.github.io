@@ -25,7 +25,7 @@
 				v-if="contentByAuthor.length > 0"
 				class="mt-8 lg:mt-12 pt-4 border-t border-ui-border w-auto"
 			>
-				Content by {{ author.title }}
+				Created by {{ author.title }}
 			</h2>
 			<div class="mt-12 -mx-2 flex flex-wrap">
 				<Card
@@ -72,6 +72,17 @@ query ($id: ID!) {
 							title
 						}
               		}
+					... on Plugin {
+                		id
+                		title: name
+						excerpt: description
+						path
+						tags {
+							id
+							path
+							title
+						}
+              		}
 				}
           	}
         }
@@ -91,7 +102,7 @@ export default {
 	computed: {
 		githubLink() {
 			return (
-				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/' +
+				'https://github.com/bridge-core/bridge-core.github.io/blob/master/content/authors/' +
 				this.$page.author.fileInfo.path
 			)
 		},

@@ -5,6 +5,7 @@
 		>
 			<g-link :to="to">
 				<g-image
+					v-if="image"
 					class="w-full"
 					:src="image"
 					:alt="`Image of ${title}`"
@@ -22,7 +23,7 @@
 					v-for="tag in tags"
 					:key="tag.id"
 					:to="tag.path"
-					class="inline-block bg-ui-background rounded-full px-3 py-1 text-sm font-semibold opacity-75 mr-2 mb-2"
+					class="inline-block bg-ui-background rounded-full px-3 py-1 text-sm font-semibold opacity-75 mr-2 mb-2 transition-all duration-200 ease-out transform hover:shadow-md hover:-translate-y-1"
 				>
 					#{{ tag.title }}
 				</g-link>

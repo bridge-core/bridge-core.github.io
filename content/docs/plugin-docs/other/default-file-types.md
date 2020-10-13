@@ -42,7 +42,7 @@ sidebar: 'plugins'
 | File Type                 | Description                            |
 | ------------------------- | -------------------------------------- |
 | `attachable`              | RP/attachables                         |
-| `entity_model`            | RP/models/entity & RP/models/mobs.json |
+| `model`                   | RP/models/entity & RP/models/mobs.json |
 | `rp_animation`            | RP/animations                          |
 | `rp_animation_controller` | RP/animation_controllers               |
 | `client_entity`           | RP/entity                              |

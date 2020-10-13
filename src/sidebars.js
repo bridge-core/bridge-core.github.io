@@ -40,6 +40,7 @@ module.exports = [
 				title: 'Plugin Modules',
 				items: [
 					'/plugin-docs/modules/',
+					'/plugin-docs/other/common-types/',
 					'/plugin-docs/modules/env/',
 					'/plugin-docs/modules/fetch-definition/',
 					'/plugin-docs/modules/footer/',

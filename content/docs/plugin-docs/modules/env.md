@@ -7,26 +7,43 @@ sidebar: 'plugins'
 
 Utility module that provides access to environmental project data.
 
-## `getCurrentBP(): string`
+## Getting the current behavior pack
+
+**Function Signature:** getCurrentBP(): string
 
 Returns the absolute path to the current behavior pack
 
-## `getCurrentRP(): string`
+## Getting the current resource pack
+
+**Function Signature:** getCurrentRP(): string
 
 Returns the absolute path to the current resource pack
 
-## `getProjectPrefix(): string`
+## Getting the project prefix
+
+**Function Signature:** getProjectPrefix(): string
 
 Returns the prefix/namespace of the current project
 
-## `getProjectTargetVersion(): string`
+## Getting the project target version
+
+**Function Signature:** getProjectPrefix(): string
 
 Returns the target minecraft version of the current project
 
-## `getContext(): Object`
+## Getting additional context
+
+**Function Signature:** getContext(): string
 
 Returns data that depends on the context you call the method in
 
-| Context                     | Type                                             |
-| --------------------------- | ------------------------------------------------ |
-| `CustomComponent.onApply()` | `{ location: string, entityIdentifier: string }` |
+### Custom component
+
+Using this `getContext()` hook inside of a custom component's `onApply(...)` method returns the following data:
+
+```typescript
+interface IComponentContext {
+	location: string
+	entityIdentifier: string
+}
+```

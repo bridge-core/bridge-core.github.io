@@ -7,24 +7,42 @@ sidebar: 'plugins'
 
 Module that provides acess to bridge's window system
 
-### `createInformationWindow(displayName: string, displayContent: string): IBridgeWindow`
+## Information windows
 
-### `createInputWindow(displayName: string, inputLabel: string, defaultValue: string, expandText: string, onConfirm: (input: string) => void): IBridgeWindow`
+**Function Signature:** `createInformationWindow(displayName: string, displayContent: string): IBridgeWindow`
 
-### `createDropdownWindow(displayName: string, placeholderText: string, options: Array<string>, defaultSelected: string, onConfirm: (input: string) => void): IBridgeWindow`
+## Input windows
 
-### `createConfirmWindow(displayContent: string, confirmText: string, cancelText: string, onConfirm: () => void, onCancel: () => void): IBridgeWindow`
+**Function Signature:** `createInputWindow(displayName: string, inputLabel: string, defaultValue: string, expandText: string, onConfirm: (input: string) => void): IBridgeWindow`
 
-### `createWindow(vueComponent: VueComponent, state: Record<string, any>): IBridgeWindow`
+## Dropdown windows
+
+**Function Signature:** `createDropdownWindow(displayName: string, placeholderText: string, options: Array<string>, defaultSelected: string, onConfirm: (input: string) => void): IBridgeWindow`
+
+## Confirmation windows
+
+**Function Signature:** `createConfirmWindow(displayContent: string, confirmText: string, cancelText: string, onConfirm: () => void, onCancel: () => void): IBridgeWindow`
+
+## Generic windows
+
+**Function Signature:** `createWindow(vueComponent: VueComponent, state: Record<string, any>): IBridgeWindow`
 
 A helper function that is used internally to define all app windows. You can use it to create rich, custom interfaces for your plugin.
 
-| `IBridgeWindow` | Description                                                                                                                            |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `.getState()`   | Returns the window state: Maps to the state given by the user as a parameter with additional `isVisible` and `shouldRender` attributes |
-| `.close()`      | Closes the window                                                                                                                      |
-| `.open()`       | Opens the window                                                                                                                       |
-| `.dispose()`    | Delete the window. A disposed window can no longer be rendered                                                                         |
+### IBridgeWindow
+
+```typescript
+interface IBridgeWindow extends IDisposable {
+	// Returns the window state:
+	// Maps to the state given by the user as a parameter
+	// + additional `isVisible` and `shouldRender` attributes
+	getState: () => Record<string, any>
+	// Closes the window
+	close: () => void
+	// Opens the window
+	open: () => void
+}
+```
 
 You can use the `currentWindow` prop on the component you pass to the `createWindow` function to access the `IBridgeWindow` instance directly on your component. You also need to implement the `isVisible` and `shouldRender` attributes properly so the window reacts to the `open()` and `close()` function calls and the window becomes as efficient as possible.
 

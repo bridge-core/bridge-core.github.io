@@ -5,17 +5,31 @@ sidebar: 'plugins'
 
 # @bridge/ui
 
-Module that provides programmatic access to Vue components defined of the plugin's `ui/` folder
+Module that provides programmatic access to [Vue](https://vuejs.org/) components defined inside of the plugin's `ui/` folder
 
-## `UI.BuiltIn`
+## Accessing Vue components
+
+```typescript
+//Accesses the component inside of the ui/Main.vue file
+const { Main } = await require('@bridge/ui')
+```
+
+```typescript
+//Accesses the component inside of the ui/Nested/Main.vue file
+const {
+	Nested: { Main: Main2 },
+} = await require('@bridge/ui')
+```
+
+## UI.BuiltIn
 
 bridge. ships with a couple of built-in components for you to use:
 
-### `BuiltIn.BaseWindow`
+### BuiltIn.BaseWindow
 
 A helper for quickly creating windows
 
-#### Props:
+#### Props
 
 ```javascript
 {
@@ -64,14 +78,14 @@ A helper for quickly creating windows
 }
 ```
 
-### Events:
+#### Events
 
 ```
 @closeWindow
 @toggleFullscreen
 ```
 
-#### Example Usage:
+#### Example Usage
 
 ```html
 <template>

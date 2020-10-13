@@ -32,7 +32,7 @@
 
 <page-query>
 query($page: Int) {
-	allCreation(perPage: 20, page: $page) @paginate {
+	allCreation(perPage: 12, page: $page) @paginate {
 		pageInfo {
 			totalPages
 			currentPage
@@ -45,7 +45,6 @@ query($page: Int) {
 				image
 				excerpt
 				author {
-					path
 					title
 					image
 					position
@@ -77,29 +76,3 @@ export default {
 	},
 }
 </script>
-
-<style lang="scss">
-.pager {
-	display: inline-block;
-	width: 100%;
-	text-align: center;
-
-	&__link {
-		text-align: center;
-		text-decoration: none;
-		padding: 0.5rem 1rem;
-		margin-left: 4px;
-
-		&:hover:not(.active) {
-			background-color: var(--color-ui-sidebar);
-			border-radius: 5px;
-			color: var(--color-ui-primary);
-		}
-	}
-
-	.active {
-		background-color: var(--color-ui-primary);
-		border-radius: 5px;
-	}
-}
-</style>

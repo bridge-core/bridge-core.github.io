@@ -21,24 +21,26 @@ interface IFileDefinition {
 	id: string
 	// Matcher to recognize your file type
 	includes: string
+	// Conditionally change availability of file type
+	target_version?: string
 	// Whether this file is a RP or BP file; Default: BP file
 	rp_definition?: boolean
 	// How to display a file of this type; Default: File viewer determined by file extension
 	file_viewer?: 'json' | 'text' | 'model' | 'mcstructure'
 	// Lightning cache definition for this file type
-	lightning_cache: string
+	lightning_cache?: string
 	// Highlighter definition for this file type
-	highlighter: string
+	highlighter?: string
 	// Start state for the auto-completions
-	start_state: string
+	start_state?: string
 	// Build array exceptions -explicit exception to bridge.'s is_array detection
-	build_array_exceptions: string[]
+	build_array_exceptions?: string[]
 	// Comment character
-	comment_character: string
+	comment_character?: string
 	// File creator
-	file_creator: IFileCreator
+	file_creator?: IFileCreator
 	// Documentation lookup data
-	documentation: {
+	documentation?: {
 		base: string
 		extend: string
 	}
@@ -59,7 +61,7 @@ interface IFileCreator {
 	path: string
 	// Templates
 	templates: {
-		$default_pack: {
+		$default_pack?: {
 			// Where to load vanilla templates from
 			path: string
 		}
@@ -71,4 +73,4 @@ interface IFileCreator {
 
 ## Examples
 
--   [`static/data/file_definitions.json`](https://github.com/bridge-core/bridge./blob/master/static/data/file_definitions.json)
+-   [`packages/data/file_definitions.json`](https://github.com/bridge-core/data/blob/master/packages/data/file_definitions.json)
