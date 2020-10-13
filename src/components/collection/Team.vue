@@ -54,7 +54,7 @@ export default {
 					teamMember: true,
 					position: 'Contributor',
 				}))
-				.filter(({ type }) => type !== 'Bot')
+				.filter(({ type, login }) => (type !== 'Bot' && login !== 'actions-user'))
 		},
 		teamMembers() {
 			return this.$static.allAuthor.edges
