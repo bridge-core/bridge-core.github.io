@@ -9,7 +9,7 @@ Module that allows plugins to create notifications.
 
 ## Creating a generic notification
 
-**Function Signature:** create(config: INotificationConfig): INotification
+**Function Signature:** `create(config: INotificationConfig): INotification`
 
 ```typescript
 interface INotificationConfig {
@@ -25,7 +25,7 @@ interface INotificationConfig {
 
 ## Creating an error notification
 
-**Function Signature:** createError(error: Error)
+**Function Signature:** `createError(error: Error)`
 
 ### Example
 

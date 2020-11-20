@@ -10,7 +10,7 @@ Grants access to the lightning cache database
 ## Fetching lightning cache data
 
 **Function Signature:**
-fetchDefinition(fileType: string, fetchDefs: string[], fetchSearch: string, fetchAll = false): Promise<string[]>
+`fetchDefinition(fileType: string, fetchDefs: string[], fetchSearch: string, fetchAll = false): Promise<string[]>`
 
 Search through the definitions `fetchDefs` in `fileType` files for `fetchSearch`. Available definitions can be found by browsing the lightning cache files [here](plugin-docs/json/lightning-cache/). Valid built-in file types are listed [here](/plugin-docs/other/default-file-types/).
 

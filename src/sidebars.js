@@ -41,8 +41,10 @@ module.exports = [
 				items: [
 					'/plugin-docs/modules/',
 					'/plugin-docs/other/common-types/',
+					'/plugin-docs/modules/compare-versions/',
 					'/plugin-docs/modules/env/',
 					'/plugin-docs/modules/fetch-definition/',
+					'/plugin-docs/modules/file-importer/',
 					'/plugin-docs/modules/footer/',
 					'/plugin-docs/modules/fs/',
 					'/plugin-docs/modules/globals/',
