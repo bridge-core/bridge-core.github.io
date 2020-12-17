@@ -10,12 +10,22 @@
 				<Card
 					class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
 					v-for="{
-						node: { id, image, path, title, excerpt, tags, author },
+						node: {
+							id,
+							image,
+							path,
+							title,
+							excerpt,
+							tags,
+							author,
+							developer,
+						},
 					} in edges"
 					:key="id"
 					:to="path"
 					:image="image"
 					:title="title"
+					:developer="developer"
 					:excerpt="excerpt"
 					:tags="tags"
 					:author="author"
@@ -43,6 +53,7 @@ query($page: Int) {
 				path   
 				title
 				image
+				developer
 				excerpt
 				author {
 					title
