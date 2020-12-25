@@ -29,6 +29,10 @@ https://github.com/bridge-core/bridge./issues/new/choose
 
 Follow the same steps as reporting improper bridge. behavior.
 
+## How do I uninstall global plugins?
+
+You can open the folder where global plugins are stored by pressing the 'Help' action in the toolbar and pressing the 'Open Global Plugins Folder' option. Then you can delete the folders inside the 'plugins' folder to remove plugins.
+
 ## My entity exists in game, but is invisible.
 
 This could be caused by many different things, such as a mistake in your render controller, a probelm referecing your geometry or incorrectly defining the texture path. For more in depth help with this, check out [this entity troubleshooting guide](https://wiki.bedrock.dev/knowledge/troubleshooting.html).
