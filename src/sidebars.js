@@ -10,6 +10,7 @@ module.exports = [
 					'/editor-docs/team/',
 					'/editor-docs/getting-started/',
 					'/editor-docs/faq/',
+					'/editor-docs/no-cache/',
 				],
 			},
 			{
