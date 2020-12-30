@@ -2,6 +2,7 @@
 description: 'Find out how to stop bridge. from caching certain file types using the .no-cache file.'
 sidebar: 'editor'
 author: 'joelant05'
+next: '/editor-docs/other/molang/'
 ---
 
 # No Cache File
