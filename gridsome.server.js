@@ -43,6 +43,16 @@ module.exports = function(api) {
 					filteredContributors.push(d)
 			})
 
+			// Release data
+			const releases = addCollection({
+				typeName: 'Release',
+			})
+			const releaseData = (await bridgeRepo.listReleases()).data
+			releaseData.forEach(release => {
+				if (release.body) release.content = marked(release.body)
+				releases.addNode(release)
+			})
+
 			const contributors = addCollection({
 				typeName: 'Contributor',
 			})
