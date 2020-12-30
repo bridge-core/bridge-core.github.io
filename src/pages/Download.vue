@@ -89,6 +89,8 @@ export default {
 			}
 		},
 		downloadForOs() {
+			if (process.isServer)
+				return 'https://github.com/bridge-core/bridge./releases/latest'
 			if (navigator.platform.includes('Win'))
 				return this.latestRelease.winAsset.browser_download_url
 			else if (navigator.platform.includes('Mac'))
