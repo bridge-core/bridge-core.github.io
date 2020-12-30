@@ -9,7 +9,7 @@ Module that allows plugins to create sidebar tabs.
 
 ## Creating a sidebar
 
-**Function Signature:** create(config: ISidebarConfig): ISidebarInstance
+**Function Signature:** `create(config: ISidebarConfig): ISidebarInstance`
 
 Creates a new sidebar and adds it to the current workspace.
 
@@ -48,13 +48,13 @@ export interface ISidebarInstance extends ISidebarConfig, IDisposable {
 
 ## Getting the currently selected sidebar
 
-**Function Signature:** getSelected(): ISidebarInstance
+**Function Signature:** `getSelected(): ISidebarInstance`
 
 Returns the currently selected sidebar instance.
 
 ## Selecting a sidebar
 
-**Function Signature:** select(id: string): void
+**Function Signature:** `select(id: string): void`
 
 Select the sidebar with the provided id.
 
@@ -74,7 +74,7 @@ sidebar.select()
 
 ## Listening to changes
 
-**Function Signature:** onChange(cb: (prev: ISidebarInstance, curr: ISidebarInstance) => void)
+**Function Signature:** `onChange(cb: (prev: ISidebarInstance, curr: ISidebarInstance) => void)`
 
 Registers a handler that fires whenever the currently selected sidebar changes.
 

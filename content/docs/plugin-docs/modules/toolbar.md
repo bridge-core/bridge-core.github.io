@@ -9,7 +9,7 @@ Module that allows plugins to create toolbar tabs.
 
 ## Creating a toolbar tab
 
-**Function Signature:** create(config: IAppMenu)
+**Function Signature:** `create(config: IAppMenu)`
 
 ### IAppMenu
 

@@ -15,12 +15,12 @@ This module exposes all functions Node's `fs.promises` module provides. You can 
 
 ### Writing JSON
 
-**Function Signature:** writeJSON(filePath: string, data: any, beautify = false, fileVersion?: number): Promise<void>
+**Function Signature:** `writeJSON(filePath: string, data: any, beautify = false, fileVersion?: number): Promise<void>`
 
 Write a JavaScript object to a file.
 
 ### Reading JSON
 
-**Function Signature:** readJSON(filePath: string): Promise<any>
+**Function Signature:** `readJSON(filePath: string): Promise<any>`
 
 Read a file as JSON and return the equivalent JavaScript object.

@@ -9,31 +9,31 @@ Utility module that provides access to environmental project data.
 
 ## Getting the current behavior pack
 
-**Function Signature:** getCurrentBP(): string
+**Function Signature:** `getCurrentBP(): string`
 
 Returns the absolute path to the current behavior pack
 
 ## Getting the current resource pack
 
-**Function Signature:** getCurrentRP(): string
+**Function Signature:** `getCurrentRP(): string`
 
 Returns the absolute path to the current resource pack
 
 ## Getting the project prefix
 
-**Function Signature:** getProjectPrefix(): string
+**Function Signature:** `getProjectPrefix(): string`
 
 Returns the prefix/namespace of the current project
 
 ## Getting the project target version
 
-**Function Signature:** getProjectPrefix(): string
+**Function Signature:** `getProjectTargetVersion(): string`
 
 Returns the target minecraft version of the current project
 
 ## Getting additional context
 
-**Function Signature:** getContext(): string
+**Function Signature:** `getContext(): string`
 
 Returns data that depends on the context you call the method in
 
@@ -45,5 +45,6 @@ Using this `getContext()` hook inside of a custom component's `onApply(...)` met
 interface IComponentContext {
 	location: string
 	entityIdentifier: string
+	formatVersion?: string
 }
 ```
