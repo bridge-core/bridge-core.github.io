@@ -3,7 +3,7 @@ description: ''
 sidebar: 'editor'
 author: 'solveddev'
 next: '/plugin-docs/'
-prev: '/editor-docs/projects/'
+prev: '/editor-docs/no-cache/'
 ---
 
 # MoLang
@@ -27,14 +27,22 @@ A fast MoLang parser used and developed by the bridge. team.
 ## Usage
 
 ```javascript
-import { execute } from 'molang'
+import { MoLang } from 'molang'
 
-execute('query.x + query.get(3) == 7', {
-	query: {
-		x: 0,
-		get(val) {
-			return val + 4
+const molang = new MoLang(
+	{
+		query: {
+			x: 0,
+			get(val) {
+				return val + 4
+			},
 		},
 	},
-})
+	{ useCache: true }
+)
+molang.execute('query.x + query.get(3) == 7')
 ```
+
+## MoLang Playground
+
+We have built a very basic MoLang playground with this parser. You can use it at [bridge-core.github.io/molang-playground](https://bridge-core.github.io/molang-playground).

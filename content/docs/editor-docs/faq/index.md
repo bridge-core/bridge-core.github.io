@@ -2,7 +2,6 @@
 description: 'Find answers for frequently asked questions on addons and bridge.'
 sidebar: 'editor'
 author: '7dev7urandom'
-next: '/editor-docs/other/molang/'
 ---
 
 # FAQ
@@ -28,6 +27,10 @@ https://github.com/bridge-core/bridge./issues/new/choose
 ## Something is wrong with the bridge. auto completions.
 
 Follow the same steps as reporting improper bridge. behavior.
+
+## How do I uninstall global plugins?
+
+You can open the folder where global plugins are stored by pressing the 'Help' action in the toolbar and pressing the 'Open Global Plugins Folder' option. Then you can delete the folders inside the 'plugins' folder to remove plugins.
 
 ## My entity exists in game, but is invisible.
 
