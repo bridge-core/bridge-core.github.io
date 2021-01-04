@@ -110,29 +110,29 @@ module.exports = {
 			options: {},
 		},
 
-		{
-			use: 'gridsome-plugin-pwa',
-			options: {
-				// Service Worker
-				disableServiceWorker: false,
-				serviceWorkerPath: 'service-worker.js',
-				cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
+		// {
+		// 	use: 'gridsome-plugin-pwa',
+		// 	options: {
+		// 		// Service Worker
+		// 		disableServiceWorker: false,
+		// 		serviceWorkerPath: 'service-worker.js',
+		// 		cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
 
-				// Manifest
-				manifestPath: 'manifest.json',
-				title: 'bridge',
-				shortName: 'bridge',
-				description: 'The IDE for Minecraft Add-Ons',
-				scope: '/',
-				startUrl: '/',
-				display: 'standalone',
-				statusBarStyle: 'default',
-				themeColor: '#1778d2',
-				backgroundColor: '#ffffff',
-				icon: './static/touch-icon.png',
-				maskableIcon: true,
-			},
-		},
+		// 		// Manifest
+		// 		manifestPath: 'manifest.json',
+		// 		title: 'bridge',
+		// 		shortName: 'bridge',
+		// 		description: 'The IDE for Minecraft Add-Ons',
+		// 		scope: '/',
+		// 		startUrl: '/',
+		// 		display: 'standalone',
+		// 		statusBarStyle: 'default',
+		// 		themeColor: '#1778d2',
+		// 		backgroundColor: '#ffffff',
+		// 		icon: './static/touch-icon.png',
+		// 		maskableIcon: true,
+		// 	},
+		// },
 	],
 	templates: {
 		Tag: [
