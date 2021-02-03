@@ -27,13 +27,11 @@ module.exports = function(api) {
 
 			const bridgeRepo = gh.getRepo('bridge-core', 'bridge.')
 			const pluginRepo = gh.getRepo('bridge-core', 'plugins')
-			const dataRepo =   gh.getRepo('bridge-core', 'data')
+			const dataRepo = gh.getRepo('bridge-core', 'data')
 
-			const contributorData = (await bridgeRepo.getContributors()).data.concat(
-				(await pluginRepo.getContributors()).data
-			).concat(
-				(await dataRepo.getContributors()).data
-			)
+			const contributorData = (await bridgeRepo.getContributors()).data
+				.concat((await pluginRepo.getContributors()).data)
+				.concat((await dataRepo.getContributors()).data)
 
 			const filteredContributors = []
 			contributorData.forEach(d => {
@@ -72,11 +70,11 @@ module.exports = function(api) {
 			})
 			const tagCollection = getCollection('Tag')
 			const authorCollection = getCollection('Author')
-			const ghPluginData = (await pluginRepo.getContents(
+			const ghPluginData = await pluginRepo.getContents(
 				'master',
 				'plugins.json',
 				true
-			)).data
+			)
 
 			await Promise.all(
 				ghPluginData.map(async ({ author, tags, ...other }) => {
@@ -112,7 +110,7 @@ module.exports = function(api) {
 
 					plugins.addNode({
 						...other,
-						content: readme ? marked(readme) : readme,
+						content: readme ? marked(readme) : '',
 						path: `/plugins/${other.id}/`,
 						author: store.createReference(contributor),
 						tags: store.createReference(
