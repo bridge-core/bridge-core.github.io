@@ -70,55 +70,69 @@ module.exports = function(api) {
 			})
 			const tagCollection = getCollection('Tag')
 			const authorCollection = getCollection('Author')
-			const ghPluginData = await pluginRepo.getContents(
+			const ghPluginData = (await pluginRepo.getContents(
 				'master',
 				'plugins.json',
 				true
+			)).data.concat(
+				(await pluginRepo.getContents(
+					'master',
+					'extensions.json',
+					true
+				)).data
 			)
 
 			await Promise.all(
-				ghPluginData.map(async ({ author, tags, ...other }) => {
-					let readmeLink = other.link.split(/\\|\//g)
-					readmeLink.pop()
-					readmeLink = readmeLink.concat(['README.md']).join('/')
-					const readme = (await pluginRepo
-						.getContents('master', readmeLink, true)
-						.catch(() => ({}))).data
+				ghPluginData.map(
+					async ({ author, tags, target = 'v1', ...other }) => {
+						let readmeLink = other.link.split(/\\|\//g)
+						readmeLink.pop()
+						readmeLink = readmeLink.concat(['README.md']).join('/')
+						const readme = (await pluginRepo
+							.getContents('master', readmeLink, true)
+							.catch(() => ({}))).data
 
-					tags.unshift(`v${other.version.replace(/\./g, '-')}`)
-					tags.forEach(
-						t =>
-							tagCollection.findNode({
-								title: t.toLowerCase(),
+						tags.unshift(`v${other.version.replace(/\./g, '-')}`)
+						tags.unshift(
+							...(target === 'both'
+								? ['bridge-v1', 'bridge-v2']
+								: ['bridge-' + target])
+						)
+						tags.forEach(
+							t =>
+								tagCollection.findNode({
+									title: t.toLowerCase(),
+								}) ||
+								tagCollection.addNode({
+									title: t.toLowerCase(),
+									id: t.toLowerCase(),
+								})
+						)
+						const contributor =
+							authorCollection.findNode({
+								id: author.replace(/\s+/g, '').toLowerCase(),
 							}) ||
-							tagCollection.addNode({
-								title: t.toLowerCase(),
-								id: t.toLowerCase(),
+							contributors.findNode({
+								title: author.replace(/\s+/g, ''),
+							}) ||
+							contributors.addNode({
+								title: author,
+								image: `https://robohash.org/${author}`,
 							})
-					)
-					const contributor =
-						authorCollection.findNode({
-							id: author.replace(/\s+/g, '').toLowerCase(),
-						}) ||
-						contributors.findNode({
-							title: author.replace(/\s+/g, ''),
-						}) ||
-						contributors.addNode({
-							title: author,
-							image: `https://robohash.org/${author}`,
-						})
 
-					plugins.addNode({
-						...other,
-						content: readme ? marked(readme) : '',
-						path: `/plugins/${other.id}/`,
-						author: store.createReference(contributor),
-						tags: store.createReference(
-							'Tag',
-							tags.map(t => t.toLowerCase())
-						),
-					})
-				})
+						if (plugins.getNodeById(other.id) === undefined)
+							plugins.addNode({
+								...other,
+								content: readme ? marked(readme) : '',
+								path: `/plugins/${other.id}/`,
+								author: store.createReference(contributor),
+								tags: store.createReference(
+									'Tag',
+									tags.map(t => t.toLowerCase())
+								),
+							})
+					}
+				)
 			)
 		}
 	)
