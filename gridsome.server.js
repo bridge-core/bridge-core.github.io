@@ -84,7 +84,7 @@ module.exports = function(api) {
 
 			await Promise.all(
 				ghPluginData.map(
-					async ({ author, tags, target = 'v1', ...other }) => {
+					async ({ author, tags = [], target = 'v1', ...other }) => {
 						let readmeLink = other.link.split(/\\|\//g)
 						readmeLink.pop()
 						readmeLink = readmeLink.concat(['README.md']).join('/')
