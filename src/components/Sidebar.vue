@@ -12,7 +12,7 @@
 				{{ section.title }}
 			</h3>
 
-			<ul class="max-w-full pl-2 mb-0">
+			<ul class="max-w-full pl-2 mb-0 list-none">
 				<li
 					v-for="page in findPages(section.items)"
 					:id="page.path"
