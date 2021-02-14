@@ -30,7 +30,12 @@ module.exports = function(api) {
 			const dataRepo = gh.getRepo('bridge-core', 'data')
 
 			const contributorData = (await bridgeRepo.getContributors()).data
-				.concat((await pluginRepo.getContributors()).data)
+				.concat(
+					(await pluginRepo.getContributors()).data.map(d => ({
+						...d,
+						isPluginAuthor: true,
+					}))
+				)
 				.concat((await dataRepo.getContributors()).data)
 
 			const filteredContributors = []
@@ -55,10 +60,11 @@ module.exports = function(api) {
 				typeName: 'Contributor',
 			})
 			filteredContributors.forEach(
-				({ id, html_url, avatar_url, login, type }) =>
+				({ id, html_url, avatar_url, login, type, isPluginAuthor }) =>
 					contributors.addNode({
 						id,
 						type,
+						isPluginAuthor,
 						title: login,
 						path: html_url,
 						image: avatar_url,
@@ -117,6 +123,7 @@ module.exports = function(api) {
 							}) ||
 							contributors.addNode({
 								title: author,
+								isPluginAuthor: true,
 								image: `https://robohash.org/${author}`,
 							})
 

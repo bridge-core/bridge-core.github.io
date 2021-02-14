@@ -34,6 +34,7 @@ query {
 		edges {
 			node {
 				id
+				isPluginAuthor
 				type
 				path
 				title
@@ -55,8 +56,10 @@ export default {
 					position: 'Contributor',
 				}))
 				.filter(
-					({ type, title }) =>
-						type !== 'Bot' && title !== 'actions-user'
+					({ type, title, isPluginAuthor }) =>
+						type !== 'Bot' &&
+						title !== 'actions-user' &&
+						!isPluginAuthor
 				)
 		},
 		teamMembers() {
