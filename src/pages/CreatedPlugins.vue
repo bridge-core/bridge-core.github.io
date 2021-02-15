@@ -1,11 +1,28 @@
 <template>
 	<Layout :showSidebars="false">
 		<div class="mt-12 mx-12">
-			<h1>Creations</h1>
+			<h1>Plugins</h1>
 			<p>
-				bridge. has been used to create various awesome projects. Here
-				are some of our favorites...
+				bridge. has a powerful plugin API that has been used to create
+				amazing extensions for the editor. You can find all officially
+				available plugins here!
 			</p>
+			<h2>Submission</h2>
+			<p>
+				<span>
+					You can submit your plugins to the official extension store
+				</span>
+				<g-link
+					class="border-b border-dashed border-ui-primary text-ui-primary"
+					to="https://github.com/bridge-core/plugins"
+					>here</g-link
+				>
+				<span
+					>. Accepted plugins appear inside of bridge.'s extension
+					store and on this page.</span
+				>
+			</p>
+
 			<div class="mt-12 -mx-2 flex flex-wrap">
 				<Card
 					class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
@@ -13,19 +30,18 @@
 						node: {
 							id,
 							image,
+							image2,
 							path,
 							title,
 							excerpt,
 							tags,
 							author,
-							developer,
 						},
 					} in edges"
 					:key="id"
 					:to="path"
-					:image="image"
+					:image="image || image2"
 					:title="title"
-					:developer="developer"
 					:excerpt="excerpt"
 					:tags="tags"
 					:author="author"
@@ -34,7 +50,7 @@
 			<Pager
 				linkClass="pager__link"
 				class="pager text-xl"
-				:info="$page.allCreation.pageInfo"
+				:info="$page.allPlugin.pageInfo"
 			/>
 		</div>
 	</Layout>
@@ -42,7 +58,7 @@
 
 <page-query>
 query($page: Int) {
-	allCreation(perPage: 12, page: $page) @paginate {
+	allPlugin(perPage: 12, page: $page) @paginate {
 		pageInfo {
 			totalPages
 			currentPage
@@ -51,14 +67,18 @@ query($page: Int) {
 			node {
 				id
 				path   
-				title
-				image
-				developer
-				excerpt
+				title: name
+				excerpt: description
 				author {
-					title
-					image
-					position
+					... on Author {
+						title
+						image
+						position
+					}
+					... on Contributor {
+						title
+						altImage: image
+					}
 				}
 				tags {
 					id
@@ -82,7 +102,7 @@ export default {
 	},
 	computed: {
 		edges() {
-			return this.$page.allCreation.edges
+			return this.$page.allPlugin.edges
 		},
 	},
 }

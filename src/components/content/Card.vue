@@ -5,6 +5,7 @@
 		>
 			<g-link :to="to">
 				<g-image
+					v-if="image"
 					class="w-full"
 					:src="image"
 					:alt="`Image of ${title}`"
@@ -12,6 +13,11 @@
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2">{{ title }}</div>
 					<AuthorTag :author="author" :card="true" />
+					<p v-if="developer">
+						<!--To be used when product isn't developed by the publisher-->
+						<strong>Developed by:</strong><br />
+						{{ developer }}
+					</p>
 					<p class="text-base mt-4">
 						{{ excerpt }}
 					</p>
@@ -39,6 +45,7 @@ export default {
 		image: [String, Object],
 		title: String,
 		excerpt: String,
+		developer: String,
 		date: String,
 		tags: Array,
 		author: Object,

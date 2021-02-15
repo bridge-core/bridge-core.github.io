@@ -22,6 +22,7 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `display_name`                       | `String`              | Name to display inside the preset window |
 | `description`                        | `String`              | Preset description                       |
 | `icon`                               | `String`              | Icon to show inside of the preset window |
+| `target_version`                     | `String`              | Conditionally change preset availability |
 | `bp_map`, `rp_map`                   | `FileFolderMap`       | JSON files to create                     |
 | `expand_bp_files`, `expand_rp_files` | `FileMap`             | Files to add data to                     |
 | `copy_rp_files`                      | `SimpleFileFolderMap` | Files to just copy over                  |
@@ -51,6 +52,7 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
     "display_name": "Humanoid",
     "description": "Creates a new humanoid entity.",
     "icon": "mdi-human",
+    "target_version": "$project_target_version >= 1.10.0"
 
     "bp_map": {
         "entity.json": "entities/",

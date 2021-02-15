@@ -2,7 +2,6 @@
 description: 'Find answers for frequently asked questions on addons and bridge.'
 sidebar: 'editor'
 author: '7dev7urandom'
-next: '/editor-docs/other/molang/'
 ---
 
 # FAQ
@@ -19,7 +18,7 @@ commands.
 This is a known issue that has to do with how bridge. handles arrays and objects. The automatic type detection fails where there is ambiguity between objects and
 animations and both options are valid. Solution: Do not edit animations from Blockbench with bridge.; manually fix broken animations with a text editor.
 
-## Something isn’t behaving properly with bridge. behavior. What should I do?
+## Something isn’t behaving properly with bridge. What should I do?
 
 Please verify your bridge. version is the latest, and then report it in **#bugs** (within the bridge. Discord, specifying the version, the problem, and what you were
 doing when the problem occured). We will get back to you as soon as we can. In case you have a GitHub account, it is preferred that you open an issue here:
@@ -29,9 +28,13 @@ https://github.com/bridge-core/bridge./issues/new/choose
 
 Follow the same steps as reporting improper bridge. behavior.
 
+## How do I uninstall global plugins?
+
+You can open the folder where global plugins are stored by pressing the 'Help' action in the toolbar and pressing the 'Open Global Plugins Folder' option. Then you can delete the folders inside the 'plugins' folder to remove plugins.
+
 ## My entity exists in game, but is invisible.
 
-This could be caused by many different things, such as a mistake in your render controller, a probelm referecing your geometry or incorrectly defining the texture path. For more in depth help with this, check out [this entity troubleshooting guide](https://wiki.bedrock.dev/knowledge/troubleshooting.html).
+This could be caused by many different things, such as a mistake in your render controller, a problem referecing your geometry or incorrectly defining the texture path. For more in depth help with this, check out [this entity troubleshooting guide](https://wiki.bedrock.dev/knowledge/troubleshooting.html).
 
 ## My addon isn’t working. Why?
 
@@ -64,4 +67,4 @@ As of 1.16.0, the following things require experimental gameplay:
 ## My entity's texture is black where there should be transparency.
 
 This is caused when you're using a material that doesn't support transparency.
-`skeleton` and `entity_alphatest` both support transparency and can be used when you have this issue
+`skeleton` and `entity_alphatest` both support transparency and can be used when you have this issue.

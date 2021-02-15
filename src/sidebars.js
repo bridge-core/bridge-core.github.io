@@ -10,6 +10,7 @@ module.exports = [
 					'/editor-docs/team/',
 					'/editor-docs/getting-started/',
 					'/editor-docs/faq/',
+					'/editor-docs/no-cache/',
 				],
 			},
 			{
@@ -40,8 +41,11 @@ module.exports = [
 				title: 'Plugin Modules',
 				items: [
 					'/plugin-docs/modules/',
+					'/plugin-docs/other/common-types/',
+					'/plugin-docs/modules/compare-versions/',
 					'/plugin-docs/modules/env/',
 					'/plugin-docs/modules/fetch-definition/',
+					'/plugin-docs/modules/file-importer/',
 					'/plugin-docs/modules/footer/',
 					'/plugin-docs/modules/fs/',
 					'/plugin-docs/modules/globals/',

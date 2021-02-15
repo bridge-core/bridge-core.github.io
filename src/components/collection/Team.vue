@@ -34,10 +34,11 @@ query {
 		edges {
 			node {
 				id
+				isPluginAuthor
 				type
-				path: html_url
-				title: login
-				image: avatar_url
+				path
+				title
+				image
 			}
 		}
 	}
@@ -54,7 +55,12 @@ export default {
 					teamMember: true,
 					position: 'Contributor',
 				}))
-				.filter(({ type }) => type !== 'Bot')
+				.filter(
+					({ type, title, isPluginAuthor }) =>
+						type !== 'Bot' &&
+						title !== 'actions-user' &&
+						!isPluginAuthor
+				)
 		},
 		teamMembers() {
 			return this.$static.allAuthor.edges

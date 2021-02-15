@@ -19,8 +19,9 @@ module.exports = {
 		nav: {
 			links: [
 				{ path: '/editor-docs/', title: 'Editor' },
+				{ path: '/plugin-docs/', title: 'Docs' },
 				{ path: '/creations/', title: 'Creations' },
-				{ path: '/plugin-docs/', title: 'Plugins' },
+				{ path: '/created-plugins/', title: 'Plugins' },
 			],
 		},
 		sidebar: require('./src/sidebars.js'),
@@ -97,41 +98,41 @@ module.exports = {
 			},
 		},
 
-		// {
-		// 	use: '@gridsome/plugin-google-analytics',
-		// 	options: {
-		// 		id: process.env.GA_ID ? process.env.GA_ID : 'XX-999999999-9',
-		// 	},
-		// },
+		{
+			use: '@gridsome/plugin-google-analytics',
+			options: {
+				id: process.env.GA_ID ? process.env.GA_ID : 'XX-999999999-9',
+			},
+		},
 
 		{
 			use: '@gridsome/plugin-sitemap',
 			options: {},
 		},
 
-		{
-			use: 'gridsome-plugin-pwa',
-			options: {
-				// Service Worker
-				disableServiceWorker: false,
-				serviceWorkerPath: 'service-worker.js',
-				cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
+		// {
+		// 	use: 'gridsome-plugin-pwa',
+		// 	options: {
+		// 		// Service Worker
+		// 		disableServiceWorker: false,
+		// 		serviceWorkerPath: 'service-worker.js',
+		// 		cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
 
-				// Manifest
-				manifestPath: 'manifest.json',
-				title: 'bridge',
-				shortName: 'bridge',
-				description: 'The IDE for Minecraft Add-Ons',
-				scope: '/',
-				startUrl: '/',
-				display: 'standalone',
-				statusBarStyle: 'default',
-				themeColor: '#1778d2',
-				backgroundColor: '#ffffff',
-				icon: './static/touch-icon.png',
-				maskableIcon: true,
-			},
-		},
+		// 		// Manifest
+		// 		manifestPath: 'manifest.json',
+		// 		title: 'bridge',
+		// 		shortName: 'bridge',
+		// 		description: 'The IDE for Minecraft Add-Ons',
+		// 		scope: '/',
+		// 		startUrl: '/',
+		// 		display: 'standalone',
+		// 		statusBarStyle: 'default',
+		// 		themeColor: '#1778d2',
+		// 		backgroundColor: '#ffffff',
+		// 		icon: './static/touch-icon.png',
+		// 		maskableIcon: true,
+		// 	},
+		// },
 	],
 	templates: {
 		Tag: [

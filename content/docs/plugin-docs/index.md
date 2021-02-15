@@ -10,7 +10,7 @@ This is the documentation for bridge.'s new Plugin API. We are still working on 
 
 ## General
 
-bridge. loads plugins per project. This means that every workspace can have an unique set of plugins. Plugins are a composition of JSON and JavaScript files.
+bridge. loads plugins per project. This means that every workspace can have an unique set of plugins. Plugins are a composition of JSON and JavaScript files. Publicly available plugins can be found [here](/created-plugins/).
 
 ## Getting Started
 
@@ -43,9 +43,3 @@ The plugin manifest stores important data on your add-on like its version number
 ## Scripts
 
 Scripts are loaded from the `<PLUGIN NAME>/scripts` folder. Scripts are written in JavaScript and allow plugins to deeply hook into bridge.'s functionality. You can add new dynamic auto-completions, create new windows, add support for new file types and do many more things.
-
-## Old JavaScript API Docs:
-
-### Script API v1:
-
-[Documentation](https://github.com/solvedDev/bridge./blob/master/plugin-docs/getting-started.md)
