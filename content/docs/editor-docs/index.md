@@ -13,6 +13,7 @@ bridge. is a powerful **add-on editor** designed to speed up your development pr
 ## Latest Release
 
 You can download the latest bridge. release [here](https://github.com/bridge-core/bridge./releases/latest)!
+You can try out the latest version of bridge. v2 [here](https://bridge-core.github.io/editor/)!
 
 ## Why _you_ should use bridge.
 
