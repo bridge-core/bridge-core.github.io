@@ -72,6 +72,10 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 }
 ```
 
+## Icon
+Icons show up in the presets window. Presets use Material Design Icons (https://materialdesignicons.com/) a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
+
+
 ## File Syntax
 
 Files which are defined inside of a `FileMap` or a `FileFolderMap` have access to the following variables:
