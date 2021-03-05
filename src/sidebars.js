@@ -26,6 +26,7 @@ module.exports = [
 				title: 'General',
 				items: [
 					'/plugin-docs/',
+					'/plugin-docs/contributing/',
 					'/plugin-docs/other/default-file-types/',
 					'/plugin-docs/custom-commands/',
 					'/plugin-docs/custom-components/',
