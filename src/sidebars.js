@@ -33,6 +33,7 @@ module.exports = [
 					'/plugin-docs/json/file-definitions/',
 					'/plugin-docs/json/lightning-cache/',
 					'/plugin-docs/json/presets/',
+					'/plugin-docs/json/presetsv2/',
 					'/plugin-docs/json/snippets/',
 					'/plugin-docs/other/styles/',
 					'/plugin-docs/json/themes/',
