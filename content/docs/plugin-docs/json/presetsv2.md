@@ -103,4 +103,4 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 
 ### More Examples:
 
--   [`More Vannila Entity Presets by Joelant05`](See https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
+-	[`More Vannila Entity Presets by Joelant05`](See https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
