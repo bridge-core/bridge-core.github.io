@@ -7,7 +7,7 @@ sidebar: 'Presets v2'
 
 ## General
 
-Presets are groups of files which can be created through the preset interface by only entering an identifier and clicking "CREATE!". They help quickly setting up new items, entities or similiar features. This page covers the presets in version 2 of the api
+Presets are groups of files which can be created through the Create File window there the user can input values to customize the preset's output.
 
 ## Plugin Integration
 
@@ -17,15 +17,17 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 
 ### Main
 
-| Name                                 | Type                  | Description                              |
-| ------------------------------------ | --------------------- | ---------------------------------------- |
-| `name`                               | `String`              | Name to display inside the preset window |
-| `description`                        | `String`              | Preset description                       |
-| `icon`                               | `String`              | Icon to show inside of the preset window |
-| `targetVersion`                      | `Array`               | Conditionally change preset availability |
-| `createFiles`                        | `FileMap`             | JSON files to create                     |
-| `expandFles`                         | `FileMap`             | Files to add data to                     |
-| `fields`                             | `InputUI`             | This defines new inputs                  |
+| Name                                 | Type                  | Description                                   |
+| ------------------------------------ | --------------------- | --------------------------------------------- |
+| `name`                               | `String`              | Name to display inside the preset window      |
+| `description`                        | `String`              | Preset description                            |
+| `icon`                               | `String`              | Icon to show inside of the preset window      |
+| `category`                           | `String`              | Defines what category the preset should be in |
+| `targetVersion`                      | `Array`               | Conditionally change preset availability      |
+| `fields`                             | `InputUI`             | This defines new inputs                       |
+| `createFiles`                        | `FileMap`             | JSON files to create                          |
+| `expandFles`                         | `FileMap`             | Files to add data to                          |
+
 
 ### `FileMap`
 
@@ -42,7 +44,7 @@ Icons show up in the presets window. Presets use [Material Design Icons](https:/
 
 ## Variables
 
-Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json they` can also be used any other files in the preset as long as they are "injected" in the file.
+Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json` they can also be used any other files in the preset as long as they are "injected" in the file.
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
 
