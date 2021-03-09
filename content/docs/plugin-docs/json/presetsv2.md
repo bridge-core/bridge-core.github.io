@@ -38,7 +38,7 @@ Creates a text box, the name of the text box can be defined in a `string` and af
 
 
 ## Icon
-Icons show up in the presets window. Presets use Material Design Icons (https://materialdesignicons.com/) a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
+Icons show up in the presets window. Presets use [Material Design Icons](https://materialdesignicons.com/) a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
 
 ## Variables
 
@@ -103,4 +103,4 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 
 ### More Examples:
 
--	[`More Vannila Entity Presets by Joelant05`](See https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
+-	[`More Vannila Entity Presets by Joelant05`](https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
