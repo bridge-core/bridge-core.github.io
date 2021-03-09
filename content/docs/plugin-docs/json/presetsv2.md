@@ -1,6 +1,6 @@
 ---
 description: ''
-sidebar: 'Plugins v2'
+sidebar: 'Presets v2'
 ---
 
 # Presets v2
