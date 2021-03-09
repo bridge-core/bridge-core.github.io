@@ -19,31 +19,18 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 
 | Name                                 | Type                  | Description                              |
 | ------------------------------------ | --------------------- | ---------------------------------------- |
-| `display_name`                       | `String`              | Name to display inside the preset window |
+| `name`                               | `String`              | Name to display inside the preset window |
 | `description`                        | `String`              | Preset description                       |
 | `icon`                               | `String`              | Icon to show inside of the preset window |
-| `target_version`                     | `String`              | Conditionally change preset availability |
-| `createFiles`                        | `FileFolderMap`       | JSON files to create                     |
-| `expand_bp_files`, `expand_rp_files` | `FileMap`             | Files to add data to                     |
-| `copy_rp_files`                      | `SimpleFileFolderMap` | Files to just copy over                  |
+| `targetVersion`                      | `Array`               | Conditionally change preset availability |
+| `createFiles`                        | `FileMap`             | JSON files to create                     |
+| `expandFles`                         | `FileMap`             | Files to add data to                     |
 
-### `FileFolderMap`
+### `FileMap`
 
-| Key                                                   | Value                       |
-| ----------------------------------------------------- | --------------------------- |
-| `String` Path to file inside of current preset folder | `String` Destination folder |
+Takes the file name as a `sting`, the file path where the file will be created or expanded and the variables used in the file
 
-### `FileFolderMap`
-
-| Key                                                   | Value                               |
-| ----------------------------------------------------- | ----------------------------------- |
-| `String` Path to file inside of current preset folder | `String` Full destination file path |
-
-### `FileFolderMap`
-
-| Key                                                   | Value                       |
-| ----------------------------------------------------- | --------------------------- |
-| `String` Path to file inside of current preset folder | `String` Destination folder |
+| Name                                 |Type                   |Description                                |
 
 ## Manifest Example
 
