@@ -35,18 +35,24 @@ Takes the file name as a `sting`, the file path where the file will be created o
 
 Creates a text box, the name of the text box can be defined in a `string` and afterwards be linked to a variable. Any input in that text box will be saved in the assigned variable.
 
-### Icon
+
+
+## Icon
 Icons show up in the presets window. Presets use Material Design Icons (https://materialdesignicons.com/) a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
 
-### Variables
+## Variables
 
-Variables are able to be used in the `createFiles` and `expandFile` components of the manifest.json they can also be used any other files in the preset as long as they are "injected" in the file.
+Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json they` can also be used any other files in the preset as long as they are "injected" in the file.
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
 
 Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespace of the project (colon is not included).
 
-## Variable Example
+
+## Examples
+
+
+### Variable Example
 
 ```javascript
 {
@@ -59,7 +65,7 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 ```
 
 
-## Manifest Example
+### Manifest Example
 
 ```javascript
 {
