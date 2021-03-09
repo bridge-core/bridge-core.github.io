@@ -97,7 +97,6 @@ module.exports = function(api) {
 						const readme = (await pluginRepo
 							.getContents('master', readmeLink, true)
 							.catch(() => ({}))).data
-						console.log(tags)
 
 						tags.unshift(`v${other.version.replace(/\./g, '-')}`)
 						tags.unshift(
