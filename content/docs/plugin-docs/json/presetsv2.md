@@ -25,54 +25,26 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `targetVersion`                      | `Array`               | Conditionally change preset availability |
 | `createFiles`                        | `FileMap`             | JSON files to create                     |
 | `expandFles`                         | `FileMap`             | Files to add data to                     |
+| `fields`                             | `InputUI`             | This defines new inputs                  |
 
 ### `FileMap`
 
 Takes the file name as a `sting`, the file path where the file will be created or expanded and the variables used in the file
 
-| Name                                 |Type                   |Description                                |
+### `InputUI`
 
-## Manifest Example
+Creates a text box, the name of the text box can be defined in a `string` and afterwards be linked to a variable. Any input in that text box will be saved in the assigned variable.
 
-```javascript
-{
-    "display_name": "Humanoid",
-    "description": "Creates a new humanoid entity.",
-    "icon": "mdi-human",
-    "target_version": "$project_target_version >= 1.10.0"
-    "bp_map": {
-        "entity.json": "entities/",
-        "loot_table.json": "loot_tables/entities/",
-        "spawn_rule.json": "spawn_rules/"
-    },
-    "rp_map": {
-        "client_entity.json": "entity/"
-    },
-    "expand_rp_files": {
-        "item_texture.json": "textures/item_texture.json"
-    },
-    "copy_rp_files": {
-        "icon.png": "textures/items/",
-        "texture.png": "textures/entity/"
-    }
-}
-```
-
-## Icon
+### Icon
 Icons show up in the presets window. Presets use Material Design Icons (https://materialdesignicons.com/) a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
 
+### Variables
 
-## File Syntax
-
-Files which are defined inside of a `FileMap` or a `FileFolderMap` have access to the following variables:
-
-| Name              | Description                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------ |
-| `IDENTIFIER`      | Identifier the user entered (does not include prefix)                                |
-| `IDENTIFIER_NAME` | Prettified identifier to be used e.g. inside of an actual name displaying to players |
-| `PROJ_PREFIX`     | Prefix/Namespace of the current project                                              |
+Variables are able to be used in the `createFiles` and `expandFile` components of the manifest.json they can also be used any other files in the preset as long as they are "injected" in the file.
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
+
+Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespace of the project (colon is not included).
 
 ## Variable Example
 
@@ -86,6 +58,43 @@ Variables can be referenced by using them inside of two curly brackets: `{{VARIA
 }
 ```
 
+
+## Manifest Example
+
+```javascript
+{
+	"name": "Bat",
+	"icon": "mdi-bat",
+	"description": "Creates a new bat entity.",
+	"category": "fileType.entity",
+	"targetVersion": [">=", "1.8.0"],
+	"fields": [
+		["Identifier", "IDENTIFIER"],
+		["Display Name", "IDENTIFIER_NAME"]
+	],
+
+	"createFiles": [
+		[
+			"entity.json",
+			"BP/entities/{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER", "PROJECT_PREFIX"] }
+		],
+		[
+			"animation.json",
+			"RP/animations/{{IDENTIFIER}}.json",
+			{ "inject": ["IDENTIFIER"] }
+		]
+	],
+	"expandFiles": [
+		[
+			"en_US.lang",
+			"RP/texts/en_US.lang",
+			{ "inject": ["IDENTIFIER", "IDENTIFIER_NAME", "PROJECT_PREFIX"] }
+		]
+}
+```
+
+
 ### More Examples:
 
--   [`static/presets`](https://github.com/solvedDev/bridge./tree/master/static/presets)
+-   [`More Vannila Entity Presets by Joelant05`](See https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
