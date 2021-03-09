@@ -179,7 +179,7 @@ code {
 	--color-ui-typo: #1a1a1a;
 	--color-ui-sidebar: #f4f4f4;
 	--color-ui-border: theme('colors.gray.300');
-	--color-ui-primary: #1778d2;
+	--color-ui-primary: #0855d4;
 }
 
 body {

@@ -2,10 +2,12 @@
 	<Layout>
 		<div class="pt-8 md:pt-16">
 			<div class="flex flex-col items-center">
-				<div class="flex flex-col items-center mb-2 text-ui-primary">
-					<Logo width="100px" />
+				<div
+					class="flex justify-items-center items-center mb-2 text-ui-primary"
+				>
+					<Logo width="120px" />
 					<h1
-						class="text-3xl text-6xl font-black tracking-tighter border-none"
+						class="mb-0 ml-4 text-3xl text-6xl font-black tracking-tighter border-none"
 					>
 						bridge.
 					</h1>

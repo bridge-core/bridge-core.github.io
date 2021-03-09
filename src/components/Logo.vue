@@ -1,6 +1,6 @@
 <template>
 	<div :style="`width: ${width};`">
-		<g-image alt="bridge. Logo" src="~/assets/logo.png" />
+		<g-image alt="bridge. Logo" src="~/assets/logo.svg" />
 	</div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
 	props: {
 		width: {
-			default: '40px',
+			default: '50px',
 			type: String,
 		},
 	},
