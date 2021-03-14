@@ -22,6 +22,8 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `name`                               | `String`              | Name to display inside the preset window |
 | `description`                        | `String`              | Preset description                       |
 | `icon`                               | `String`              | Icon to show inside of the preset window |
+| `category`						   | `String`              | Category of the preset entity, item, ect |
+| `packTypes`						   | `String`			   | Which packs are needed for the preset    |
 | `targetVersion`                      | `Array`               | Conditionally change preset availability |
 | `createFiles`                        | `Array`               | JSON files to create                     |
 | `expandFles`                         | `Array`               | Files to add data to or expand           |
@@ -58,7 +60,7 @@ Fields create input boxes in the preset window where the player can input some t
 
 #### Input Types
 
-Input types are "boxes" where the user can input different type of data values like `text`, `image`, `models` and more. Input type is defined in the properties of each input box inside the `manifest.json` of a preset. To create a new input box create a new array inside of `fields` array.
+Input types are "boxes" where the user can input different type of data values like `text`, `image`, `models` and more. Input type is defined in the properties of each input box inside the manifest of a preset. To create a new input box create a new array inside of `fields` array.
 
 
 ###### Text
@@ -101,7 +103,7 @@ Icons show up in the presets window. Presets use [Material Design Icons](https:/
 
 ### Variables
 
-Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json` they can also be used any other files in the preset as long as they are "injected" in the file.
+Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json they` can also be used any other files in the preset as long as they are "injected" in the file.
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
 
