@@ -22,9 +22,9 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `name`                               | `String`              | Name to display inside the preset window    |
 | `description`                        | `String`              | Preset description                          |
 | `icon`                               | `String`              | Icon to show inside of the preset window    |
-| `category`						   | `String`              | Category of the preset entity, item, ect    |
-| `packTypes`						   | `Array`			   | Which packs are needed for the preset       |
-| `additionalModels`                   | `object`              | Advanced Optional Feature for preset scripts|
+| `category`			       | `String`              | Category of the preset entity, item, ect    |
+| `packTypes`			       | `Array`	       | Which packs are needed for the preset       |
+| `additionalModels`                   | `Object`              | Advanced Optional Feature for preset scripts|
 | `targetVersion`                      | `Array`               | Conditionally change preset availability    |
 | `createFiles`                        | `Array`               | JSON files to create                        |
 | `expandFles`                         | `Array`               | Files to add data to or expand              |
