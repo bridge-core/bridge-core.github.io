@@ -17,17 +17,18 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 
 ### Main
 
-| Name                                 | Type                  | Description                              |
-| ------------------------------------ | --------------------- | ---------------------------------------- |
-| `name`                               | `String`              | Name to display inside the preset window |
-| `description`                        | `String`              | Preset description                       |
-| `icon`                               | `String`              | Icon to show inside of the preset window |
-| `category`                           | `String`              | Category of the preset entity, item, ect |
-| `packTypes`                          | `String`	       | Which packs are needed for the preset    |
-| `targetVersion`                      | `Array`               | Conditionally change preset availability |
-| `createFiles`                        | `Array`               | JSON files to create                     |
-| `expandFles`                         | `Array`               | Files to add data to or expand           |
-| `fields`                             | `Array`               | This defines new inputs                  |
+| Name                                 | Type                  | Description                                 |
+| ------------------------------------ | --------------------- | ------------------------------------------- |
+| `name`                               | `String`              | Name to display inside the preset window    |
+| `description`                        | `String`              | Preset description                          |
+| `icon`                               | `String`              | Icon to show inside of the preset window    |
+| `category`						   | `String`              | Category of the preset entity, item, ect    |
+| `packTypes`						   | `Array`			   | Which packs are needed for the preset       |
+| `additionalModels`                   | `object`              | Advanced Optional Feature for preset scripts|
+| `targetVersion`                      | `Array`               | Conditionally change preset availability    |
+| `createFiles`                        | `Array`               | JSON files to create                        |
+| `expandFles`                         | `Array`               | Files to add data to or expand              |
+| `fields`                             | `Array`               | This defines new inputs                     |
 
 
 
@@ -39,8 +40,8 @@ Both components of the manifest `createFiles` and `expandFiles` will need 3 thin
 - The Variables injected to the file
 
 The template file name is a string that will include the file name and the extension of the file name such as `.json` or `.lang` that will be created or expanded.
-The file path will define where the specified template file will be created. If the file is supposed to be expanded the path need to define what file its expanding for example `RP/texts/en_US.lang`.
-The variables that will be included in the specified template file will also need to be "Injected" so bridge. knows what variables need to be replaced with their corresponding values
+The file path will define where the specified template file will be created. If the file is supposed to be expanded the path need to define what file it's expanding. Example: `RP/texts/en_US.lang`.
+The variables that will be included in the specified template file will also need to be "injected" so bridge. knows what variables need to be replaced with their corresponding values
 
 
 
@@ -49,7 +50,7 @@ The variables that will be included in the specified template file will also nee
 
 ### Fields
 
-Fields create input boxes in the preset window where the player can input some type of data like a image or text that will be assigned to the variable specified after the name of the input box these are the types of input:
+Fields create input boxes in the preset window where the player can input some type of data like an image or text that will be assigned to the variable specified after the name of the input box these are the types of input:
 
 - Text
 - File
@@ -65,27 +66,27 @@ Input types are "boxes" where the user can input different type of data values l
 
 ###### Text
 
-`textInput` is the default type of input is `text`. To create a `text` input type make a array with the name of the text box as a `string` followed by another `string` which is the variable where the user's input will be assigned to
+`textInput` is the default type of input is `text`. To create a `text` input type make an array with the name of the text box as a `string` followed by another `string` which the variable to which the user's input gets assigned.
 
 
 ###### File
 
-`fileInput` input types can be created by an array this will include the name of the input box, the input type. Last by creating a `object` properties are defined such as `accept`, `icon` these can only be used inside a `fileInput` input type.
+`fileInput` input types will ask for the user to input a file. To create it set the `type` property to `fileInput` then use the `accept` property to limit the input to 1 type of file. Use `icon` property to set the icon of the input box.
 
 
 ###### Selection Box
 
-`selectInput` is an input type creates selection boxes or drop down lists that have a fixed amount of options. To make a selection box create a input box with a name and assign a variable to it, then create a properties object and define the type of input box as `selectInput` then a `default` value this is the default option the input box will be set. Create an array named `options` then for each option create an object that will define what the display `text` and `value` should be.
+`selectInput` is an input type that creates a selection boxe or drop down list that have a fixed amount of options. To make a selection box create a input box with a name and assign a variable to it, then create a properties object and define the type of input box as `selectInput` then a `default` value this is the default option the input box will be set. Create an array named `options` then for each option create an object that will define what the display `text` and `value` should be.
 
 
 ###### Number Input
 
-`numberInput` is an input type that creates a slider this slider goes from a specified `min` number to a specified `max` number. This slider will count up or down by a specified `step` number. To create a `numberInput` create a new input box with the `numberInput` as the input `type` then put a `min`, `max`, `step` number.
+`numberInput` is an input type that creates a slider, this slider goes from a defined `min` number to a defined `max` number. This slider will count up or down by a defined `step` number. To create it create a new input box with the `numberInput` as the input `type` then put a `min`, `max`, `step` number.
 
 
 ###### Switch
 
-`switch` is the simplest type of input which is a literal switch that can be turned on or off. The variable that is assigned to the input will get `0` or `1` based on the switch state (`0` for `off` and `1` for `on`). To create it set the input `type` to `switch`
+`switch` is the simplest type of input which is a literal switch that can be turned on or off. The variable that is assigned to the input will get `true` or `false` based on the switch state. To create it set the input `type` to `switch`.
 
 
 ##### Input Properties
@@ -98,12 +99,12 @@ Input Properties are poperties that can be defined inside of an input box these 
 
 
 ### Icon
-Icons show up in the presets window. Presets use [Material Design Icons](https://materialdesignicons.com/) a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
+Icons show up in the presets window. Presets use [Material Design Icons](https://materialdesignicons.com/), a collection of icons that can be defined in the manifest.json by typing `mdi-` followed by the icon's name.
 
 
 ### Variables
 
-Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json they` can also be used any other files in the preset as long as they are "injected" in the file.
+Variables are able to be used in the `createFiles` and `expandFile` components of the manifest they can also be used in any other files of the preset as long as they are "injected" into the file.
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
 
@@ -222,7 +223,3 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 
 -	[`Bridge. Vannila Presets`](https://github.com/bridge-core/editor/tree/main/data/preset)
 -	[`More Vannila Entity Presets by Joelant05`](https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
-
-
-
-Page written by Paty
