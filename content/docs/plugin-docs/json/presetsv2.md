@@ -101,7 +101,7 @@ Icons show up in the presets window. Presets use [Material Design Icons](https:/
 
 ### Variables
 
-Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json they` can also be used any other files in the preset as long as they are "injected" in the file.
+Variables are able to be used in the `createFiles` and `expandFile` components of the `manifest.json` they can also be used any other files in the preset as long as they are "injected" in the file.
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
 
