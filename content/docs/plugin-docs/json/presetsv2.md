@@ -50,7 +50,7 @@ The variables that will be included in the specified template file will also nee
 
 ### Fields
 
-Fields create input boxes in the preset window where the player can input some type of data like an image or text that will be assigned to the variable specified after the name of the input box these are the types of input:
+Fields create input boxes in the preset window where the user can input some type of data like an image or text that will be assigned to the variable specified after the name of the input box these are the types of input:
 
 - Text
 - File
