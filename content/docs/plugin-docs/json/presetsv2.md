@@ -22,13 +22,13 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `name`                               | `String`              | Name to display inside the preset window    |
 | `description`                        | `String`              | Preset description                          |
 | `icon`                               | `String`              | Icon to show inside of the preset window    |
-| `category`			       | `String`              | Category of the preset entity, item, ect    |
-| `packTypes`			       | `Array`	       | Which packs are needed for the preset       |
-| `additionalModels`                   | `Object`              | Advanced Optional Feature for preset scripts|
+| `category`						   | `String`              | Category of the preset entity, item, ect    |
+| `packTypes`						   | `Array`			   | Which packs are needed for the preset       |
+| `additionalModels`                   | `object`              | Advanced Optional Feature for preset scripts|
 | `targetVersion`                      | `Array`               | Conditionally change preset availability    |
 | `createFiles`                        | `Array`               | JSON files to create                        |
 | `expandFles`                         | `Array`               | Files to add data to or expand              |
-| `fields`                             | `Array`               | Creates new input boxes                     |
+| `fields`                             | `Array`               | This defines new inputs                     |
 
 
 
@@ -59,14 +59,9 @@ Fields create input boxes in the preset window where the user can input some typ
 - Switch
 
 
-#### Input Types
-
-Input types are "boxes" where the user can input different type of data values like `text`, `image`, `models` and more. Input type is defined in the properties of each input box inside the manifest of a preset. To create a new input box create a new array inside of `fields` array.
-
-
 ###### Text
 
-`textInput` is the default type of input is `text`. To create a `text` input type make an array with the name of the text box as a `string` followed by another `string` which the variable to which the user's input gets assigned.
+`textInput` is the default type of input. To create it make an array with the name of the text box as a `string` followed by another `string` which the variable to which the user's input gets assigned.
 
 
 ###### File
@@ -88,14 +83,23 @@ Input types are "boxes" where the user can input different type of data values l
 
 `switch` is the simplest type of input which is a literal switch that can be turned on or off. The variable that is assigned to the input will get `true` or `false` based on the switch state. To create it set the input `type` to `switch`.
 
+#### Input Types
 
-##### Input Properties
+Input types are "boxes" where the user can input different types of data values like `text`, `image`, `models` and more. Input types are defined in the properties of each input box inside the manifest of a preset. To create a new input box create a new array inside of `fields` array and define a display name for the box and a variable to which the user's input gets assigned. Properties can be defined inside of an `object` that's in a input box.
 
-Input Properties are poperties that can be defined inside of an input box these are grouped in a `object` and will change depending on what input type is selected. There are 3 properties that work with all input types and those are:
+#### Input Properties
 
-- `type` Type of input.
-- `default` Default value for the input.
-- `optional` Whether or not the input is optional.
+Input Properties are poperties that can be defined inside of an `object` that's in an input box. Properties change depending on what input type is selected. There are 3 properties that work with all input types and those are:
+
+| Name       | Type         | Description                           |
+| ---------- | ------------ | ------------------------------------- |
+| `type`     | `String`     | Type of input.                        |
+| `default`  | `String`     | Default value for the input.          |
+| `optional` | `Boolean`    | Whether or not the input is optional. |
+
+
+
+
 
 
 ### Icon
