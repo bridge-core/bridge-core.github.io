@@ -22,8 +22,8 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `name`                               | `String`              | Name to display inside the preset window    |
 | `description`                        | `String`              | Preset description                          |
 | `icon`                               | `String`              | Icon to show inside of the preset window    |
-| `category`						   | `String`              | Category of the preset entity, item, ect    |
-| `packTypes`						   | `Array`			   | Which packs are needed for the preset       |
+| `category`                           | `String`              | Category of the preset entity, item, ect    |
+| `packTypes`                          | `Array`               | Which packs are needed for the preset       |
 | `additionalModels`                   | `object`              | Advanced Optional Feature for preset scripts|
 | `targetVersion`                      | `Array`               | Conditionally change preset availability    |
 | `createFiles`                        | `Array`               | JSON files to create                        |
@@ -59,6 +59,11 @@ Fields create input boxes in the preset window where the user can input some typ
 - Switch
 
 
+#### Input Types
+
+Input types are "boxes" where the user can input different types of data values like `text`, `image`, `models` and more. Input types are defined in the properties of each input box inside the manifest of a preset. To create a new input box create a new array inside of `fields` array and define a display name for the box and a variable to which the user's input gets assigned. Properties can be defined inside of an `object` thats in a input box.
+
+
 ###### Text
 
 `textInput` is the default type of input. To create it make an array with the name of the text box as a `string` followed by another `string` which the variable to which the user's input gets assigned.
@@ -83,9 +88,7 @@ Fields create input boxes in the preset window where the user can input some typ
 
 `switch` is the simplest type of input which is a literal switch that can be turned on or off. The variable that is assigned to the input will get `true` or `false` based on the switch state. To create it set the input `type` to `switch`.
 
-#### Input Types
 
-Input types are "boxes" where the user can input different types of data values like `text`, `image`, `models` and more. Input types are defined in the properties of each input box inside the manifest of a preset. To create a new input box create a new array inside of `fields` array and define a display name for the box and a variable to which the user's input gets assigned. Properties can be defined inside of an `object` that's in a input box.
 
 #### Input Properties
 
