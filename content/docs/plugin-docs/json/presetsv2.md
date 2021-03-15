@@ -28,7 +28,7 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `targetVersion`                      | `Array`               | Conditionally change preset availability    |
 | `createFiles`                        | `Array`               | JSON files to create                        |
 | `expandFles`                         | `Array`               | Files to add data to or expand              |
-| `fields`                             | `Array`               | This defines new inputs                     |
+| `fields`                             | `Array`               | Creates new input boxes                     |
 
 
 
