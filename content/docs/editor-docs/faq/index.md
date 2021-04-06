@@ -72,3 +72,6 @@ This is caused when you're using a material that doesn't support transparency.
 # What is the difference between bridge. and bridge. v2?
 
 bridge. is a native program, while bridge. v2 is an installable web app (PWA) currently available for Chrome (Desktop) and Microsoft Edge. bridge. v2 is currently in alpha and features a raw JSON editor, new user interface, skin pack support, a new compiler architecture instead of a cache system, and more. bridge. v2 already has support for extensions but many recently-published extensions are currently only available for bridge. v1.
+
+# Is bridge. available for mobile devices?
+No, bridge. is not available for mobile devices, nor will it ever be for the time being. bridge. v1 would be too difficult to port over, while bridge. v2 requires an API that mobile browsers don't support.
