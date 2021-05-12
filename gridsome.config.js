@@ -14,7 +14,7 @@ module.exports = {
 	settings: {
 		web: false,
 		discord: 'https://discord.gg/uj8K2S9',
-		twitter: process.env.URL_TWITTER || false,
+		twitter: 'https://twitter.com/bridgeEditor',
 		github: 'https://github.com/bridge-core/',
 		nav: {
 			links: [

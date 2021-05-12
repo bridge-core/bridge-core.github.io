@@ -10,7 +10,7 @@
 						class="flex items-center text-ui-primary"
 						title="Home"
 					>
-						<Logo width="20px" class="text-ui-primary" />
+						<Logo width="24px" class="text-ui-primary" />
 						<span
 							class="hidden ml-2 text-xl font-bold tracking-tighter sm:block"
 						>

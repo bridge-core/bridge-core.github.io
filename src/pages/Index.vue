@@ -12,12 +12,9 @@
 						bridge.
 					</h1>
 				</div>
-				<h2 class="text-4xl text-center lg:text-5xl">
-					The IDE for Minecraft Add-Ons
-				</h2>
+
 				<p class="text-xl font-medium text-center">
-					We strive to provide the best development experience
-					possible
+					- A powerful IDE for Minecraft Add-Ons -
 					<br />
 					<g-link
 						to="https://github.com/bridge-core/bridge./releases/latest"
@@ -60,6 +57,61 @@
 				class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
 			/>
 
+			<div class="text-center">
+				<h1>Getting Inspired</h1>
+				<p>
+					bridge. has been used to create some of the most advanced
+					products on the Minecraft Marketplace.
+				</p>
+
+				<div class="flex justify-center">
+					<Card
+						class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
+						:class="{
+							hidden: true,
+							'sm:inline-block': i === 0,
+							'md:inline-block': i < 2,
+							'lg:inline-block': true,
+						}"
+						v-for="({
+							node: {
+								id,
+								image,
+								path,
+								title,
+								excerpt,
+								tags,
+								author,
+								developer,
+							},
+						},
+						i) in $static.allCreation.edges"
+						:key="id"
+						:to="path"
+						:image="image"
+						:title="title"
+						:developer="developer"
+						:excerpt="excerpt"
+						:tags="tags"
+						:author="author"
+					/>
+				</div>
+
+				<div class="flex justify-center mt-8 flex-wrap -mx-4">
+					<g-link
+						to="/creations/"
+						class="flex items-center px-6 py-2 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
+					>
+						More Creations
+						<ChevronRightIcon class="ml-4" size="1x" />
+					</g-link>
+				</div>
+			</div>
+
+			<div
+				class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
+			/>
+
 			<div class="flex flex-wrap justify-center -mx-4">
 				<div
 					class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3"
@@ -68,15 +120,17 @@
 					<h3
 						class="font-bold tracking-wide uppercase text-ui-primary"
 					>
-						Incredibly Fast
+						Zippy!
 					</h3>
 					<p class="text-lg text-left">
-						Development with bridge. is simply faster because of its
-						<span
+						Development with bridge. is faster thanks to its
+						<BUnderline
 							class="border-b border-dashed border-ui-primary text-ui-primary"
 						>
-							custom syntax and rich auto-completions
-						</span>
+							extendable compiler architecture </BUnderline
+						>, <BUnderline>rich auto-completions</BUnderline> and
+						<BUnderline>live previews</BUnderline> of the things you
+						work on
 					</p>
 				</div>
 
@@ -88,18 +142,18 @@
 						<h3
 							class="font-bold tracking-wide uppercase text-ui-primary"
 						>
-							Plugin Support
+							Extendable!
 						</h3>
 					</g-link>
 
 					<p class="text-lg text-left">
 						Custom components, custom commands, file presets and
 						themes: You can do
-						<span
-							class="border-b border-dashed border-ui-primary text-ui-primary"
+						<BUnderline>
+							almost anything with extensions for
+							bridge.</BUnderline
 						>
-							almost anything with plugins for bridge.
-						</span>
+						and choose from an already great extension ecosystem
 					</p>
 				</div>
 
@@ -110,17 +164,15 @@
 					<h3
 						class="font-bold tracking-wide uppercase text-ui-primary"
 					>
-						Seamless Integration
+						Seamless!
 					</h3>
 					<p class="text-lg text-left">
 						bridge.
-						<span
-							class="border-b border-dashed border-ui-primary text-ui-primary"
+						<BUnderline>
+							interacts seamlessly with Minecraft</BUnderline
 						>
-							interacts seamlessly with Minecraft
-						</span>
-						and loads behavior packs and the corresponding resource
-						pack from the com.mojang folder automatically
+						and syncs behavior packs, resource pack, skin packs and
+						worlds to the com.mojang folder automatically
 					</p>
 				</div>
 			</div>
@@ -130,27 +182,36 @@
 			/>
 
 			<Team />
-
-			<div
-				class="pt-8 mx-auto mt-8 border-t md:mt-16 md:pt-16 border-top border-ui-border max-w-screen-sm"
-			/>
-
-			<div class="text-center">
-				<h1>Getting Inspired</h1>
-				<p>bridge. has been used to create various awesome projects.</p>
-				<div class="flex justify-center mt-8 flex-wrap -mx-4">
-					<g-link
-						to="/creations/"
-						class="flex items-center px-6 py-2 text-2xl font-bold leading-none text-ui-primary border rounded-lg shadow-lg border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
-					>
-						Take a Peek
-						<ChevronRightIcon class="ml-4" size="1x" />
-					</g-link>
-				</div>
-			</div>
 		</div>
 	</Layout>
 </template>
+
+<static-query>
+query {
+	allCreation(limit: 4) {
+		edges {
+			node {
+				id
+				path   
+				title
+				image
+				developer
+				excerpt
+				author {
+					title
+					image
+					position
+				}
+				tags {
+					id
+					path
+					title
+				}
+			}
+		}
+	}
+}
+</static-query>
 
 <script>
 import Logo from '@/components/Logo'
@@ -163,6 +224,8 @@ import {
 	DownloadCloudIcon,
 } from 'vue-feather-icons'
 import Team from '@/components/collection/Team.vue'
+import Card from '@/components/content/Card.vue'
+import BUnderline from '@/components/content/BUnderline.vue'
 
 export default {
 	components: {
@@ -174,6 +237,8 @@ export default {
 		CodeIcon,
 		SlidersIcon,
 		SearchIcon,
+		Card,
+		BUnderline,
 	},
 
 	metaInfo() {

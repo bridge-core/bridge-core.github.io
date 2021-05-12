@@ -1,7 +1,7 @@
 ---
 id: 'enderzombi102'
 title: 'ENDERZOMBI102'
-position: 'Developer'
+position: 'Contributor'
 teamMember: true
 image: './icon.jpg'
 ---

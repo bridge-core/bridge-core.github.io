@@ -72,7 +72,11 @@ export default {
 			)
 		},
 		showSidebar() {
-			return this.$page.markdownPage.sidebar && this.sidebar
+			return (
+				this.$page.markdownPage &&
+				this.$page.markdownPage.sidebar &&
+				this.sidebar
+			)
 		},
 		currentPage() {
 			return this.$page.markdownPage

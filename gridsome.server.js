@@ -28,6 +28,7 @@ module.exports = function(api) {
 			const bridgeRepo = gh.getRepo('bridge-core', 'bridge.')
 			const pluginRepo = gh.getRepo('bridge-core', 'plugins')
 			const dataRepo = gh.getRepo('bridge-core', 'data')
+			const editorRepo = gh.getRepo('bridge-core', 'editor')
 
 			const contributorData = (await bridgeRepo.getContributors()).data
 				.concat(
@@ -37,6 +38,7 @@ module.exports = function(api) {
 					}))
 				)
 				.concat((await dataRepo.getContributors()).data)
+				.concat((await editorRepo.getContributors()).data)
 
 			const filteredContributors = []
 			contributorData.forEach(d => {

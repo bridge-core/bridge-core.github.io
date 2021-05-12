@@ -1,7 +1,7 @@
 ---
 id: 'montudor'
 title: 'monte'
-position: 'Developer'
+position: 'Contributor'
 teamMember: true
 image: './icon.jpg'
 ---
