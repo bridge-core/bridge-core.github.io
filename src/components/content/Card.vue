@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div
-			class="h-full w-full bg-ui-sidebar rounded overflow-hidden shadow-lg transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
+			class="h-full w-full bg-ui-sidebar rounded overflow-hidden shadow-lg text-left transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
 		>
 			<g-link :to="to">
 				<g-image

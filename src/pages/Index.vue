@@ -69,9 +69,9 @@
 						class="w-full p-2 md:w-1/2 lg:w-1/3 xl:w-1/4"
 						:class="{
 							hidden: true,
-							'sm:inline-block': i === 0,
-							'md:inline-block': i < 2,
-							'lg:inline-block': true,
+							'sm:inline': i === 0,
+							'md:inline': i < 2,
+							'lg:inline': true,
 						}"
 						v-for="({
 							node: {
