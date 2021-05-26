@@ -8,7 +8,7 @@ next: '/plugin-docs/modules/'
 
 ## General
 
-Themes change how bridge. looks. You are able to change all user interface elements and the syntax highlighter.
+Themes change how bridge. looks in a variety of ways. This includes changing both light mode and dark mode, CSS colors, syntax highlighter and many other parts of bridge.'s UI.
 
 ## Plugin Integration
 
