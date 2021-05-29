@@ -44,7 +44,7 @@ There are lots of reasons an addon might not work. Before you ask in an addon he
 
 In _Minecraft_ settings under the Profile section, there are two settings: ”Enable Content Log GUI” and “Enable Content Log File.” We recommend turning both on while
 testing.
-![Enable content logs](./faq_1.png)]
+![Enable content logs](./faq_1.png)
 
 In _Minecraft 1.17_ these settings will be under the Creator section.
 ![Enable 1.17 Content Logs](./creator.png)
