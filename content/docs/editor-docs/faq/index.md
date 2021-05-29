@@ -46,6 +46,9 @@ In _Minecraft_ settings under the Profile section, there are two settings: ”En
 testing.
 ![Enable content logs](./faq_1.png)
 
+In _Minecraft 1.17_ these settings will be under the Creator section.
+![Enable 1.17 Content Logs](./creator.png)
+
 ## How do I make a scripting GUI?
 
 There are currently no tutorials for this, but Mojang has released an example pack using a GUI. You can get the pack here: [https://aka.ms/minecraftscripting_turnbased](https://aka.ms/minecraftscripting_turnbased)
