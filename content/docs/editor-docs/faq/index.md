@@ -47,7 +47,7 @@ testing.
 ![Enable content logs](./faq_1.png)]
 
 In _Minecraft 1.17_ these settings will be under the Creator section.
-![Enable 1.17 Content Logs](./faq_2.png)
+![Enable 1.17 Content Logs](./creator.png)
 
 ## How do I make a scripting GUI?
 
