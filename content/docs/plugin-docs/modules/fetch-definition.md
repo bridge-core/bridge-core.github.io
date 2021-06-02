@@ -5,7 +5,7 @@ sidebar: 'plugins'
 
 # @bridge/fetch-definition
 
-Grants access to the lightning cache database
+Grants access to the lightning cache database.
 
 ## Fetching lightning cache data
 
