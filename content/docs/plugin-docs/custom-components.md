@@ -13,7 +13,7 @@ bridge. allows you to define new entity components. In order to get started, cre
 
 JavaScript files placed inside of this folder have access to the `Bridge` object. Available methods:
 
--   `Bridge.register` registers a custom component. This method expects a JavaScript class with the static properties `component_name` & `type` and the two instance methods `onApply(component_data, location)` & `onPropose()`.
+-   `Bridge.register` registers a custom component. This method expects a JavaScript class with the static properties `component_name` & `type` and the two instance methods `onApply(component_data, location)` & `onPropose()`
 -   `Bridge.report(string)` opens an information window that contains the given string
 
 ### `onApply(component_data, location)`
