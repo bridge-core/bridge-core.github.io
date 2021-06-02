@@ -7,7 +7,7 @@ sidebar: 'plugins'
 
 ## General
 
-Presets are groups of files which can be created through the preset interface by only entering an identifier and clicking "CREATE!". They help quickly setting up new items, entities or similiar features. This page covers the presets in version 2 of the api
+Presets are groups of files which can be created through the preset interface by only entering an identifier and clicking "CREATE!". They help quickly setting up new items, entities or similiar features. This page covers the presets in version 2 of the API.
 
 ## Plugin Integration
 
@@ -40,7 +40,7 @@ Both components of the manifest `createFiles` and `expandFiles` will need 3 thin
 
 The template file name is a string that will include the file name and the extension of the file name such as `.json` or `.lang` that will be created or expanded.
 The file path will define where the specified template file will be created. If the file is supposed to be expanded the path need to define what file it's expanding. Example: `RP/texts/en_US.lang`.
-The variables that will be included in the specified template file will also need to be "injected" so bridge. knows what variables need to be replaced with their corresponding values
+The variables that will be included in the specified template file will also need to be "injected" so bridge. knows what variables need to be replaced with their corresponding values.
 
 ### Fields
 
