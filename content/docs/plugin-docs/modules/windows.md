@@ -5,7 +5,7 @@ sidebar: 'plugins'
 
 # @bridge/windows
 
-Module that provides acess to bridge's window system
+Module that provides acess to bridge's window system.
 
 ## Information windows
 
