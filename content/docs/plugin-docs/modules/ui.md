@@ -5,7 +5,7 @@ sidebar: 'plugins'
 
 # @bridge/ui
 
-Module that provides programmatic access to [Vue](https://vuejs.org/) components defined inside of the plugin's `ui/` folder
+Module that provides programmatic access to [Vue](https://vuejs.org/) components defined inside of the plugin's `ui/` folder.
 
 ## Accessing Vue components
 
@@ -27,7 +27,7 @@ bridge. ships with a couple of built-in components for you to use:
 
 ### BuiltIn.BaseWindow
 
-A helper for quickly creating windows
+A helper for quickly creating windows.
 
 #### Props
 
