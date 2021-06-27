@@ -9,60 +9,42 @@ Module that allows plugins to create toolbar tabs.
 
 ## Creating a toolbar tab
 
-**Function Signature:** `create(config: IAppMenu)`
-
-### IAppMenu
-
-```typescript
-interface IAppMenu {
-	displayName: string
-	displayIcon?: string
-	onClick?: () => void
-	elements?: IAppMenuElement[]
-}
-```
-
-### IAppMenuElement
-
-```typescript
-interface IAppMenuElement {
-	isHidden?: boolean
-	displayName: string
-	displayIcon?: string
-	elements?: (() => IAppMenuElement[]) | IAppMenuElement[]
-	keyBinding?: IKeyBinding
-	onClick?: () => void
-}
-```
-
-## Removing a toolbar tab
-
-In order to remove a toolbar tab, you need to have a reference to the `IAppMenu`. Calling `dispose()` on it will remove the toolbar tab from the app.
+**Function Signature:** `addCategory(config: ToolbarCategory): void`
 
 ### Example
 
 ```typescript
-const { createCategory } = await require('@bridge/toolbar')
+const {
+	addCategory,
+	ToolbarCatgeory,
+	actionManager,
+} = await require('@bridge/toolbar')
 
-const toolbar = create(...)
+const category = new ToolbarCategory('mdi-file-outline', 'My Category')
 
-// Later...
-toolbar.dispose()
+category.addItem(
+	actionManager.create({
+		id: 'myAction',
+		icon: 'mdi-folder-outline',
+		name: 'My Action',
+		description: '...',
+		onTrigger: () => {
+			// Do something...
+		},
+	})
+)
+
+addCategory(category)
 ```
 
-## Re-adding a toolbar tab
+## New toolbar category
 
-In order to re-add a toolbar tab, you need to have a reference to the `IAppMenu`. Calling `add()` on it will add the toolbar tab to the app.
+**Class:** [`ToolbarCategory`](https://github.com/bridge-core/editor/blob/main/src/components/Toolbar/ToolbarCategory.ts)
 
-### Example
+Used to create new toolbar categories
 
-```typescript
-const { createCategory } = await require('@bridge/toolbar')
+## Register actions
 
-const toolbar = create(...)
+**Property:** [`actionManager`](https://github.com/bridge-core/editor/blob/main/src/components/Actions/ActionManager.ts)
 
-toolbar.dispose()
-
-// Later...
-toolbar.add()
-```
+Allows creating/disposing new app actions

@@ -11,40 +11,40 @@ Utility module that provides access to environmental project data.
 
 **Function Signature:** `getCurrentBP(): string`
 
-Returns the absolute path to the current behavior pack
+Returns the path to the current behavior pack
 
 ## Getting the current resource pack
 
 **Function Signature:** `getCurrentRP(): string`
 
-Returns the absolute path to the current resource pack
+Returns the path to the current resource pack
+
+## Getting the current project
+
+**Function Signature:** `getCurrentProject(): string`
+
+Returns the path to the current project
 
 ## Getting the project prefix
 
-**Function Signature:** `getProjectPrefix(): string`
+**Function Signature:** `getProjectPrefix(): Promise<string | undefined>`
 
 Returns the prefix/namespace of the current project
 
 ## Getting the project target version
 
-**Function Signature:** `getProjectTargetVersion(): string`
+**Function Signature:** `getProjectTargetVersion(): Promise<string | undefined>`
+
+Returns the author of the current project
+
+## Getting the project author
+
+**Function Signature:** `getProjectAuthor(): Promise<string | undefined>`
 
 Returns the target minecraft version of the current project
 
-## Getting additional context
+## Get bridge's app version
 
-**Function Signature:** `getContext(): string`
+**Property:** `APP_VERSION: string`
 
-Returns data that depends on the context you call the method in
-
-### Custom component
-
-Using this `getContext()` hook inside of a custom component's `onApply(...)` method returns the following data:
-
-```typescript
-interface IComponentContext {
-	location: string
-	entityIdentifier: string
-	formatVersion?: string
-}
-```
+Gets the current version for bridge.

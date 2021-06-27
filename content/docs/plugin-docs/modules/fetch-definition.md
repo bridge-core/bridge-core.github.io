@@ -3,6 +3,8 @@ description: ''
 sidebar: 'plugins'
 ---
 
+<!--Needs updating-->
+
 # @bridge/fetch-definition
 
 Grants access to the lightning cache database.

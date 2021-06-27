@@ -9,6 +9,6 @@ Module that provides common functions to developers.
 
 ## Opening a link
 
-**Function Signature:** `openExternal(url: string): Promise<void>`
+**Function Signature:** `openExternal(url: string): void`
 
 Opens a given url inside of the user's default browser.

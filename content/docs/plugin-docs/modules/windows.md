@@ -25,9 +25,9 @@ Module that provides acess to bridge's window system.
 
 ## Generic windows
 
-**Function Signature:** `createWindow(vueComponent: VueComponent, state: Record<string, any>): IBridgeWindow`
+**Class:** [`BaseWindow`](https://github.com/bridge-core/editor/blob/main/src/components/Windows/BaseWindow.ts)
 
-A helper function that is used internally to define all app windows. You can use it to create rich, custom interfaces for your plugin.
+Abstract class used to create your own windows
 
 ### IBridgeWindow
 
@@ -45,44 +45,3 @@ interface IBridgeWindow extends IDisposable {
 ```
 
 You can use the `currentWindow` prop on the component you pass to the `createWindow` function to access the `IBridgeWindow` instance directly on your component. You also need to implement the `isVisible` and `shouldRender` attributes properly so the window reacts to the `open()` and `close()` function calls and the window becomes as efficient as possible.
-
-#### Example Component:
-
-```html
-<template>
-	<BaseWindow
-		v-if="shouldRender"
-		:windowTitle="windowTitle"
-		:isVisible="isVisible"
-		:hasMaximizeButton="false"
-		:isFullscreen="false"
-		:width="440"
-		:height="120"
-		@closeWindow="onClose"
-	>
-		<template #default>
-			Lorem Ipsum...
-		</template>
-	</BaseWindow>
-</template>
-
-<script>
-	const { BuiltIn } = await require('@bridge/ui')
-
-	export default {
-		name: 'Information',
-		components: {
-			BaseWindow: BuiltIn.BaseWindow,
-		},
-		props: ['currentWindow'],
-		data() {
-			return this.currentWindow.getState()
-		},
-		methods: {
-			onClose() {
-				this.currentWindow.close()
-			},
-		},
-	}
-</script>
-```

@@ -18,9 +18,32 @@ interface INotificationConfig {
 	color?: string
 	textColor?: string
 	disposeOnMiddleClick?: boolean
+	isVisible?: boolean
+
 	onClick?: () => void
 	onMiddleClick?: () => void
 }
+```
+
+### Example
+
+```typescript
+const { create } = await require('@bridge/notification')
+
+create(
+	icon: 'mdi-apple',
+	message: 'Hello World!',
+	color: 'blue'
+	textColor: 'white',
+	disposeOnMiddleClick: true,
+
+	() => {
+		// Do something...
+	},
+	() => {
+		// Do something...
+	}
+)
 ```
 
 ## Creating an error notification
