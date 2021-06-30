@@ -1,5 +1,5 @@
 ---
-title: 'Minecraft: Sonic the Hedhehog'
+title: 'Minecraft: Sonic the Hedgehog'
 image: './main.jpg'
 author: 'gamemode-one'
 excerpt: 'Sonic the Hedgehog races into Minecraft at supersonic speeds!'
