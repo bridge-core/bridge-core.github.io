@@ -9,7 +9,7 @@ bridge.'s compiler architecture allows anyone to create powerful plugins that ca
 
 ## Compiler Config
 
-The compiler config tells the compiler which plugins to use in compilation. It should go in the `<PROJECT NAME>/.bridge/compiler` directory and be given any name. The `dev` compiler mode uses the `default.json` compiler config.
+The compiler config tells the compiler which plugins to use in compilation. It should go in the `<PROJECT NAME>/.bridge/compiler` directory and be given any name. The `dev` compiler mode uses the `default.json` compiler config and the `dist` compiler mode allows you to choose from the available modes.
 
 By default the `default.json` config should look like this:
 
@@ -48,37 +48,37 @@ By default the `default.json` config should look like this:
 **Note: The `name` and `description` have square brackets around them so that bridge. doesn't attempt to translate these strings.**
 
 -   `plugins`
-    An array of values that specify the id's of the compiler plugins to use. The values can either be a string, to simply add the plugin to the compiler, or it can be an array with the first value as the compiler plugin's id and arguments for that compiler plugin in an object as the second argument. For example, see the `"simpleRewrite"` plugin above contains an argument `"packName"` which is passed to and used in the plugin.
+    An array of values that specify the ids of the compiler plugins to use. The values can either be a string, to simply add the plugin to the compiler, or it can be an array with the first value of the array as the compiler plugin's id and in the second value of the array there should be options for the compiler plugin in an object. For example, see that the `"simpleRewrite"` plugin above contains an argument `"packName"` which is passed to, and used in the plugin.
 
 ## Built-In Compiler Plugins
 
-By default bridge contains 6 different compiler plugins built-in:
+By default bridge. contains 6 different compiler plugins built-in:
 
 -   `typeScript`
-    Compiles any TypeScript files in your project into JavaScript. This allows you to use TypeScript for Minecraft's GameTests, Scripting API and bridge's custom components and commands.
+    Compiles any TypeScript files in your project into JavaScript. This allows you to use TypeScript for Minecraft's GameTests, Scripting API and bridge.'s custom components and commands.
 
 -   `entityIdentifierAlias`
     Registers entity identifiers to be fetched by the `getAlias()` function in compiler plugins.
 
 -   `customEntityComponents`, `customItemComponents`, `customBlockComponents`
-    Provides custom component functionality for entities, items and blocks. [Documentaion](https://bridge-core.app/extension-docs/custom-components/).
+    Provides custom component functionality for entities, items and blocks. [Documentation](https://bridge-core.app/extension-docs/custom-components/).
 
     **Arguments:**
 
     -   `v1CompatMode: boolean` Enables v1 custom components. Recommended only for compatibility.
 
 -   `customCommands`
-    Provides custom command functionality for use in function files and json files where commands are supported. [Documentation](https://bridge-core.app/extension-docs/custom-commands/)
+    Provides custom command functionality for use in `.mcfunction` files and json files where commands are supported. [Documentation](https://bridge-core.app/extension-docs/custom-commands/)
 
     **Arguments:**
 
     -   `v1CompatMode: boolean` Enables v1 custom commands. Recommended only for compatibility.
 
 -   `moLang`
-    Provides custom MoLang functionality. This allows you to create .molang files and register functions to be used across your project where MoLang is permitted.
+    Provides custom MoLang functionality. This allows you to create `.molang` files and register functions to be used across your project where MoLang is valid.
 
 -   `simpleRewrite`
-    Restructures the compiler output and puts your project in a structure that Minecraft will understand.
+    Restructures the compiler output and rewrites your project structure into a structure that Minecraft will understand.
 
     **Arguments:**
 
@@ -94,7 +94,7 @@ By default bridge contains 6 different compiler plugins built-in:
 
 A compiler plugin should be added by putting it in the `<EXTENSION NAME>/compiler` folder of an extension. The plugin can then be registered via the extension manifest.
 
-In the extension mnaifest you need a `"compiler"` property which should contain the path to the plugin and the id to give it, which can be then references in a compiler config.
+In the extension manifest you need a `"compiler"` property which should contain the path to the plugin and the id to give it, which can be then referenced in a compiler config.
 
 Structure:
 
@@ -120,15 +120,15 @@ module.exports = () => {
 
 	return {
 		transform(filePath, fileContent) {
-			// This would add " test" to the end of every block file.
-			if (filePath.startsWith(blockPath)) return `${fileContent} test`
+			// This would add "test" to the end of every block file.
+			if (filePath.startsWith(blockPath)) return `${fileContent}test`
 			else return
 		},
 	}
 }
 ```
 
-This function recieves context parameters to be used in the plugin. These are:
+This function receives context parameters to be used in the plugin. These are:
 
 -   `fileSystem: FileSystem`
     Returns the [FileSystem](https://github.com/bridge-core/editor/blob/main/src/components/FileSystem/FileSystem.ts) instance.
@@ -146,7 +146,7 @@ This function recieves context parameters to be used in the plugin. These are:
     Returns all aliases registered in the `registerAliases()` hook for a given file path.
 
 -   `targetVersion: string`
-    Gives access to reading the project target version.
+    Allows you to read the project target version.
 
 -   `options: { mode: 'dev' | 'build', isFileRequest: boolean, restartDevServer: boolean, [key: string]: any}`
 
@@ -154,10 +154,10 @@ This function recieves context parameters to be used in the plugin. These are:
         Allows you to read the current compiler mode.
 
     -   `isFileRequest: boolean`
-        Some of bridge.'s core components manually request a file to be compiled. 
-	These file requests don't necessarily need to represent an underlying file on your disk. 
-	(Example: The particle preview requests a compilation of an unsaved particle file)
-	
+        Some of bridge.'s core components manually request a file to be compiled.
+        These file requests don't necessarily need to represent an underlying file on your disk.
+        (Example: The particle preview requests a compilation of an unsaved particle file)
+
     -   `restartDevServer: boolean`
         Whether this compilation is the dev server being restarted.
 

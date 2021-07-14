@@ -15,7 +15,7 @@ bridge. allows you to define new commands that can be used in `.mcfunction` file
 
 Custom commands have access to the `defineCommand` function, which looks like this:
 
-`defineCommand({ name: (name: string) => void, schema: (schema: any) => void, template: (templateFunction: (commandArgs: string[]) => void) => void }): void`
+`defineCommand({ name: (name: string) => void, schema: (schema: any) => void, template: (templateFunction: (commandArgs: string[]) => string[] | string) => void }): void`
 
 Arguments:
 
@@ -36,8 +36,8 @@ Arguments:
     })
     ```
 
--   `template(templateFunction: (componentArgs: string[]) => void): void`
-    The `templateFunction` recieves a string of values representing the arguments that the user has input after the command. It should return an array of commands that represent the commands to be put in place of the custom command in compilation.
+-   `template(templateFunction: (componentArgs: string[]) => string[] | string): void`
+    The `templateFunction` recieves a string of values representing the arguments that the user has input after the command. It should return a command or list of commands that represent the commands to be put in place of the custom command in compilation.
 
 ## Extension Manifest
 
