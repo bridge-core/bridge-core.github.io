@@ -15,15 +15,15 @@ Add the default tab actions for the specific file tab.
 
 #### Parameters
 
-| Name  | Type  |
-| :---- | :---- |
+| Name | Type |
+| :------ | :------ |
 | `tab` | `any` |
 
 #### Returns
 
 `Promise`<`void`\>
 
----
+___
 
 ### register
 
@@ -33,8 +33,8 @@ Register a new tab action.
 
 #### Parameters
 
-| Name         | Type                                                    |
-| :----------- | :------------------------------------------------------ |
+| Name | Type |
+| :------ | :------ |
 | `definition` | [`ITabActionConfig`](../interfaces/itabactionconfig.md) |
 
 #### Returns
@@ -43,7 +43,7 @@ Register a new tab action.
 
 Disposable
 
----
+___
 
 ### registerPreview
 
@@ -53,8 +53,8 @@ Register a new tab preview
 
 #### Parameters
 
-| Name         | Type                                                      |
-| :----------- | :-------------------------------------------------------- |
+| Name | Type |
+| :------ | :------ |
 | `definition` | [`ITabPreviewConfig`](../interfaces/itabpreviewconfig.md) |
 
 #### Returns

@@ -11,19 +11,19 @@ sidebar: 'extensions'
 
 • **isLoading**: `boolean`
 
----
+___
 
 ### isSelected
 
 • **isSelected**: `boolean`
 
----
+___
 
 ### isVisible
 
 • **isVisible**: `boolean`
 
----
+___
 
 ### sidebarUUID
 
@@ -39,7 +39,7 @@ sidebar: 'extensions'
 
 `any`
 
----
+___
 
 ### displayName
 
@@ -49,7 +49,7 @@ sidebar: 'extensions'
 
 `string`
 
----
+___
 
 ### icon
 
@@ -59,7 +59,7 @@ sidebar: 'extensions'
 
 `string`
 
----
+___
 
 ### uuid
 
@@ -79,7 +79,7 @@ sidebar: 'extensions'
 
 `Promise`<`void`\>
 
----
+___
 
 ### dispose
 

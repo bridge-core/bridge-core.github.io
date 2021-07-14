@@ -11,7 +11,7 @@ sidebar: 'extensions'
 
 • **fileMatch**: `string`
 
----
+___
 
 ### name
 
@@ -25,10 +25,10 @@ sidebar: 'extensions'
 
 #### Parameters
 
-| Name        | Type  |
-| :---------- | :---- |
+| Name | Type |
+| :------ | :------ |
 | `tabSystem` | `any` |
-| `tab`       | `any` |
+| `tab` | `any` |
 
 #### Returns
 

@@ -9,9 +9,9 @@ Utility module that provides access to environmental project data.
 
 ## Variables
 
-### APP_VERSION
+### APP\_VERSION
 
-• `Const` **APP_VERSION**: `string`
+• `Const` **APP\_VERSION**: `string`
 
 Gets the current version for bridge.
 
@@ -27,7 +27,7 @@ Returns the path to the current behavior pack.
 
 `string`
 
----
+___
 
 ### getCurrentProject
 
@@ -39,7 +39,7 @@ Returns the path to the current project.
 
 `string`
 
----
+___
 
 ### getCurrentRP
 
@@ -51,7 +51,7 @@ Returns the path to the current resource pack.
 
 `string`
 
----
+___
 
 ### getProjectAuthor
 
@@ -63,7 +63,7 @@ Returns the author of the current project.
 
 `Promise`<`string` \| `undefined`\>
 
----
+___
 
 ### getProjectPrefix
 
@@ -75,7 +75,7 @@ Returns the prefix/namespace of the current project.
 
 `Promise`<`string` \| `undefined`\>
 
----
+___
 
 ### getProjectTargetVersion
 

@@ -15,7 +15,7 @@ Module that allows access to bridge.'s tab system.
 
 **`link`** https://github.com/bridge-core/editor/blob/main/src/components/TabSystem/CommonTab.ts
 
----
+___
 
 ### FileTab
 
@@ -33,16 +33,16 @@ Given a file path relative to the project root, open the corresponding file insi
 
 #### Parameters
 
-| Name        | Type      | Description                             |
-| :---------- | :-------- | :-------------------------------------- |
-| `filePath`  | `string`  | File to open                            |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filePath` | `string` | File to open |
 | `selectTab` | `boolean` | Whether to automatically select the tab |
 
 #### Returns
 
 `Promise`<`void`\>
 
----
+___
 
 ### openTab
 
@@ -52,16 +52,16 @@ Useful for ContentTabs: Programmatically add the tab to the tab system
 
 #### Parameters
 
-| Name           | Type      |
-| :------------- | :-------- |
-| `FileTabClass` | `any`     |
-| `splitScreen`  | `boolean` |
+| Name | Type |
+| :------ | :------ |
+| `FileTabClass` | `any` |
+| `splitScreen` | `boolean` |
 
 #### Returns
 
 `Promise`<`any`\>
 
----
+___
 
 ### register
 
@@ -71,8 +71,8 @@ Register new FileTabs to be picked up by the isTabFor tab system method
 
 #### Parameters
 
-| Name           | Type  | Description   |
-| :------------- | :---- | :------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `FileTabClass` | `any` | FileTab class |
 
 #### Returns

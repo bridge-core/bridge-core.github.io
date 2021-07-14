@@ -19,10 +19,10 @@ Register a file formatter.
 
 #### Parameters
 
-| Name         | Type     |
-| :----------- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `languageId` | `string` |
-| `provider`   | `any`    |
+| `provider` | `any` |
 
 #### Returns
 

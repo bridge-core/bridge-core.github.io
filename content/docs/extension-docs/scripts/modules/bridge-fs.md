@@ -17,16 +17,16 @@ Copy a file.
 
 #### Parameters
 
-| Name         | Type     |
-| :----------- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `originPath` | `string` |
-| `destPath`   | `string` |
+| `destPath` | `string` |
 
 #### Returns
 
 `Promise`<`FileSystemFileHandle`\>
 
----
+___
 
 ### copyFileHandle
 
@@ -36,16 +36,16 @@ Copy a file handle.
 
 #### Parameters
 
-| Name           | Type                   |
-| :------------- | :--------------------- |
+| Name | Type |
+| :------ | :------ |
 | `originHandle` | `FileSystemFileHandle` |
-| `destHandle`   | `FileSystemFileHandle` |
+| `destHandle` | `FileSystemFileHandle` |
 
 #### Returns
 
 `Promise`<`FileSystemFileHandle`\>
 
----
+___
 
 ### copyFolder
 
@@ -55,16 +55,16 @@ Copy a folder by their paths.
 
 #### Parameters
 
-| Name         | Type     |
-| :----------- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `originPath` | `string` |
-| `destPath`   | `string` |
+| `destPath` | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
----
+___
 
 ### copyFolderByHandle
 
@@ -74,16 +74,16 @@ Copy a folder by its FileSystemDirectoryHandle.
 
 #### Parameters
 
-| Name           | Type                        |
-| :------------- | :-------------------------- |
+| Name | Type |
+| :------ | :------ |
 | `originHandle` | `FileSystemDirectoryHandle` |
-| `destHandle`   | `FileSystemDirectoryHandle` |
+| `destHandle` | `FileSystemDirectoryHandle` |
 
 #### Returns
 
 `Promise`<`void`\>
 
----
+___
 
 ### directoryExists
 
@@ -93,15 +93,15 @@ Return whether a directory exists or not.
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `path` | `string` |
 
 #### Returns
 
 `Promise`<`boolean`\>
 
----
+___
 
 ### fileExists
 
@@ -111,15 +111,15 @@ Return whether a file exists or not.
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `path` | `string` |
 
 #### Returns
 
 `Promise`<`boolean`\>
 
----
+___
 
 ### getDirectoryHandle
 
@@ -129,16 +129,16 @@ The getDirectoryHandle() method returns a FileSystemDirectoryHandle for a subdir
 
 #### Parameters
 
-| Name                | Type                                                                | Description                                                                                  |
-| :------------------ | :------------------------------------------------------------------ | :------------------------------------------------------------------------------------------- |
-| `path`              | `string`                                                            | A USVString representing the FileSystemHandle.name of the subdirectory you wish to retrieve. |
-| `__namedParameters` | `Partial`<[`IGetHandleConfig`](../interfaces/igethandleconfig.md)\> | -                                                                                            |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `string` | A USVString representing the FileSystemHandle.name of the subdirectory you wish to retrieve. |
+| `__namedParameters` | `Partial`<[`IGetHandleConfig`](../interfaces/igethandleconfig.md)\> | - |
 
 #### Returns
 
 `Promise`<`FileSystemDirectoryHandle`\>
 
----
+___
 
 ### getFileHandle
 
@@ -146,16 +146,16 @@ The getDirectoryHandle() method returns a FileSystemDirectoryHandle for a subdir
 
 #### Parameters
 
-| Name     | Type      |
-| :------- | :-------- |
-| `path`   | `string`  |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 | `create` | `boolean` |
 
 #### Returns
 
 `Promise`<`FileSystemFileHandle`\>
 
----
+___
 
 ### loadFileHandleAsDataUrl
 
@@ -165,15 +165,15 @@ Read a file by its FileHandle as a URL.
 
 #### Parameters
 
-| Name         | Type                   |
-| :----------- | :--------------------- |
+| Name | Type |
+| :------ | :------ |
 | `fileHandle` | `FileSystemFileHandle` |
 
 #### Returns
 
 `Promise`<`string`\>
 
----
+___
 
 ### mkdir
 
@@ -181,16 +181,16 @@ Read a file by its FileHandle as a URL.
 
 #### Parameters
 
-| Name                | Type                                                        |
-| :------------------ | :---------------------------------------------------------- |
-| `path`              | `string`                                                    |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 | `__namedParameters` | `Partial`<[`IMkdirConfig`](../interfaces/imkdirconfig.md)\> |
 
 #### Returns
 
 `Promise`<`void`\>
 
----
+___
 
 ### readFile
 
@@ -200,34 +200,34 @@ Read a file and return it.
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `path` | `string` |
 
 #### Returns
 
 `Promise`<`File`\>
 
----
+___
 
 ### readFilesFromDir
 
-▸ **readFilesFromDir**(`path`, `dirHandle`): `Promise`<{ `kind`: `string` ; `name`: `string` ; `path`: `string` }[]\>
+▸ **readFilesFromDir**(`path`, `dirHandle`): `Promise`<{ `kind`: `string` ; `name`: `string` ; `path`: `string`  }[]\>
 
 Read the contents of a directory and returns the files.
 
 #### Parameters
 
-| Name        | Type                                                                   |
-| :---------- | :--------------------------------------------------------------------- |
-| `path`      | `string`                                                               |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 | `dirHandle` | `FileSystemDirectoryHandle` \| `Promise`<`FileSystemDirectoryHandle`\> |
 
 #### Returns
 
-`Promise`<{ `kind`: `string` ; `name`: `string` ; `path`: `string` }[]\>
+`Promise`<{ `kind`: `string` ; `name`: `string` ; `path`: `string`  }[]\>
 
----
+___
 
 ### readJSON
 
@@ -237,15 +237,15 @@ Read a JSON file at a given path and return the file handle.
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `path` | `string` |
 
 #### Returns
 
 `Promise`<`FileSystemFileHandle`\>
 
----
+___
 
 ### readdir
 
@@ -255,11 +255,11 @@ Read the contents of a given directory.
 
 #### Parameters
 
-| Name                   | Type     |
-| :--------------------- | :------- |
-| `path`                 | `string` |
-| `config`               | `Object` |
-| `config.withFileTypes` | `true`   |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `config` | `Object` |
+| `config.withFileTypes` | ``true`` |
 
 #### Returns
 
@@ -269,11 +269,11 @@ Read the contents of a given directory.
 
 #### Parameters
 
-| Name                    | Type     |
-| :---------------------- | :------- |
-| `path`                  | `string` |
-| `config?`               | `Object` |
-| `config.withFileTypes?` | `false`  |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `config?` | `Object` |
+| `config.withFileTypes?` | ``false`` |
 
 #### Returns
 
@@ -283,17 +283,17 @@ Read the contents of a given directory.
 
 #### Parameters
 
-| Name                               | Type      |
-| :--------------------------------- | :-------- |
-| `path`                             | `string`  |
-| `__namedParameters`                | `Object`  |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `__namedParameters` | `Object` |
 | `__namedParameters.withFileTypes?` | `boolean` |
 
 #### Returns
 
 `Promise`<`FileSystemHandle`[]\>
 
----
+___
 
 ### setup
 
@@ -301,15 +301,15 @@ Read the contents of a given directory.
 
 #### Parameters
 
-| Name            | Type                        |
-| :-------------- | :-------------------------- |
+| Name | Type |
+| :------ | :------ |
 | `baseDirectory` | `FileSystemDirectoryHandle` |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### unlink
 
@@ -319,15 +319,15 @@ Unlink a directory from the fileSystem, deleting it.
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `path` | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
----
+___
 
 ### write
 
@@ -337,16 +337,16 @@ Write to a file from a FileSystemDirectoryHandle.
 
 #### Parameters
 
-| Name         | Type                       |
-| :----------- | :------------------------- |
-| `fileHandle` | `FileSystemFileHandle`     |
-| `data`       | `FileSystemWriteChunkType` |
+| Name | Type |
+| :------ | :------ |
+| `fileHandle` | `FileSystemFileHandle` |
+| `data` | `FileSystemWriteChunkType` |
 
 #### Returns
 
 `Promise`<`FileSystemFileHandle`\>
 
----
+___
 
 ### writeFile
 
@@ -356,16 +356,16 @@ Write to a file at the specified path.
 
 #### Parameters
 
-| Name   | Type                       |
-| :----- | :------------------------- |
-| `path` | `string`                   |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 | `data` | `FileSystemWriteChunkType` |
 
 #### Returns
 
 `Promise`<`FileSystemFileHandle`\>
 
----
+___
 
 ### writeJSON
 
@@ -375,10 +375,10 @@ Write a javascript object as JSON to a file.
 
 #### Parameters
 
-| Name       | Type      |
-| :--------- | :-------- |
-| `path`     | `string`  |
-| `data`     | `any`     |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `data` | `any` |
 | `beautify` | `boolean` |
 
 #### Returns

@@ -13,7 +13,7 @@ sidebar: 'extensions'
 
 Vue component that should be rendered for the sidebar.
 
----
+___
 
 ### displayName
 
@@ -21,7 +21,7 @@ Vue component that should be rendered for the sidebar.
 
 Name of the sidebar.
 
----
+___
 
 ### icon
 
@@ -29,7 +29,7 @@ Name of the sidebar.
 
 Material design icon to display within the sidebar navegation.
 
----
+___
 
 ### id
 

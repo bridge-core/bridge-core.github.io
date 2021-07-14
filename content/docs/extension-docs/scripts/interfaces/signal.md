@@ -10,5 +10,5 @@ sidebar: 'extensions'
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |

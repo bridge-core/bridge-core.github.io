@@ -16,7 +16,6 @@ Grants access to the lightning cache database.
 Search through the definitions `fetchDefs` in `fileType` files for `fetchSearch`.
 
 **`example`**
-
 ```js
 const { fetchDefinition } = await require('@bridge/fetch-definition')
 
@@ -34,12 +33,12 @@ const walkAnimation = walkAnimations[0]
 
 #### Parameters
 
-| Name          | Type       |
-| :------------ | :--------- |
-| `fileType`    | `string`   |
-| `fetchDefs`   | `string`[] |
-| `fetchSearch` | `string`   |
-| `fetchAll?`   | `boolean`  |
+| Name | Type |
+| :------ | :------ |
+| `fileType` | `string` |
+| `fetchDefs` | `string`[] |
+| `fetchSearch` | `string` |
+| `fetchAll?` | `boolean` |
 
 #### Returns
 

@@ -17,8 +17,8 @@ Opens a given url inside of the user's default browser.
 
 #### Parameters
 
-| Name  | Type     | Description                 |
-| :---- | :------- | :-------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `url` | `string` | Url to open in the browser. |
 
 #### Returns

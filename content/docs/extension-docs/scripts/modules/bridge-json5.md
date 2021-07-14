@@ -17,8 +17,8 @@ Parses a json string to a javascript object.
 
 #### Parameters
 
-| Name  | Type     | Description           |
-| :---- | :------- | :-------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `str` | `string` | Json string to parse. |
 
 #### Returns

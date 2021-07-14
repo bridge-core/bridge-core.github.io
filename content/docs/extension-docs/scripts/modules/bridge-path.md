@@ -15,16 +15,16 @@ Return the last portion of a path.
 
 #### Parameters
 
-| Name   | Type     | Description                                         |
-| :----- | :------- | :-------------------------------------------------- |
-| `p`    | `string` | The path to evaluate.                               |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `p` | `string` | The path to evaluate. |
 | `ext?` | `string` | Optionally, an extension to remove from the result. |
 
 #### Returns
 
 `string`
 
----
+___
 
 ### dirname
 
@@ -34,15 +34,15 @@ Return the directory name of a path.
 
 #### Parameters
 
-| Name | Type     | Description           |
-| :--- | :------- | :-------------------- |
-| `p`  | `string` | The path to evaluate. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `p` | `string` | The path to evaluate. |
 
 #### Returns
 
 `string`
 
----
+___
 
 ### extname
 
@@ -52,15 +52,15 @@ Return the extension of the path, from the last '.' to end of string in the last
 
 #### Parameters
 
-| Name | Type     | Description          |
-| :--- | :------- | :------------------- |
-| `p`  | `string` | The path to evaluate |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `p` | `string` | The path to evaluate |
 
 #### Returns
 
 `string`
 
----
+___
 
 ### join
 
@@ -70,15 +70,15 @@ Join all arguments together and normalize the resulting path.
 
 #### Parameters
 
-| Name       | Type       | Description    |
-| :--------- | :--------- | :------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `...paths` | `string`[] | Paths to join. |
 
 #### Returns
 
 `string`
 
----
+___
 
 ### relative
 
@@ -88,10 +88,10 @@ Solve the relative path from {from} to {to}. At times we have two absolute paths
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `from` | `string` |
-| `to`   | `string` |
+| `to` | `string` |
 
 #### Returns
 

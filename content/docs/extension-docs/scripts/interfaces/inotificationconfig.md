@@ -11,31 +11,31 @@ sidebar: 'extensions'
 
 • `Optional` **color**: `string`
 
----
+___
 
 ### disposeOnMiddleClick
 
 • `Optional` **disposeOnMiddleClick**: `boolean`
 
----
+___
 
 ### icon
 
 • `Optional` **icon**: `string`
 
----
+___
 
 ### isVisible
 
 • `Optional` **isVisible**: `boolean`
 
----
+___
 
 ### message
 
 • `Optional` **message**: `string`
 
----
+___
 
 ### onClick
 
@@ -49,7 +49,7 @@ sidebar: 'extensions'
 
 `void`
 
----
+___
 
 ### onMiddleClick
 
@@ -63,7 +63,7 @@ sidebar: 'extensions'
 
 `void`
 
----
+___
 
 ### textColor
 

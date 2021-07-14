@@ -16,8 +16,7 @@ Module that allows extensions to create notifications.
 Create a new notification.
 
 **`example`**
-
-```js
+ ```js
 const { create } = await require('@bridge/notification')
 
 create(
@@ -38,15 +37,15 @@ create(
 
 #### Parameters
 
-| Name     | Type                                                          |
-| :------- | :------------------------------------------------------------ |
+| Name | Type |
+| :------ | :------ |
 | `config` | [`INotificationConfig`](../interfaces/inotificationconfig.md) |
 
 #### Returns
 
 `any`
 
----
+___
 
 ### createError
 
@@ -55,23 +54,22 @@ create(
 Create a new error notification.
 
 **`example`**
-
 ```js
 const { createError } = await require('@bridge/notification')
 
 createError(new Error(`Oops, something went wrong :(`))
 
 try {
-	const t = 0
-	t = 2 //Throws error
+	   const t = 0
+	   t = 2 //Throws error
 } catch (error) {
-	createError(error)
+	   createError(error)
 }
 ```
 
 #### Parameters
 
-| Name    | Type    |
+| Name | Type |
 | :------ | :------ |
 | `error` | `Error` |
 

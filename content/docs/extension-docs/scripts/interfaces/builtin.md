@@ -14,7 +14,6 @@ sidebar: 'extensions'
 A helper for quickly creating windows.
 
 **`example`**
-
 ```html
 <template>
 	<BaseWindow
@@ -27,9 +26,15 @@ A helper for quickly creating windows.
 		:height="120"
 		v-on:closeWindow="onClose"
 	>
-		<template #toolbar> [TOOLBAR CONTENT] </template>
-		<template #default> [MAIN CONTENT] </template>
-		<template #actions> [ACTION CONTENT] </template>
+		<template #toolbar>
+			[TOOLBAR CONTENT]
+		</template>
+		<template #default>
+			[MAIN CONTENT]
+		</template>
+		<template #actions>
+			[ACTION CONTENT]
+		</template>
 	</BaseWindow>
 </template>
 
@@ -54,7 +59,7 @@ A helper for quickly creating windows.
 </script>
 ```
 
----
+___
 
 ### SidebarWindow
 
@@ -63,7 +68,6 @@ A helper for quickly creating windows.
 A helper for quickly creating sidebar windows.
 
 **`example`**
-
 ```html
 <template>
 	<SidebarWindow
@@ -75,11 +79,19 @@ A helper for quickly creating sidebar windows.
 		:width="440"
 		:height="120"
 		v-on:closeWindow="onClose"
-	>
-		<template #toolbar> [TOOLBAR CONTENT] </template>
-		<template #sidebar> [SIDEBAR CONTENT] </template>
-		<template #default> [MAIN CONTENT] </template>
-		<template #actions> [ACTION CONTENT] </template>
+ >
+		<template #toolbar>
+			[TOOLBAR CONTENT]
+		</template>
+		<template #sidebar>
+			[SIDEBAR CONTENT]
+		</template>
+		<template #default>
+			[MAIN CONTENT]
+		</template>
+		<template #actions>
+			[ACTION CONTENT]
+		</template>
 	</SidebarWindow>
 </template>
 

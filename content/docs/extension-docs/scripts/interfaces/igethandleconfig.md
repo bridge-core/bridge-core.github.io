@@ -11,7 +11,7 @@ sidebar: 'extensions'
 
 • **create**: `boolean`
 
----
+___
 
 ### createOnce
 

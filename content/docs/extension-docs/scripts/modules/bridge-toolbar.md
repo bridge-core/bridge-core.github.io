@@ -17,7 +17,7 @@ Used to create new toolbar categories.
 
 **`link`** https://github.com/bridge-core/editor/blob/main/src/components/Toolbar/ToolbarCategory.ts
 
----
+___
 
 ### actionManager
 
@@ -37,8 +37,8 @@ Add a new category to the app toolbar.
 
 #### Parameters
 
-| Name       | Type  |
-| :--------- | :---- |
+| Name | Type |
+| :------ | :------ |
 | `category` | `any` |
 
 #### Returns

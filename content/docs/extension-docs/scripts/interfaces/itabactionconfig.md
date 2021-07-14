@@ -11,7 +11,7 @@ sidebar: 'extensions'
 
 • **icon**: `string`
 
----
+___
 
 ### isDisabled
 
@@ -23,15 +23,15 @@ sidebar: 'extensions'
 
 ##### Parameters
 
-| Name  | Type  |
-| :---- | :---- |
+| Name | Type |
+| :------ | :------ |
 | `tab` | `any` |
 
 ##### Returns
 
 `boolean`
 
----
+___
 
 ### name
 
@@ -45,15 +45,15 @@ sidebar: 'extensions'
 
 #### Parameters
 
-| Name  | Type  |
-| :---- | :---- |
+| Name | Type |
+| :------ | :------ |
 | `tab` | `any` |
 
 #### Returns
 
 `boolean` \| `Promise`<`boolean`\>
 
----
+___
 
 ### trigger
 
@@ -61,8 +61,8 @@ sidebar: 'extensions'
 
 #### Parameters
 
-| Name  | Type  |
-| :---- | :---- |
+| Name | Type |
+| :------ | :------ |
 | `tab` | `any` |
 
 #### Returns
