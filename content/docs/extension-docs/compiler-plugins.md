@@ -9,9 +9,9 @@ bridge.'s compiler architecture allows anyone to create powerful plugins that ca
 
 ## Compiler Config
 
-The compiler config tells the compiler which plugins to use in compilation. Currently only one compiler config is supported. It should go in the `<PROJECT NAME>/.bridge/compiler` directory and be called `default.json`.
+The compiler config tells the compiler which plugins to use in compilation. It should go in the `<PROJECT NAME>/.bridge/compiler` directory and be given any name. The `dev` compiler mode uses the `default.json` compiler config.
 
-By default the config should look like this:
+By default the `default.json` config should look like this:
 
 ```json
 {
