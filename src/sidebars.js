@@ -28,6 +28,7 @@ module.exports = [
 					'/extension-docs/',
 					'/extension-docs/contributing/',
 					'/extension-docs/other/default-file-types/',
+					'/extension-docs/compiler-plugins/',
 					'/extension-docs/custom-commands/',
 					'/extension-docs/custom-components/',
 					'/extension-docs/json/file-definitions/',
