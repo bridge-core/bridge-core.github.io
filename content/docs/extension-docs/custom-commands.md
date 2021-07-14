@@ -1,6 +1,6 @@
 ---
 description: ''
-sidebar: 'plugins'
+sidebar: 'extensions'
 ---
 
 # Custom Commands
@@ -39,7 +39,7 @@ Bridge.register(
 		static command_name = 'setupTags'
 
 		onApply([selector, ...tags]) {
-			return tags.map(t => `tag ${selector} add ${t}`)
+			return tags.map((t) => `tag ${selector} add ${t}`)
 		}
 
 		onPropose() {

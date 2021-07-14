@@ -1,97 +1,115 @@
 ---
 description: ''
-sidebar: 'plugins'
+sidebar: 'extensions'
 ---
 
 # Custom Components
 
 ## General
 
-bridge. allows you to define new entity components. In order to get started, create a `components/` folder inside of your project or a `<PLUGIN NAME>/components` inside of your plugin folder and place a first JavaScript (.js) file inside of it. The name of the file does not matter.
+bridge. allows you to define new entity, block and item components. In order to get started, navigate to the "Custom Components" tab in the preset window and fill in the options, so whether you want to write the component in TypeScript or JavaScript and the file name, as well as whether you want to create an item, entity or block component. If you are creating the component outside of bridge., or in an extension, you need to create a js or ts file in the `BP/components/<COMPONENT TYPE>` or `<EXTENSION NAME>/components/<COMPONENT TYPE>` folder.
 
 ## Execution Scope
 
-JavaScript files placed inside of this folder have access to the `Bridge` object. Available methods:
+### `defineComponent`
 
--   `Bridge.register` registers a custom component. This method expects a JavaScript class with the static properties `component_name` & `type` and the two instance methods `onApply(component_data, location)` & `onPropose()`
--   `Bridge.report(string)` opens an information window that contains the given string
+Custom components have access to the `defineComponent` function, which looks like this:
 
-### `onApply(component_data, location)`
+`defineComponent({ name: (name: string) => void, schema: (schema: any) => void, template: (templateFunction: (componentArgs: T, opts: TemplateContext) => void) => void }): void`
 
-`onApply(component_data, location)` receives the `component_data` entered by the user and where the component was placed (`location`). Can be "components" or the name of a component group. This method must return an entity object to merge with the actual file. Must return a Minecraft entity.
+Arguments:
 
-### `onPropose()`
+-   `name(name: string): void`
+    The name of the custom component that will show up in auto-completions.
 
-`onPropose()` must return an auto-completion object. It should only have one property (named your custom component name) which should replicate the structure of the custom component. [Read more about bridge.'s auto-completion JSON format.](/plugin-docs/auto-completions/)
+-   `schema(schema: any): void`
+    The schema of the component. This is used to create auto-completions for custom component arguments and should be written in [standard JSON schema](https://json-schema.org). You can also access bridge.'s built-in auto-completions with the `$ref` property. They can be found [here](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `$ref: '/data/packages/minecraftBedrock/schema/general/slotType.json'` would access slot type auto-completions.
+
+-   `template(templateFunction: (componentArgs: any, opts: TemplateContext) => void): void`
+    The the `templateFunction` recieves `componentArgs` which is the component arguments defined by the user, and the `opts` provides functions to allow you to merge data with the file that the component is created on and allows you to create animations and animation controllers.
+
+### `TemplateContext`
+
+#### Common
+
+-   `mode: 'build' | 'dev'`
+    Gives you access to read the current compiler mode.
+
+-   `create(template: any, location: string): void`
+    Allows you to create data inside of the entity/block/item that the component is in. `template` should be a JavaScript object of the data to merge with the file at the given `location`. `location` should be a path seperated by `'/'` to where you want the `template` to be created. For example: `minecraft:entity/description`
+
+-   `location: string`
+    Gives you access to the location of the component in the entity/block/item file.
+
+-   `identifier: string`
+    Gives you access to the identifier of the entity/block/item that the component is in.
+
+#### Entity
+
+```ts
+interface TemplateContext {
+	mode: 'build' | 'dev'
+	create: (template: any, location: string) => void
+	animation: (animation: any, condition?: string | false) => void
+	animationController: (
+		animationController: any,
+		condition?: string | false
+	) => void
+	location: string
+	identifier: string
+}
+```
+
+-   `animation(animation: any, condition?: string | false): void`
+    Allows you to create a BP animation that is automatically linked to the entity. `animation` should be a JavaScript object containing the animation data that should be added to the animation name. `condition` is an optional parameter that allows you to set a molang condition for the animation to be run.
+
+-   `animationController(animationController: any, condition?: string | false): void`
+    Allows you to create a BP animation controller that is automatically linked to the entity. `animationController` should be a JavaScript object containing the animation controller data that should be added to the animation controller name. `condition` is an optional parameter that allows you to set a molang condition for the animation controller to be run.
+
+#### Item
+
+```ts
+interface TemplateContext {
+	mode: 'build' | 'dev'
+	create: (template: any, location: string) => void
+	location: string
+	identifier: string
+	player: {
+		create: (template: any, location: string) => void
+		animation: (animation: any, condition?: string | false) => void
+		animationController: (
+			animationController: any,
+			condition?: string | false
+		) => void
+	}
+}
+```
+
+The `player` object gives access to these functions:
+
+-   `animation(animation: any, condition?: string | false): void`
+    Allows you to create a BP animation that is automatically linked to the player. `animation` should be a JavaScript object containing the animation data that should be added to the animation name. `condition` is an optional parameter that allows you to set a molang condition for the animation to be run.
+
+-   `animationController(animationController: any, condition?: string | false): void`
+    Allows you to create a BP animation controller that is automatically linked to the player. `animationController` should be a JavaScript object containing the animation controller data that should be added to the animation controller name. `condition` is an optional parameter that allows you to set a molang condition for the animation controller to be run.
+
+-   `create(template: any, location: string): void`
+    Allows you to create data inside of the player. `template` should be a JavaScript object of the data to merge into the player behavior file at the given `location`. `location` should be a path seperated by `'/'` to where you want the `template` to be created. For example: `minecraft:entity/description`
+
+#### Block
+
+```ts
+interface TemplateContext {
+	mode: 'build' | 'dev'
+	create: (template: any, location: string) => void
+	location: string
+	identifier: string
+}
+```
 
 ## Example
 
-### Entity Component
+Examples can be found here:
 
-```javascript
-Bridge.register(
-	class DemoComponent {
-		static component_name = 'bridge:demo_npc'
-		static type = 'entity'
-
-		onApply({ trade_table, display_name }, location) {
-			return {
-				'minecraft:entity': {
-					component_groups: {
-						[DemoComponent.component_name]: {
-							'minecraft:trade_table': {
-								display_name: display_name,
-								table: trade_table,
-							},
-							'minecraft:behavior.trade_with_player': {
-								priority: 1,
-							},
-							'minecraft:behavior.look_at_trading_player': {
-								priority: 2,
-							},
-						},
-					},
-				},
-			}
-		}
-
-		onPropose() {
-			return {
-				[DemoComponent.component_name]: {
-					display_name: '$general.translatable_text',
-					trade_table: '$dynamic.trade_table_files',
-				},
-			}
-		}
-	}
-)
-```
-
-### Block Component
-
-```javascript
-Bridge.register(
-	class BlockComponent {
-		static component_name = 'bridge:rotation_wrapper'
-		static type = 'block'
-
-		onApply({ rotation }) {
-			return {
-				'minecraft:block': {
-					components: {
-						'minecraft:rotation': [rotation, rotation, rotation],
-					},
-				},
-			}
-		}
-
-		onPropose() {
-			return {
-				[BlockComponent.component_name]: {
-					rotation: '$general.degree',
-				},
-			}
-		}
-	}
-)
-```
+-   [ItemEquippedSensor](https://github.com/bridge-core/plugins/tree/master/plugins/ItemEquippedSensorV2)
+-   [SimpleBlockRotation](https://github.com/bridge-core/plugins/tree/master/plugins/BlockRotationV2)
