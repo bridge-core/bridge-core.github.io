@@ -96,6 +96,8 @@ A compiler plugin should be added by putting it in the `<EXTENSION NAME>/compile
 
 In the extension mnaifest you need a `"compiler"` property which should contain the path to the plugin and the id to give it, which can be then references in a compiler config.
 
+Structure:
+
 ```json
 {
 	"compiler": {

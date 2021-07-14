@@ -107,6 +107,30 @@ interface TemplateContext {
 }
 ```
 
+## Extension Manifest
+
+When you are creating a custom component in an extension you need to specify where it should be installed in the extension manifest.
+
+Structure:
+
+```json
+{
+	"install": {
+		"<srcFolder>": "<destinationFolder>"
+	}
+}
+```
+
+Example:
+
+```json
+{
+	"install": {
+		"components/item": "BP/components/item/bridge/"
+	}
+}
+```
+
 ## Example
 
 Examples can be found here:

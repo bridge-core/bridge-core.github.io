@@ -7,48 +7,75 @@ sidebar: 'extensions'
 
 ## General
 
-bridge. allows you to define new commands that can be used in mcfunction files. In order to get started, create a `commands/` folder inside of your project or a `<PLUGIN NAME>/commands` inside of your plugin folder and place a first JavaScript (.js) file inside of it. The name of the file does not matter.
+bridge. allows you to define new commands that can be used in `.mcfunction` files and json files where commands are supported. In order to get started, navigate to the "Custom Commands" tab in the preset window and fill in the options, so whether you want to write the command in TypeScript or JavaScript and the file name. If you are creating the command outside of bridge., or in an extension, you need to create a js or ts file in the `BP/commands` or `<EXTENSION NAME>/commands` folder.
 
 ## Execution Scope
 
-JavaScript files placed inside of this folder have access to the `Bridge` object. Available methods:
+### `defineCommand`
 
--   `Bridge.register(command: ? extends BridgeCommand)`: Registers a custom command. This method expects a JavaScript class with a static property `command_name` and the three instance methods `onApply(commandArgs)`, `onPropose()` and `onCacheHook(commandArgs)`.
--   `Bridge.registerSelector(selectorId: string, parser: (selector: string, selectorArgs: string[]) =>[string, string[])`: Registers a custom selector parser
--   `Bridge.insertAutoCompletions(path: string, definition: JSONObject)`: Modifies the exisiting auto-completion library
--   `Bridge.createFunction(path: string, fileContent: string)`: Creates a new function file
--   `Bridge.readFunction(path: string): Promise<string>`: Reads a function file
+Custom commands have access to the `defineCommand` function, which looks like this:
 
-### `onApply(commandArgs: string[]): string | string[]`
+`defineCommand({ name: (name: string) => void, schema: (schema: any) => void, template: (templateFunction: (commandArgs: string[]) => void) => void }): void`
 
-`onApply(commandArgs)` receives all arguments a user calls the command with (`commandArgs`). The method must return a string or a string array.
+Arguments:
 
-### `onPropose(): JSONObject`
+-   `name(name: string): void`
+    The name of the custom command that will show up in auto-completions.
 
-`onPropose()` must return an auto-completion object. It should only have one property (named your custom command name) which should replicate the structure of the command. [Read more about bridge.'s auto-completion JSON format.](/plugin-docs/auto-completions/)
+-   `schema(schema: any): void`
+    The schema of the command. This is used to create auto-completions for custom command arguments and should be written in the shape of [bridge.'s command schema](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/language/mcfunction/schema/main.json). You can also access bridge.'s built-in auto-completions with the `additionalData > schemaReference` property. They can be found [here](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `additionalData: { schemaReference: '/data/packages/minecraftBedrock/schema/general/slotType.json' }` would access slot type auto-completions.
 
-### `onCacheHook(commandArgs: string[]): [[string, [string]]]`
+    Example:
 
-`onCacheHook(commandArgs)` allows you to add data to bridge.'s lightning cache. Implementation of this method is optional.
+    ```js
+    schema({
+    	arguments: [
+    		{ type: 'string', additionalData: { values: ['1', '2', '3'] } },
+    		{ type: 'string', additionalData: { values: ['4', '5', '6'] } },
+    	],
+    })
+    ```
+
+-   `template(templateFunction: (componentArgs: string[]) => void): void`
+    The `templateFunction` recieves a string of values representing the arguments that the user has input after the command. It should return an array of commands that represent the commands to be put in place of the custom command in compilation.
+
+## Extension Manifest
+
+When you are creating a custom command in an extension you need to specify where it should be installed in the extension manifest.
+
+Structure:
+
+```json
+{
+	"install": {
+		"<srcFolder>": "<destinationFolder>"
+	}
+}
+```
+
+Example:
+
+```json
+{
+	"install": {
+		"commands": "BP/commands/bridge/"
+	}
+}
+```
 
 ## Example
 
-```javascript
-Bridge.register(
-	class Command {
-		static command_name = 'setupTags'
+```js
+export default defineCommand(({ name, template, schema }) => {
+	name('helloWorld')
+	schema({
+		arguments: [
+			{ type: 'string', additionalData: { values: ['1', '2', '3'] } },
+		],
+	})
 
-		onApply([selector, ...tags]) {
-			return tags.map((t) => `tag ${selector} add ${t}`)
-		}
-
-		onPropose() {
-			return {
-				[Command.command_name]: {
-					'$function.general.target_selector': {},
-				},
-			}
-		}
-	}
-)
+	template((names) => {
+		return ['say Hello World!', ...names.map((name) => `say Hello ${name}`)]
+	})
+})
 ```
