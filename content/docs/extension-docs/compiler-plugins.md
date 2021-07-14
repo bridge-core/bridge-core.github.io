@@ -143,7 +143,7 @@ This function recieves context parameters to be used in the plugin. These are:
     A function allowing you to force compilation on a list of file paths.
 
 -   `getAliases: (filePath: string) => string[]`
-    Returns all aliases registered in the `registerAliases()` hook.
+    Returns all aliases registered in the `registerAliases()` hook for a given file path.
 
 -   `targetVersion: string`
     Gives access to reading the project target version.
@@ -154,8 +154,10 @@ This function recieves context parameters to be used in the plugin. These are:
         Allows you to read the current compiler mode.
 
     -   `isFileRequest: boolean`
-        Whether this compilation is a single file update.
-
+        Some of bridge.'s core components manually request a file to be compiled. 
+	These file requests don't necessarily need to represent an underlying file on your disk. 
+	(Example: The particle preview requests a compilation of an unsaved particle file)
+	
     -   `restartDevServer: boolean`
         Whether this compilation is the dev server being restarted.
 
