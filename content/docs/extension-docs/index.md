@@ -50,4 +50,4 @@ The extension manifest stores important data on your add-on like its version num
 
 ## Scripts
 
-Scripts are loaded from the `<EXTENSION NAME>/scripts` folder. Scripts are written in JavaScript and allow extensions to deeply hook into bridge.'s functionality. You can create new windows, add new tab types and do many more things.
+Scripts are loaded from the `<EXTENSION NAME>/scripts` folder. Scripts are written in JavaScript and allow extensions to deeply hook into bridge.'s functionality. You can create new windows, add new tab types and lots more.
