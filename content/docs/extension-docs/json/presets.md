@@ -207,5 +207,5 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 ### More Examples:
 
 -   [`Bridge. Vannila Presets`](https://github.com/bridge-core/editor/tree/main/data/preset)
--   [`More Vannila Entity Presets by Joelant05`](https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
+-   [`More Vannila Entity Presets`](https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
 -   [`Preset schema`](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema/bridge/preset/manifest.json)

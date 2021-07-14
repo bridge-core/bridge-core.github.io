@@ -16,7 +16,7 @@ bridge. loads extensions per project. This means that every workspace can have a
 
 Navigate to the directory where bridge. stores your projects. Choose the project to which you want to add the extension to and navigate to the `.bridge/extensions` folder. You can also add extensions globally in the `extensions` folder of bridge.'s root directory.
 
-Inside this directory, you can create a new folder per extension you want to add. Create a new JSON file in the root of your plugin called _manifest.json_ (`.bridge/extensions/<EXTENSION NAME>/manifest.json`).
+Inside this directory, you can create a new folder per extension you want to add. Create a new JSON file in the root of your extension called _manifest.json_ (`.bridge/extensions/<EXTENSION NAME>/manifest.json`).
 
 ## Extension Manifest
 
@@ -30,7 +30,7 @@ The extension manifest stores important data on your add-on like its version num
 	"icon": "mdi-code-braces",
 	"id": "aad1d7ec-a32e-4732-ad2b-abb770e38202",
 	"version": "1.0.0",
-	"name": "My Plugin",
+	"name": "My Extension",
 	"link": "www.my_homepage.com/me",
 	"target": "v2",
 	"description": "My first bridge. extension",
@@ -38,7 +38,7 @@ The extension manifest stores important data on your add-on like its version num
 	"tags": [
 		"Utility"
 	],
-	// Used for compiler plugins
+	// Used for compiler extensions
 	"compiler": {...},
 	// Used for custom components/commands
 	"install": {...}
@@ -50,4 +50,4 @@ The extension manifest stores important data on your add-on like its version num
 
 ## Scripts
 
-Scripts are loaded from the `<PLUGIN NAME>/scripts` folder. Scripts are written in JavaScript and allow plugins to deeply hook into bridge.'s functionality. You can add new dynamic auto-completions, create new windows, add new tab types and do many more things.
+Scripts are loaded from the `<EXTENSION NAME>/scripts` folder. Scripts are written in JavaScript and allow extensions to deeply hook into bridge.'s functionality. You can create new windows, add new tab types and do many more things.
