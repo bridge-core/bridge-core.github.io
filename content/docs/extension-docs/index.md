@@ -38,7 +38,7 @@ The extension manifest stores important data on your add-on like its version num
 	"tags": [
 		"Utility"
 	],
-	// Used for compiler extensions
+	// Used for compiler plugins
 	"compiler": {...},
 	// Used for custom components/commands
 	"install": {...}
