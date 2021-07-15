@@ -138,7 +138,7 @@
 					class="flex flex-col items-center w-full px-4 mb-8 text-center md:w-1/3"
 				>
 					<CodeIcon size="3x" class="mb-6 text-ui-primary" />
-					<g-link to="/plugin-docs/">
+					<g-link to="/extension-docs/">
 						<h3
 							class="font-bold tracking-wide uppercase text-ui-primary"
 						>
