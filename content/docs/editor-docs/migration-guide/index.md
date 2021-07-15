@@ -8,7 +8,11 @@ author: 'joelant05'
 
 ## What's different about bridge. v1 projects and bridge. v2 projects?
 
-bridge. v1 stored its projects in the `development_behavior_packs` and `development_resource_packs` folders within the `com.mojang` directory. However, bridge. v2 approaches this differently by storing your projects in a nicer to work with format and elsewhere on the system, in `Documents` for example, and you are given the option to link your `com.mojang` folder to bridge. v2. Upon linking this, bridge. v2's compiler will write its `dev` mode output to the `development_behavior_packs`, `development_resource_packs`, `minecraftWorlds` and `development_skin_packs` folders, where these are appropriate for your pack. This means that the source of your projects will always be outside of the `com.mojang` directory which has many benefits, such as not losing all of your projects when uninstalling Minecraft and much easier git integration.
+bridge. v1 stored its projects in the `development_behavior_packs` and `development_resource_packs` folders within the `com.mojang` directory. However, bridge. v2 approaches this differently by storing your projects in a nicer to work with format and elsewhere on the system, in `Documents` for example, and you are given the option to link your `com.mojang` folder to bridge. v2.
+
+Upon linking this, bridge. v2's compiler will write its `dev` mode output to the `development_behavior_packs`, `development_resource_packs`, `minecraftWorlds` and `development_skin_packs` folders, where these are appropriate for your pack. This means that the source of your projects will always be outside of the `com.mojang` directory which has many benefits, such as not losing all of your projects when uninstalling Minecraft and much easier git integration.
+
+This also means that you should **not** edit your packs in the `com.mojang` folder because they will just be overwritten by bridge.'s compiler output.
 
 ## What will happen to my projects once I have transferred them?
 
