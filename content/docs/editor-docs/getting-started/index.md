@@ -1,81 +1,92 @@
 ---
-description: 'Are you looking for help to get started with bridge.? This guide aims to introduce you to the editor and make you familiar with how to use it.'
+description: 'Are you looking for help to get started with bridge.? This guide aims to introduce you to the editor and make you more familiar with how to use it.'
 sidebar: 'editor'
 author: 'joelant05'
 ---
 
 # Getting Started
 
+## Setting up bridge.
+
+In order to start using bridge., you must first open it. bridge. v2 is a PWA meaning it can be used in a supported browser and/or installed to your system. To access bridge. v2 head to https://editor.bridge-core.app and to install it click the **Install App** prompt in the sidebar, which you will be able to click after creating your first project, or by clicking the install button on the right of the URL bar.
+
+The first time you open bridge., you will be met with a setup screen, where you must follow 3 simple steps.
+
+1. Select the folder where bridge. should store its projects. This should not be your `com.mojang` folder. Make sure to give permissions in the prompt that will pop up.
+
+![Setup: Step 1](./getting-started-1.png)
+
+2. Link your `com.mojang` folder to bridge., by dragging it from the Minecraft directory (`C:\Users\<USER>\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang`). This step is optional and can be skipped, however doing so will mean your projects will not automatically be compiled to your Minecraft development packs folders. Make sure to give permissions in the prompt that will pop up.
+
+![Setup: Step 2](./getting-started-2.png)
+
+3. Choose your editor type. You can choose to use the [Tree Editor](#Tree-Editor) or the [Code Editor](#Code-Editor).
+
+![Setup: Step 3](./getting-started-3.png)
+
 ## Creating a project
 
 To get started making addons with bridge. you need to create a project.
 
 With bridge., creating a new project is easy.
-You need to click the create project button to open the project creation window.
+If this is your first project and you have just set up bridge., the project creation window will automatically appear. Otherwise, to open the project creation window, click the **New Project** button in the Quick Actions menu on the welcome screen, or click the first button on the sidebar to open the **Projects** window and click **New Project** in the top right of the window.
 
-![No projects - Create project](./getting-started-1.png)
+Here you can customize your pack to your liking. You can modify the:
 
-Here you can give your project a name, description and choose whether you want to register client data in the pack manifest - _this only needs to be toggled on if you're using Minecraft's scripting api in your addon._
+-   Pack types your project should contain.
+-   Name and description of your project.
+-   Author of your projects.
+-   Pack icon of your project.
+-   Target Minecraft version of your project.
+-   Project namespace. **The prefix of identifiers used in your pack, e.g `minecraft` in `minecraft:apple`**
 
-![Create project window](./getting-started-2.png)
+There are also toggles to enable/disable things like registering the RP as a BP dependency.
 
-Once you've done that, you can click **Create!** and bridge. will set up the project files including the manifest.
+![Create project window](./getting-started-4.png)
 
-You should also set the namespace for your project for better auto-completions and syntax highlighting. The option to change this is found by clicking the 'More' icon _(the three dots)_ in the top left and clicking **Project Namespace**. A window will then appear allowing you to change the project namespace.
-
-## Creating a resource pack
-
-Creating a resource pack in bridge. is just as easy.
-On the sidebar, you will see 6 buttons - the first one shows your behavior pack and the second shows your resource pack.
-
-To add a resource pack to your project, you need to select the resource pack on the sidebar and you will see two buttons, **Create** and **Link**
-
-![Create resource pack](./getting-started-3.png)
-
-**Link** will allow you to link an existing resource pack in the `development_resource_packs` folder to your project. The resource pack will then be made a dependency of your selected behavior pack.
-
-**Create** will open a resource pack creation window where you can input a name and description for your resource pack.
-
-![Create resource pack window](./getting-started-4.png)
-
-Once you have done that click create and your resource pack will be created and linked to your behvaior pack.
+Once you've done that, you can click **Create!** and bridge. will set up all of the neccessary project files.
 
 ## Creating files
 
 bridge. supports creating **all** files that Minecraft supports.
-You can create a file in your Behavior Pack and Resource pack by clicking the new file button, or double clicking the welcome screen.
+You can create a file in your Behavior Pack, Resource pack, Skin pack or World template by clicking the new file button, or pressing `ctrl + n`.
 
 ![Create file button](./getting-started-5.png)
 
 Doing this will open the new file window. Here you will see a sidebar in the window which lets you select from all of the possible files you can create.
 
-_Remember you can scroll down the sidebar to see more file types you can create!_
+_Remember you can scroll down the sidebar or search to see more file types you can create!_
+bridge.'s preset window contains multiple categories:
+
+-   Block - Templates for different types of blocks.
+-   Entity - Templates for different types of entites.
+-   Item - Templates for different types of items.
+-   Simple Files - Allows you to create individual files.
+-   Skins - Allows you to add skins to the skin pack.
 
 ![Create File Window](./getting-started-6.png)
 
-Once you have selected a file, you will see that you need to input a file name.
-**Make sure you keep all file names and identifiers in `snake_case`, with no capital letters and underscores replacing spaces!**
+Once you have selected a file, you will see that you need to input an identifier/file name and possibly other inputs depending on the type of file you are trying to create.
 
-For most file types, you will also see a dropdown to select a template to work from. It is recommended that you select a template because it will make creating your file easier.
-Once you have done that, click **Create!** and your file will be created, placed in the correct folder and opened.
+Once you have done that, click **Create!** and the preset will be created and all created files will be opened.
 
 ## Editing files
 
 ### JSON
 
-When you open a JSON file with bridge., you will see the file displayed as an expandable tree, where you can drag nodes to reorder them and left clicking a node will select it. While a node is selected, you can use the 3 input boxes at the bottom.
+When you open a JSON file with bridge., it will open in either a code view editor or a tree view editor.
 
-![JSON Editor](./getting-started-7.png)
+#### Code Editor
 
-The input on the left will let you add a JSON object to the selected node.
-The input in the middle will let you add a value to the selected node.
-The input on the right will let you edit the currently selected node.
+The code view editor is a more traditional way of editing, giving you access to typing whatever you want in the file. It is a similar editing experience to VSCode but with all of the other amazing tools and features that bridge. has to offer.
 
-When you right click on a node it will open the hover card, where you can cut, copy, paste, delete and open the documentaion for the curently selected node.
+![Code Editor](./getting-started-7.png)
 
-![Hover Card](./getting-started-8.png)
+#### Tree Editor
 
-_There is currently a work in progress, updated JSON renderer which will feature a new, fresh way to edit JSON files!_
+Similar to the editor featured in bridge. v1, the tree editor is recommended for users that have little knowledge of JSON because you can't make syntax errors.
+
+![Tree Editor](./getting-started-8.png)
 
 ### Other file types
 
@@ -89,49 +100,48 @@ bridge. also supports opening and editing other file types, including:
 
 ![Javascript](./getting-started-10.png)
 
-### .lang
-
-LANG files are what give your entities, items, etc. proper names.
-
-![Language](./getting-started-17.png)
-
 ## Unique editing features
 
-bridge. includes tools that will make your developing experience quicker and easier!
+bridge. includes many tools and features that will make your developing experience quicker and easier!
 
-### Presets
+### File previews
 
-Presets are a feature that lets you create a whole entity, block, item and much more, by entering an identifier and clicking **Create!** bridge. will then add all the files you need for whatever you select and it will use the identifier you entered inside the created files.
+File previews are a feature which allow you to view different features inside of bridge., such as previewing entities and seeing their hitbox and rider positions or even particles with hot-reloading so that changes made the particle file are instantly reflected in the preview.
 
-![Tools > Preset](./getting-started-11.png)
+![Entity Viewer](./getting-started-11.png)
 
-![Preset Window](./getting-started-12.png)
+![Particle Viewer](./getting-started-12.png)
 
-### Snippets
+### Go to definition
 
-Snippets can be used by pressing `ctrl + q` while you have a JSON file open. Snippets allow you to quickly insert JSON into a file. bridge. has snippets for entity behavior files, but more can be added with plugin or you can create your own by going to the toolbar and clicking **File > Preferences > Settings** Then you can select the Snippets tab in the window's sidebar and click the plus icon under Custom Snippets.
+bridge. includes "Go To Definition" data to allow you quickly jump between files.
 
-![Settings > Snippets](./getting-started-13.png)
+For example:
 
-![Snippet Window](./getting-started-14.png)
+![Go To Definition](./getting-started-13.png)
 
-### Custom syntax
+Here, the client entity file with the matching identifier has been found.
 
-bridge. has custom syntax in JSON files that allow you to make complex features quickly.
-An example of custom syntax is the `bridge:item_equipped_sensor` component which can be found in item behavior files. This component allows you to easily execute commands when you hold the item, trigger events when you equip/unequip the item and have components active on the player while holding/not holding the item.
+### Custom Syntax
 
-![bridge:item_equipped_sensor](./getting-started-15.png)
+bridge. has many different custom syntax capabilities. It's specialized compiler makes it easier to add custom syntax into projects. You can even create your own [compiler plugins](/extension-docs/compiler-plugins)!
+
+Built-in custom syntax includes:
+
+-   [Custom components](/extension-docs/custom-components/)
+-   [Custom commands](/extension-docs/custom-commands/)
+-   [Custom molang](/extension-docs/custom-molang)
+
+With more available on the extension store!
 
 ## Customizing bridge.
 
-bridge. features a plugin api which allows you to customize UI add new snippets, presets, themes and much more!
+bridge. features an extension api which allows you to customize UI add new tab types, presets, themes and much more!
 
-You can either [create your own plugins](/plugin-docs/) or download plugins made by others from the extension store.
-This can be found by clicking the extensions tab on the sidebar and the pressing **View Extensions**. From here you can download from a collection of plugins to modify your experience with bridge.
+You can either [create your own extensions](/extension-docs/) or download extensions made by others from the extension store.
+This can be found by clicking the **Extensions** button on the sidebar. From here you can download from a collection of extensions to modify your experience with bridge.
 
-![Open extension store](./getting-started-16.png)
-
-bridge. also has a powerful feature for experienced users that allows you to write Javascript to create your own [Custom Components](/plugin-docs/custom-components/), which can be used in entity behavior files to quickly re-use behaviors and [Custom Commands](/plugin-docs/custom-commands/), which can be used inside .mcfunction files to make writing long and complex functions easier.
+![Extension Store](./getting-started-14.png)
 
 ## Need Help?
 

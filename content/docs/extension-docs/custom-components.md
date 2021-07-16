@@ -7,7 +7,7 @@ sidebar: 'extensions'
 
 ## General
 
-bridge. allows you to define new entity, block and item components. In order to get started, navigate to the "Custom Components" tab in the preset window and fill in the options, so whether you want to write the component in TypeScript or JavaScript and the file name, as well as whether you want to create an item, entity or block component. If you are creating the component outside of bridge., or in an extension, you need to create a js or ts file in the `BP/components/<COMPONENT TYPE>` or `<EXTENSION NAME>/components/<COMPONENT TYPE>` folder.
+bridge. allows you to define new entity, block and item components to make writing long and complex and repetitive behaviors quicker. In order to get started, navigate to the "Custom Components" tab in the preset window and fill in the options, so whether you want to write the component in TypeScript or JavaScript and the file name, as well as whether you want to create an item, entity or block component. If you are creating the component outside of bridge., or in an extension, you need to create a js or ts file in the `BP/components/<COMPONENT TYPE>` or `<EXTENSION NAME>/components/<COMPONENT TYPE>` folder.
 
 ## Execution Scope
 

@@ -7,7 +7,7 @@ sidebar: 'extensions'
 
 ## General
 
-bridge. allows you to define new commands that can be used in `.mcfunction` files and json files where commands are supported. In order to get started, navigate to the "Custom Commands" tab in the preset window and fill in the options, so whether you want to write the command in TypeScript or JavaScript and the file name. If you are creating the command outside of bridge., or in an extension, you need to create a js or ts file in the `BP/commands` or `<EXTENSION NAME>/commands` folder.
+bridge. allows you to define new commands, to make writing long and complex functions easier. They can be used in `.mcfunction` files and json files where commands are supported. In order to get started, navigate to the "Custom Commands" tab in the preset window and fill in the options, so whether you want to write the command in TypeScript or JavaScript and the file name. If you are creating the command outside of bridge., or in an extension, you need to create a js or ts file in the `BP/commands` or `<EXTENSION NAME>/commands` folder.
 
 ## Execution Scope
 
