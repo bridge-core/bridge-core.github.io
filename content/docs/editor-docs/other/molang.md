@@ -2,7 +2,7 @@
 description: ''
 sidebar: 'editor'
 author: 'solveddev'
-next: '/plugin-docs/'
+next: '/extension-docs/'
 prev: '/editor-docs/no-cache/'
 ---
 
