@@ -3,7 +3,6 @@ description: ''
 sidebar: 'editor'
 author: 'solveddev'
 next: '/extension-docs/'
-prev: '/editor-docs/no-cache/'
 ---
 
 # MoLang

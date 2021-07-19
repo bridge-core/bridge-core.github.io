@@ -16,9 +16,7 @@
 				<p class="text-xl font-medium text-center">
 					- A powerful IDE for Minecraft Add-Ons -
 					<br />
-					<g-link
-						to="https://github.com/bridge-core/bridge./releases/latest"
-					>
+					<g-link to="https://editor.bridge-core.app/">
 						<strong class="text-ui-primary">
 							Try out bridge. now!
 						</strong>
@@ -27,11 +25,11 @@
 
 				<div class="flex justify-center mt-8 flex-wrap -mx-4">
 					<g-link
-						to="/download/"
+						to="https://editor.bridge-core.app/"
 						class="flex items-center px-6 py-4 text-2xl font-bold leading-none text-white border rounded-lg shadow-lg bg-ui-primary border-ui-primary transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1 mb-4 mx-2"
 					>
-						Download
-						<DownloadCloudIcon class="ml-4" size="1x" />
+						<ExternalLinkIcon class="mr-4" size="1x" />
+						Open Editor
 					</g-link>
 					<g-link
 						to="/editor-docs/"
@@ -221,7 +219,7 @@ import {
 	CodeIcon,
 	SlidersIcon,
 	SearchIcon,
-	DownloadCloudIcon,
+	ExternalLinkIcon,
 } from 'vue-feather-icons'
 import Team from '@/components/collection/Team.vue'
 import Card from '@/components/content/Card.vue'
@@ -232,7 +230,7 @@ export default {
 		Logo,
 		Team,
 		ChevronRightIcon,
-		DownloadCloudIcon,
+		ExternalLinkIcon,
 		ZapIcon,
 		CodeIcon,
 		SlidersIcon,

@@ -11,12 +11,14 @@ module.exports = [
 					'/editor-docs/getting-started/',
 					'/editor-docs/migration-guide/',
 					'/editor-docs/faq/',
-					'/editor-docs/no-cache/',
 				],
 			},
 			{
 				title: 'Other',
-				items: ['/editor-docs/other/molang/'],
+				items: [
+					'/editor-docs/other/model-viewer/',
+					'/editor-docs/other/molang/',
+				],
 			},
 		],
 	},

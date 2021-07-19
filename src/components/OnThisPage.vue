@@ -6,7 +6,7 @@
 			On this page
 		</h3>
 		<div>
-			<ul>
+			<ul class="list-none">
 				<li
 					v-for="(heading, index) in headings"
 					:key="`${page.path}${heading.anchor}`"
