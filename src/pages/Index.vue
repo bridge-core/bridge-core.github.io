@@ -42,12 +42,23 @@
 
 				<p class="mt-8 text-center">
 					Open Source. Free to use.
-					<span
+					<g-link
+						to="https://editor.bridge-core.app/"
 						class="border-b border-dashed border-ui-primary text-ui-primary"
 					>
 						Start now
-					</span>
+					</g-link>
 					!
+				</p>
+
+				<p class="text-center">
+					Latest release:
+					<g-link
+						to="/latest-release/"
+						class="border-b border-dashed border-ui-primary text-ui-primary"
+					>
+						{{ latestRelease.name }}
+					</g-link>
 				</p>
 			</div>
 
@@ -207,6 +218,18 @@ query {
 				}
 			}
 		}
+	},
+	allRelease(sortBy: "id", order: DESC) {
+		edges {
+			node {
+				name
+				html_url
+				tag_name
+				draft
+				prerelease
+				content
+			}
+		}
 	}
 }
 </static-query>
@@ -273,6 +296,21 @@ export default {
 				},
 			],
 		}
+	},
+	computed: {
+		latestRelease() {
+			for (let release of this.$static.allRelease.edges) {
+				// Check release isn't a draft or prerelease
+				if (release.node.draft || release.node.prerelease) continue
+
+				// Return the valid release
+				return {
+					name: release.node.name,
+					url: release.node.html_url,
+					content: release.node.content,
+				}
+			}
+		},
 	},
 }
 </script>

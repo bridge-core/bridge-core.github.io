@@ -52,7 +52,7 @@ module.exports = function(api) {
 			const releases = addCollection({
 				typeName: 'Release',
 			})
-			const releaseData = (await bridgeRepo.listReleases()).data
+			const releaseData = (await editorRepo.listReleases()).data
 			releaseData.forEach(release => {
 				if (release.body) release.content = marked(release.body)
 				releases.addNode(release)

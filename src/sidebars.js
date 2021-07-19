@@ -6,6 +6,7 @@ module.exports = [
 				title: 'Editor',
 				items: [
 					'/editor-docs/',
+					'/latest-release/',
 					'/editor-docs/features/',
 					'/editor-docs/team/',
 					'/editor-docs/getting-started/',
