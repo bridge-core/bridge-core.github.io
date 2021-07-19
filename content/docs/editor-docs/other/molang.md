@@ -42,6 +42,10 @@ const molang = new MoLang(
 molang.execute('query.x + query.get(3) == 7')
 ```
 
+## Repository
+
+This library is open source and [can be found here](https://github.com/bridge-core/molang).
+
 ## MoLang Playground
 
 We have built a very basic MoLang playground with this parser. You can use it at [bridge-core.github.io/molang-playground](https://bridge-core.github.io/molang-playground).
