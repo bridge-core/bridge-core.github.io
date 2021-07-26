@@ -29,13 +29,7 @@ bridge. applies the default color theme first and then overwrites it with the th
 | `colorScheme` | `String<light\|dark>`           | Color scheme of your theme                      |
 | `colors`      | `Object<ThemeDefinition>`       | Colors of your theme                            |
 | `highlighter` | `Object<HighlighterDefinition>` | Syntax highlighter colors of your bridge. theme |
-
-### OptionObject
-
-| Name                  | Type      | Default | Description                                                                          |
-| --------------------- | --------- | ------- | ------------------------------------------------------------------------------------ |
-| `no_logo_display`     | `Boolean` | `false` | Whether to display the bridge. logo or simply "bridge."                              |
-| `inherit_highlighter` | `Boolean` | `false` | Whether your theme highlighter should use the default bridge. highlighter as a basis |
+| `monaco`      | `Record<string, string>`        | Color scheme for the monaco editor              |
 
 ### ThemeDefinition
 
@@ -64,14 +58,14 @@ bridge. applies the default color theme first and then overwrites it with the th
 
 | Name                | Type                  | Description                                                        |
 | ------------------- | --------------------- | ------------------------------------------------------------------ |
-| `property`          | `Object<StyleObject>` | Custom style for syntax highlighter; affects `format_version`      |
-| `keyword`           | `Object<StyleObject>` | Custom style for syntax highlighter; affects namespaces            |
-| `definition`        | `Object<StyleObject>` | Custom style for syntax highlighter; affects special objects       |
-| `atom`              | `Object<StyleObject>` | Custom style for syntax highlighter; affects booleans              |
-| `number`            | `Object<StyleObject>` | Custom style for syntax highlighter; affects numbers               |
-| `string`            | `Object<StyleObject>` | Custom style for syntax highlighter; affects all other values      |
+| `property`          | `Object<StyleObject>` | Custom style for syntax highlighter                                |
+| `keyword`           | `Object<StyleObject>` | Custom style for syntax highlighter                                |
+| `definition`        | `Object<StyleObject>` | Custom style for syntax highlighter                                |
+| `atom`              | `Object<StyleObject>` | Custom style for syntax highlighter                                |
+| `number`            | `Object<StyleObject>` | Custom style for syntax highlighter                                |
+| `string`            | `Object<StyleObject>` | Custom style for syntax highlighter                                |
 | `variable`          | `Object<StyleObject>` | Custom style for syntax highlighter                                |
-| `variable_strong`   | `Object<StyleObject>` | Custom style for syntax highlighter                                |
+| `variableStrong`    | `Object<StyleObject>` | Custom style for syntax highlighter                                |
 | `meta`              | `Object<StyleObject>` | Custom style for syntax highlighter                                |
 | `comment`           | `Object<StyleObject>` | Custom style for syntax highlighter                                |
 | `colorCode.<Color>` | `Object<StyleObject>` | Custom style for syntax highlighter; affects Minecraft color codes |
@@ -134,7 +128,7 @@ bridge. applies the default color theme first and then overwrites it with the th
 		"variable": {
 			"color": "#9effff"
 		},
-		"variable_strong": {
+		"variableStrong": {
 			"color": "#9effff"
 		},
 		"meta": {
