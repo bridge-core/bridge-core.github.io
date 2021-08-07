@@ -12,7 +12,7 @@ In order to start using bridge., you must first open it. bridge. v2 is a PWA mea
 
 The first time you open bridge., you will be met with a setup screen, where you must follow 3 simple steps.
 
-1. Select the folder where bridge. should store its projects. This should not be your `com.mojang` folder. Make sure to give permissions in the prompt that will pop up.
+1. Select the folder where bridge. should store its projects. This should not be your `com.mojang` folder or any folders that contain system files. Make sure to give permissions in the prompt that will pop up.
 
 ![Setup: Step 1](./getting-started-1.png)
 
