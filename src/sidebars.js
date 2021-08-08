@@ -66,6 +66,7 @@ module.exports = [
 					'/extension-docs/scripts/modules/bridge-ui/',
 					'/extension-docs/scripts/modules/bridge-utils/',
 					'/extension-docs/scripts/modules/bridge-windows/',
+					'/extension-docs/scripts/modules/bridge-project/',
 					'/extension-docs/scripts/interfaces/builtin/',
 					'/extension-docs/scripts/interfaces/idisposable/',
 					'/extension-docs/scripts/interfaces/igethandleconfig/',

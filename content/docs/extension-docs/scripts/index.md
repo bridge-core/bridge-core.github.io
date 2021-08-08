@@ -18,6 +18,7 @@ sidebar: 'extensions'
 - [&quot;@bridge/monaco&quot;](modules/__bridge_monaco_.md)
 - [&quot;@bridge/notifications&quot;](modules/__bridge_notifications_.md)
 - [&quot;@bridge/path&quot;](modules/__bridge_path_.md)
+- [&quot;@bridge/project&quot;](modules/__bridge_project_.md)
 - [&quot;@bridge/sidebar&quot;](modules/__bridge_sidebar_.md)
 - [&quot;@bridge/tab&quot;](modules/__bridge_tab_.md)
 - [&quot;@bridge/tab-actions&quot;](modules/__bridge_tab_actions_.md)
@@ -31,6 +32,7 @@ sidebar: 'extensions'
 
 - [BuiltIn](interfaces/builtin.md)
 - [IDisposable](interfaces/idisposable.md)
+- [IExporter](interfaces/iexporter.md)
 - [IGetHandleConfig](interfaces/igethandleconfig.md)
 - [IMkdirConfig](interfaces/imkdirconfig.md)
 - [INotificationConfig](interfaces/inotificationconfig.md)
@@ -41,6 +43,12 @@ sidebar: 'extensions'
 - [Signal](interfaces/signal.md)
 
 ## Type aliases
+
+### PackTypeId
+
+Ƭ **PackTypeId**: ``"behaviorPack"`` \| ``"resourcePack"`` \| ``"skinPack"`` \| ``"worldTemplate"``
+
+___
 
 ### TColorName
 
