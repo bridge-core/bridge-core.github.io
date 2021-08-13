@@ -150,10 +150,10 @@ Used by bridge.
 ### MoLangJS
 
 Used by Blockbench & Snowstorm
-| Test | Average Time |
+| Test                       | Average Time |
 | -------------------------- | ------------ |
-| Parse & Execute (uncached) | 11872ms |
-| Parse & Execute (cached) | 185.299ms |
+| Parse & Execute (uncached) | 11872ms      |
+| Parse & Execute (cached)   | 185.299ms    |
 
 ### Early Return
 
@@ -171,7 +171,11 @@ Used by bridge.
 ### MoLangJS
 
 Used by Blockbench & Snowstorm
-| Test | Average Time |
+| Test                       | Average Time |
 | -------------------------- | ------------ |
-| Parse & Execute (uncached) | 13230.682ms |
-| Parse & Execute (cached) | 147,786ms |
+| Parse & Execute (uncached) | 13230.682ms  |
+| Parse & Execute (cached)   | 147,786ms    |
+
+## MoLang Playground
+
+We have built a very basic MoLang playground with this interpreter. You can use it at [bridge-core.github.io/molang-playground](https://bridge-core.github.io/molang-playground).
