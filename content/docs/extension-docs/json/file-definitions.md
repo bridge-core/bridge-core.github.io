@@ -73,4 +73,4 @@ interface IFileCreator {
 
 ## Examples
 
--   [`packages/data/file_definitions.json`](https://github.com/bridge-core/editor/tree/main/data/packages/minecraftBedrock/fileDefinition)
+-   [`Built-in fileDefinitions`](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/fileDefinition)

@@ -206,5 +206,5 @@ bridge. applies the default color theme first and then overwrites it with the th
 
 ### More Examples:
 
--   [`Built-in Themes`](https://github.com/bridge-core/editor/tree/main/data/packages/common/themes)
--   [`Theme Schema`](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema/bridge/theme/main.json)
+-   [`Built-in Themes`](https://github.com/bridge-core/editor-packages/tree/main/packages/common/themes)
+-   [`Theme Schema`](https://github.com/bridge-core/editor-packages/blob/main/packages/common/schema/bridge/theme/main.json)
