@@ -17,13 +17,25 @@ Extensions can also add new snippets by providing them inside a `<EXTENSION NAME
 
 ## Format
 
-| Name          | Type       | Description                                                                                                                                     |
-| ------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`        | `String`   | Name of your snippet                                                                                                                            |
-| `description` | `String`   | A description of your snippet. Used inside of the completion item menu                                                                          |
-| `fileTypes`   | `String[]` | File types your snippet is compatible with, for a full list see our [file type documentation](/extension-docs/other/default-file-types/)        |
-| `locations`   | `String[]` | Locations inside of a JSON file where the snippet can be inserted, e.g. "minecraft:entity/components" or "minecraft:entity/component_groups/\*" |
-| `data`        | `Object`   | Raw JSON data to insert when the user chooses to apply your snippet                                                                             |
+| Name                  | Type                   | Description                                                                                                                                     |
+| --------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                | `String`               | Name of your snippet                                                                                                                            |
+| `description`         | `String`               | A description of your snippet. Used inside of the completion item menu                                                                          |
+| `fileTypes`           | `String[]`             | File types your snippet is compatible with, for a full list see our [file type documentation](/extension-docs/other/default-file-types/)        |
+| `locations`           | `String[]`             | Locations inside of a JSON file where the snippet can be inserted, e.g. "minecraft:entity/components" or "minecraft:entity/component_groups/\*" |
+| `targetFormatVersion` | `ITargetFormatVersion` | Describe the range of format versions that is required for your snippet to work                                                                 |
+| `data`                | `Object`               | Raw JSON data to insert when the user chooses to apply your snippet                                                                             |
+
+### ITargetFormatVersion
+
+```typescript
+interface ITargetFormatVersion {
+	// The minimum format version your snippet requires
+	min: string
+	// The maximum format version your snippet requires
+	max: string
+}
+```
 
 ## Example
 
