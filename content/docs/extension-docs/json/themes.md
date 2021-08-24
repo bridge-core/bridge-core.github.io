@@ -53,6 +53,7 @@ bridge. applies the default color theme first and then overwrites it with the th
 | `tabActive`               | `String` | Color                                                                                |
 | `tabInactive`             | `String` | Color                                                                                |
 | `lineHighlightBackground` | `String` | Color                                                                                |
+| `scrollbarThumb`          | `String` | Color                                                                                |
 | `behaviorPack`            | `String` | Color                                                                                |
 | `resourcePack`            | `String` | Color                                                                                |
 | `skinPack`                | `String` | Color                                                                                |
