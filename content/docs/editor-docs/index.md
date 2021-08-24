@@ -30,7 +30,7 @@ Additionally, "bridge." has a few more specific features which other editors do 
 
 ### Documentation
 
-You can read more on plugins [here](/plugin-docs/).
+You can read more on plugins [here](/extension-docs/).
 
 ### Library
 
