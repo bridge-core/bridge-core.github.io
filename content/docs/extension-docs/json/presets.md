@@ -17,18 +17,18 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 
 ### Main
 
-| Name               | Type     | Description                                  |
-| ------------------ | -------- | -------------------------------------------- |
-| `name`             | `String` | Name to display inside the preset window     |
-| `description`      | `String` | Preset description                           |
-| `icon`             | `String` | Icon to show inside of the preset window     |
-| `category`         | `String` | Category of the preset entity, item, ect     |
-| `packTypes`        | `Array`  | Which packs are needed for the preset        |
-| `additionalModels` | `object` | Advanced Optional Feature for preset scripts |
-| `targetVersion`    | `Array`  | Conditionally change preset availability     |
-| `createFiles`      | `Array`  | JSON files to create                         |
-| `expandFles`       | `Array`  | Files to add data to or expand               |
-| `fields`           | `Array`  | Creates new input boxes                      |
+| Name               | Type                                     | Description                                  |
+| ------------------ | ---------------------------------------- | -------------------------------------------- | ------------------------------------------------------------- |
+| `name`             | `String`                                 | Name to display inside the preset window     |
+| `description`      | `String`                                 | Preset description                           |
+| `icon`             | `String`                                 | Icon to show inside of the preset window     |
+| `category`         | `String`                                 | Category of the preset entity, item, ect     |
+| `packTypes`        | `Array`                                  | Which packs are needed for the preset        |
+| `additionalModels` | `object`                                 | Advanced Optional Feature for preset scripts |
+| `targetVersion`    | `Array`                                  | Conditionally change preset availability     |
+| `createFiles`      | `Array<string, string, ICreateFileOpts>  | string`                                      | JSON files to create or the name of a presetScript to execute |
+| `expandFles`       | `Array<string, string, ICreateFileOpts>` | Files to add data to or expand               |
+| `fields`           | `Array`                                  | Creates new input boxes                      |
 
 ### Create, Expand Files
 
@@ -36,11 +36,26 @@ Both components of the manifest `createFiles` and `expandFiles` will need 3 thin
 
 -   The template file name
 -   The file path where they will be created or expanded
--   The Variables injected to the file
+-   Other options for when creating the file
 
 The template file name is a string that will include the file name and the extension of the file name such as `.json` or `.lang` that will be created or expanded.
 The file path will define where the specified template file will be created. If the file is supposed to be expanded the path need to define what file it's expanding. Example: `RP/texts/en_US.lang`.
 The variables that will be included in the specified template file will also need to be "injected" so bridge. knows what variables need to be replaced with their corresponding values.
+
+## Options
+
+```ts
+interface ICreateFileOpts {
+	/*
+	 *	Variables to inject into the file.
+	 */
+	inject: string[]
+	/*
+	 *	Whether to open the file when the preset is created.
+	 */
+	openFile?: boolean
+}
+```
 
 ### Fields
 
