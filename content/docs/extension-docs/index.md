@@ -21,33 +21,7 @@ Inside this directory, you can create a new folder per extension you want to add
 ## Extension Manifest
 
 The extension manifest stores important data on your add-on like its version number, the extension name etc.
-More information on the extension manifest can be found [here](/extension-docs/extension-manifest/)
-
-### Example Manifest
-
-```json
-{
-	"author": "solvedDev",
-	"icon": "mdi-code-braces",
-	"id": "aad1d7ec-a32e-4732-ad2b-abb770e38202",
-	"version": "1.0.0",
-	"name": "My Extension",
-	"link": "www.my_homepage.com/me",
-	"target": "v2",
-	"description": "My first bridge. extension",
-	"api_version": 2,
-	"tags": [
-		"Utility"
-	],
-	// Used for compiler plugins
-	"compiler": {...},
-	// Used for custom components/commands
-	"contributeFiles": {...}
-}
-```
-
--   Make sure to always **generate a new id** for all of your extensions. You can grab one from [here](https://www.uuidgenerator.net/).
--   The `link` attribute is optional and allows you to provide a link to an external webpage which appears in bridge.'s UI.
+More information on the extension manifest can be found [here](/extension-docs/extension-manifest/).
 
 ## Scripts
 
