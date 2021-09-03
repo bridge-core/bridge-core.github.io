@@ -94,19 +94,7 @@ By default bridge. contains 6 different compiler plugins built-in:
 
 A compiler plugin should be added by putting it in the `<EXTENSION NAME>/compiler` folder of an extension. The plugin can then be registered via the extension manifest.
 
-In the extension manifest you need a `"compiler"` property which should contain the path to the plugin and the id to give it, which can be then referenced in a compiler config.
-
-Structure:
-
-```json
-{
-	"compiler": {
-		"plugins": {
-			"<compilerPluginId>": "compiler/<pluginName>"
-		}
-	}
-}
-```
+In the extension manifest you need a [`"compiler"`](/extension-docs/extension-manifest/#compiler) property.
 
 ### Compiler Plugin File Structure
 

@@ -31,6 +31,7 @@ module.exports = [
 				items: [
 					'/extension-docs/',
 					'/extension-docs/contributing/',
+					'/extension-docs/extension-manifest/',
 					'/extension-docs/other/default-file-types/',
 					'/extension-docs/compiler-plugins/',
 					'/extension-docs/custom-molang/',
