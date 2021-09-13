@@ -27,6 +27,24 @@ Force compilation of the project using the specified compiler config.
 
 ___
 
+### compileFiles
+
+▸ **compileFiles**(`paths`): `Promise`<`void`\>
+
+Force the compilation of specified files.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `paths` | `string`[] | The paths of the files to compile, relative to the project root. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
 ### hasPack
 
 ▸ **hasPack**(`packs`): `boolean`
