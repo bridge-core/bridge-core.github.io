@@ -23,7 +23,7 @@ Arguments:
     The name of the custom command that will show up in auto-completions.
 
 -   `schema(schema: any): void`
-    The schema of the command. This is used to create auto-completions for custom command arguments and should be written in the shape of [bridge.'s command schema](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/language/mcfunction/schema/main.json). You can also access bridge.'s built-in auto-completions with the `additionalData > schemaReference` property. They can be found [here](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `additionalData: { schemaReference: '/data/packages/minecraftBedrock/schema/general/slotType.json' }` would access slot type auto-completions.
+    The schema of the command. This is used to create auto-completions for custom command arguments and should be written in the shape of [bridge.'s command schema](https://github.com/bridge-core/editor-packages/blob/main/packages/minecraftBedrock/language/mcfunction/schema/main.json) from the `arguments` property, to define the arguments of the command. You can also access bridge.'s built-in auto-completions with the `additionalData > schemaReference` property. They can be found [here](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `additionalData: { schemaReference: '/data/packages/minecraftBedrock/schema/general/slotType.json' }` would access slot type auto-completions.
 
     Example:
 
