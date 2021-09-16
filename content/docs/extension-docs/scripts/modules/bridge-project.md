@@ -78,3 +78,21 @@ Register a pack exporter to be used to export the project.
 #### Returns
 
 `void`
+
+___
+
+### unlinkFile
+
+▸ **unlinkFile**(`path`): `Promise`<`void`\>
+
+Remove a file from the fileSystem, compiler and packIndexer.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `string` | The path to the file to unlink. |
+
+#### Returns
+
+`Promise`<`void`\>
