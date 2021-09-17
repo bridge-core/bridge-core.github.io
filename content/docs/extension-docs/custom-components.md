@@ -26,7 +26,7 @@ Arguments:
     The schema of the component. This is used to create auto-completions for custom component arguments and should be written in [standard JSON schema](https://json-schema.org). You can also access bridge.'s built-in auto-completions with the `$ref` property. They can be found [here](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `$ref: '/data/packages/minecraftBedrock/schema/general/slotType.json'` would access slot type auto-completions.
 
 -   `template(templateFunction: (componentArgs: any, opts: TemplateContext) => void): void`
-    The the `templateFunction` recieves `componentArgs` which is the component arguments defined by the user, and the `opts` provides functions to allow you to merge data with the file that the component is created on and allows you to create animations and animation controllers.
+    The `templateFunction` receives `componentArgs` which is the component arguments defined by the user, and the `opts` provides functions to allow you to merge data with the file that the component is created on and allows you to create animations and animation controllers.
 
 ### `TemplateContext`
 
@@ -35,7 +35,7 @@ Arguments:
 -   `mode: 'build' | 'dev'`
     Gives you access to read the current compiler mode.
 
--   `create(template: any, location: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any): void`
+-   `create(template: any, location?: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any): void`
     Allows you to create data inside of the entity/block/item that the component is in. `template` should be a JavaScript object of the data to merge with the file at the given `location`. `location` should be a path separated by `'/'` to where you want the `template` to be created. For example: `minecraft:entity/description`. The default merge behaviour can optionally be overridden with `operation` which should be a function that takes default merge function `deepMerge`, the data at `location` (`oldData`) and the new data being merged in (`newData`). It should return the result of the custom merge. For example: `(deepMerge, oldData, newData) => newData` will overwrite the data at `location`.
 
 -   `location: string`
@@ -51,7 +51,7 @@ interface TemplateContext {
 	mode: 'build' | 'dev'
 	create: (
 		template: any,
-		location: string,
+		location?: string,
 		operation?: (
 			deepMerge: (oldData: any, newData: any) => any,
 			oldData: any,
@@ -81,7 +81,7 @@ interface TemplateContext {
 	mode: 'build' | 'dev'
 	create: (
 		template: any,
-		location: string,
+		location?: string,
 		operation?: (
 			deepMerge: (oldData: any, newData: any) => any,
 			oldData: any,
@@ -93,7 +93,7 @@ interface TemplateContext {
 	player: {
 		create: (
 			template: any,
-			location: string,
+			location?: string,
 			operation?: (
 				deepMerge: (oldData: any, newData: any) => any,
 				oldData: any,
@@ -117,7 +117,7 @@ The `player` object gives access to these functions:
 -   `animationController(animationController: any, condition?: string | false): void`
     Allows you to create a BP animation controller that is automatically linked to the player. `animationController` should be a JavaScript object containing the animation controller data that should be added to the animation controller name. `condition` is an optional parameter that allows you to set a molang condition for the animation controller to be run.
 
--   `create(template: any, location: string): void`
+-   `create(template: any, location?: string): void`
     Allows you to create data inside of the player. `template` should be a JavaScript object of the data to merge into the player behavior file at the given `location`. `location` should be a path separated by `'/'` to where you want the `template` to be created. For example: `minecraft:entity/description`. The default merge behaviour can optionally be overridden with `operation` which should be a function that takes default merge function `deepMerge`, the data at `location` (`oldData`) and the new data being merged in (`newData`). It should return the result of the custom merge. For example: `(deepMerge, oldData, newData) => newData` will overwrite the data at `location`.
 
 #### Block
@@ -127,7 +127,7 @@ interface TemplateContext {
 	mode: 'build' | 'dev'
 	create: (
 		template: any,
-		location: string,
+		location?: string,
 		operation?: (
 			deepMerge: (oldData: any, newData: any) => any,
 			oldData: any,
