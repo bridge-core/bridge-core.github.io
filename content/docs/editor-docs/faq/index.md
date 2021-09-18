@@ -18,6 +18,8 @@ commands.
 This is a known issue that has to do with how bridge. handles arrays and objects. The automatic type detection fails where there is ambiguity between objects and
 animations and both options are valid. Solution: Do not edit animations from Blockbench with bridge.; manually fix broken animations with a text editor.
 
+This is not an issue in bridge. v2.
+
 ## Something isn’t behaving properly with bridge. What should I do?
 
 Please verify your bridge. version is the latest, and then report it in **#bugs** (within the bridge. Discord, specifying the version, the problem, and what you were
@@ -42,11 +44,9 @@ There are lots of reasons an addon might not work. Before you ask in an addon he
 
 ## How do I turn on content logs?
 
-In _Minecraft_ settings under the Profile section, there are two settings: ”Enable Content Log GUI” and “Enable Content Log File.” We recommend turning both on while
+In the _Minecraft_ settings under the Creator section, there are two settings: ”Enable Content Log GUI” and “Enable Content Log File.” We recommend turning both on while
 testing.
-![Enable content logs](./faq_1.png)
 
-In _Minecraft 1.17_ these settings will be under the Creator section.
 ![Enable 1.17 Content Logs](./creator.png)
 
 ## How do I make a scripting GUI?
@@ -77,4 +77,5 @@ This is caused when you're using a material that doesn't support transparency.
 bridge. is a native program, while bridge. v2 is an installable web app (PWA) currently available for Chrome (Desktop) and Microsoft Edge. bridge. v2 is currently in alpha and features a raw JSON editor, new user interface, skin pack support, a new compiler architecture instead of a cache system, and more. bridge. v2 already has support for extensions but many recently-published extensions are currently only available for bridge. v1.
 
 ## Is bridge. available for mobile devices?
-No, bridge. is not available for mobile devices, nor will it ever be for the time being. bridge. v1 would be too difficult to port over, while bridge. v2 requires an API that mobile browsers don't support.
+
+Yes, [bridge. v2](https://editor.bridge-core.app) is avaliable for mobile devices. However you will need to download your project in order to save your progress, because bridge. v2 requires an API that mobile browsers don't support.
