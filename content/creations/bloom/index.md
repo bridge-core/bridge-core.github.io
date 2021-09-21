@@ -2,7 +2,7 @@
 title: 'Bloom'
 image: './main.jpg'
 excerpt: 'Enter a tranquil forest and discover a garden long abandoned.'
-tags: [exploration, nature]
+tags: [exploration, nature, flower, relaxing]
 author: 'gamemode-one'
 download: 'https://www.minecraft.net/en-us/pdp?id=d8604c56-d709-40e1-a286-13dce3b34ac5'
 ---
