@@ -81,7 +81,9 @@ Input types are "boxes" where the user can input different types of data values 
 
 ###### Selection Box
 
-`selectInput` is an input type that creates a selection boxe or drop down list that have a fixed amount of options. To make a selection box create a input box with a name and assign a variable to it, then create a properties object and define the type of input box as `selectInput` then a `default` value this is the default option the input box will be set. Create an array named `options` then for each option create an object that will define what the display `text` and `value` should be.
+`selectInput` is an input type that creates a selection box or drop down list of options. To make a selection box create a input box with a name and assign a variable to it, then create a properties object and define the type of input box as `selectInput` then a `default` value this is the default option the input box will be set. Create an array named `options` then for each option create an object that will define what the display `text` and `value` should be.
+
+`options` also allows an object with `cacheKey` and `fileType`, where the file type is the id of the [file definition](/extension-docs/json/file-definitions/) and the cache key is the lightning cache key to get the values of.
 
 ###### Number Input
 
@@ -192,6 +194,20 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 			{ "text": "select2", "value": "select2" },
 			{ "text": "select3", "value": "select3" }
 		]
+	}
+]
+```
+
+```json
+[
+	"Entity Event Selection",
+	"EVENT",
+	{
+		"type": "selectInput",
+		"options": {
+			"fileType": "entity",
+			"cacheKey": "event"
+		}
 	}
 ]
 ```

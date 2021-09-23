@@ -9,8 +9,6 @@ sidebar: 'extensions'
 
 Snippets allow bridge. users to quickly insert a large code snippets into their currently active editor. The snippet API is designed in a way that makes snippets work automatically for both the text editor and tree editor bridge. v2 provides.
 
-**This feature is currently only available in our [nightly builds](https://nightly.bridge-core.app/).**
-
 ## Extension Integration
 
 Extensions can also add new snippets by providing them inside a `<EXTENSION NAME>/snippets` folder. Create a JSON file per snippet you want to add. The individual file names don't matter.
