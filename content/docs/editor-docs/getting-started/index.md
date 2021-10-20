@@ -8,21 +8,31 @@ author: 'joelant05'
 
 ## Setting up bridge.
 
-In order to start using bridge., you must first open it. bridge. v2 is a PWA meaning it can be used in a supported browser and/or installed to your system. To access bridge. v2 head to https://editor.bridge-core.app and to install it click the **Install App** prompt in the sidebar, which you will be able to click after creating your first project, or by clicking the install button on the right of the URL bar.
+In order to start using bridge., you must first open it. bridge. v2 is a PWA meaning it can be used in a supported browser and/or installed to your system. To access bridge. v2 head to https://editor.bridge-core.app.
 
-The first time you open bridge., you will be met with a setup screen, where you must follow 3 simple steps.
+To install bridge.:
 
-1. Select the folder where bridge. should store its projects. This should not be your `com.mojang` folder or any folders that contain system files. Make sure to give permissions in the prompt that will pop up.
+-   Click the **Install App** prompt in the sidebar, which you will be able to click after creating your first project.
+-   Click the install button on the right of the URL bar.
+-   Choose to install the app in the first setup step.
 
-![Setup: Step 1](./getting-started-1.png)
+The first time you open bridge., you will be met with a setup screen, where you must follow 4 simple steps.
 
-2. Link your `com.mojang` folder to bridge., by dragging it from the Minecraft directory (`C:\Users\<USER>\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang`). This step is optional and can be skipped, however doing so will mean your projects will not automatically be compiled to your Minecraft development packs folders. Make sure to give permissions in the prompt that will pop up.
+1. Install bridge. for a better experience and the ability to use bridge. offline!
 
-![Setup: Step 2](./getting-started-2.png)
+![Setup: Step 1](./getting-started-0.png)
 
-3. Choose your editor type. You can choose to use the [Tree Editor](#Tree-Editor) or the [Code Editor](#Code-Editor).
+2. Select the folder where bridge. should store its projects. This should not be your `com.mojang` folder or any folders that contain system files. Make sure to give permissions in the prompt that will pop up.
 
-![Setup: Step 3](./getting-started-3.png)
+![Setup: Step 2](./getting-started-1.png)
+
+1. Link your `com.mojang` folder to bridge., by dragging it from the Minecraft directory (`C:\Users\<USER>\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang`). This step is optional and can be skipped, however doing so will mean your projects will not automatically be compiled to your Minecraft development packs folders. Make sure to give permissions in the prompt that will pop up.
+
+![Setup: Step 3](./getting-started-2.png)
+
+4. Choose your editor type. You can choose to use the [Tree Editor](#Tree-Editor) or the [Code Editor](#Code-Editor).
+
+![Setup: Step 4](./getting-started-3.png)
 
 ## Creating a project
 
@@ -34,6 +44,8 @@ If this is your first project and you have just set up bridge., the project crea
 Here you can customize your pack to your liking. You can modify the:
 
 -   Pack types your project should contain.
+-   Which experimental gameplay toggles you want your project to use.
+-   Individual files to be created in your packs upon project creation.
 -   Name and description of your project.
 -   Author of your projects.
 -   Pack icon of your project.
@@ -56,6 +68,7 @@ You can create a file in your Behavior Pack, Resource pack, Skin pack or World t
 Doing this will open the new file window. Here you will see a sidebar in the window which lets you select from all of the possible files you can create.
 
 _Remember you can scroll down the sidebar or search to see more file types you can create!_
+
 bridge.'s preset window contains multiple categories:
 
 -   Block - Templates for different types of blocks.
@@ -72,9 +85,11 @@ Once you have done that, click **Create!** and the preset will be created and al
 
 ## Editing files
 
+Files can be editied by opening them in the Pack Explorer sidebar. Additionally, you can drag a file onto bridge. which will then give you the option to edit the file or add it to your project.
+
 ### JSON
 
-When you open a JSON file with bridge., it will open in either a code view editor or a tree view editor.
+When you open a JSON file with bridge., it will open in either a code view editor or a tree view editor. Both include colorful syntax highlighting, auto-completions, "Go To Definition" and more!
 
 #### Code Editor
 
@@ -136,18 +151,18 @@ With more available on the extension store!
 
 ## Customizing bridge.
 
-bridge. features an extension api which allows you to customize UI add new tab types, presets, themes and much more!
+bridge. features an extension API which allows you to customize UI add new tab types, presets, themes and much more!
 
-You can either [create your own extensions](/extension-docs/) or download extensions made by others from the extension store.
-This can be found by clicking the **Extensions** button on the sidebar. From here you can download from a collection of extensions to modify your experience with bridge.
+You can either [create your own extensions](/extension-docs/) or download extensions made by other creators from the extension store.
+This can be found by clicking the **Extensions** button on the sidebar. From here you can download from a collection of extensions to modify and enhance your experience with bridge.
 
 ![Extension Store](./getting-started-14.png)
 
 ## Need Help?
 
--   Join the [Official bridge. Discord server](https://discord.gg/jj2PmqU)!
--   Check out the [Unofficial Minecraft Bedrock documentation](https://bedrock.dev)
--   Read the [Minecraft Bedrock Beginners Guide](https://guide.bedrock.dev)
+-   Join the [official bridge. Discord server](https://discord.gg/jj2PmqU)!
+-   Check out the [unofficial Minecraft Bedrock documentation](https://bedrock.dev)
 -   Learn more about creating addons in the [Unofficial Bedrock Wiki](https://wiki.bedrock.dev)
+-   Visit the [official Minecraft Bedrock creator documentation](https://docs.microsoft.com/en-us/minecraft/creator)
 
 More useful links can be found [here](https://wiki.bedrock.dev/knowledge/useful-links.html).
