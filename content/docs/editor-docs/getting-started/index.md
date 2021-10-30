@@ -129,13 +129,13 @@ File previews are a feature which allow you to view different features inside of
 
 ### Go to definition
 
-bridge. includes "Go To Definition" data to allow you quickly jump between files.
+bridge. includes "Go To Definition" data to allow you quickly jump between files where there is related data.
 
 For example:
 
 ![Go To Definition](./getting-started-13.png)
 
-Here, the client entity file with the matching identifier has been found.
+Here, the entity behavior file with a matching identifier to the spawn rule has been found.
 
 ### Custom Syntax
 
