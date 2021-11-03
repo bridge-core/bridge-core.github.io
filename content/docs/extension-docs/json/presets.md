@@ -77,7 +77,7 @@ Input types are "boxes" where the user can input different types of data values 
 
 ###### File
 
-`fileInput` input types will ask for the user to input a file. To create it set the `type` property to `fileInput` then use the `accept` property to limit the input to 1 type of file. Use `icon` property to set the icon of the input box.
+`fileInput` input types will ask for the user to input a file. To create the field, set the `type` property to `fileInput`. Set the optional `multiple` property to `true` to select more than one file. Use the `accept` property to limit the input to one type of file. Use `icon` property to set the icon of the input box.
 
 ###### Selection Box
 
@@ -184,6 +184,18 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 
 ```json
 [
+	"Multiple Files",
+	"FILES",
+	{
+		"type": "fileInput",
+		"accept": "image/png",
+		"multiple": true
+	}
+]
+```
+
+```json
+[
 	"Selection box",
 	"SELECT",
 	{
@@ -237,6 +249,6 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 
 ### More Examples:
 
--   [`bridge. Vannila Presets`](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/preset)
+-   [`bridge. Vanilla Presets`](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/preset)
 -   [`More Vanilla Entity Presets`](https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
 -   [`Preset schema`](https://github.com/bridge-core/editor-packages/blob/main/packages/common/schema/bridge/preset/main.json)
