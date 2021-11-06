@@ -139,6 +139,16 @@ interface TemplateContext {
 }
 ```
 
+### Creating Files
+
+Files can also be automatically created with custom components. Functions that can be called to create files are:
+
+-   `animation(animation: any, condition: string | false) => string` which returns the name of the animation
+
+-   `animationController(animationController: any, condition: string | false) => string` which returns the name of the animation controller
+
+Other undocumented functions that can also create files such as dialouge and client entity files.
+
 ## Extension Manifest
 
 When you are creating a custom component in an extension you need to specify where it should be installed in the extension manifest using the [`contributeFiles`](/extension-docs/extension-manifest/#contributeFiles) field.
