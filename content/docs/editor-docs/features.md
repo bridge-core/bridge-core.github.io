@@ -38,7 +38,7 @@ author: 'joelant05'
 -   Support for all file types that Minecraft supports including entity, function and blocks.
 -   Dynamic auto-completions for identifiers, events, component groups and more, across all files.
 
-## Global Find and replace:
+## Global Find and Replace:
 
 -   Search for text across all files in your project and replace it.
 -   Filter your search results by including/excluding specific file paths or with glob patterns.
@@ -92,7 +92,7 @@ The compiler has two modes: "dev" and "build".
 -   The "build" output is in the "builds/dist" folder and is only triggered when your select the compile option in the sidebar.
 -   The output between these types may vary, if a specific compiler plugin produces a different output for each.
 
-## Live previews:
+## Live Previews:
 
 -   Preview files while you edit them with instant reloading to reflect the changes you make in the file.
 -   Preview entity, block, particle files and more.
