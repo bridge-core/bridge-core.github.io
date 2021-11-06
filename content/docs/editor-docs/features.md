@@ -1,5 +1,5 @@
 ---
-description: 'An overview of bridge.'s most notable features.'
+description: "An overview of bridge.'s most notable features."
 sidebar: 'editor'
 author: 'joelant05'
 ---
