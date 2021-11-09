@@ -1,9 +1,2 @@
-*.log
-.cache
+node_modules/
 .DS_Store
-src/.temp
-node_modules
-dist
-!.env.example
-.env
-.env.*
