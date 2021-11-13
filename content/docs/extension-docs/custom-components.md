@@ -48,7 +48,7 @@ Arguments:
 
 ```ts
 interface TemplateContext {
-	mode: 'build' | 'dev'
+	compilerMode: 'build' | 'dev'
 	create: (
 		template: any,
 		location?: string,
@@ -58,6 +58,7 @@ interface TemplateContext {
 			newData: any
 		) => any
 	) => void
+	sourceEntity: () => any
 	animation: (animation: any, condition?: string | false) => void
 	animationController: (
 		animationController: any,
@@ -65,8 +66,18 @@ interface TemplateContext {
 	) => void
 	location: string
 	identifier: string
+	projectNamespace: string
+	client: {
+		create: (clientEntity: any, formatVersion = "1.10.0") => void
+	}
+	dialogueScene: (sceneDefinition: any, openDialogue = true) => void
+	onActivated: (eventResponse: any) => void
+	onDeactivated: (eventResponse: any) => void
 }
 ```
+
+-	`sourceEntity(): any`
+	Access the source entity that your component currently gets applied to.
 
 -   `animation(animation: any, condition?: string | false): void`
     Allows you to create a BP animation that is automatically linked to the entity. `animation` should be a JavaScript object containing the animation data that should be added to the animation name. `condition` is an optional parameter that allows you to set a molang condition for the animation to be run.
@@ -74,11 +85,23 @@ interface TemplateContext {
 -   `animationController(animationController: any, condition?: string | false): void`
     Allows you to create a BP animation controller that is automatically linked to the entity. `animationController` should be a JavaScript object containing the animation controller data that should be added to the animation controller name. `condition` is an optional parameter that allows you to set a molang condition for the animation controller to be run.
 
+-	`client.create(clientEntity: any, formatVersion?: string): void`
+	Create a new client entity file for entities that use the custom component.
+
+-	`onActivated(eventResponse: any): void`
+	Trigger an event reponse whenever your component gets applied to this entity
+
+-	`onDeactivated(eventResponse: any): void`
+	Trigger an event reponse whenever your component gets removed from this entity
+
+-	`dialogueScene(sceneDefinition: any, openDialogue?: boolean): void`
+	Creates a new dialogue scene to be used within your add-on. This function is only available if your project target version is at least "1.17.40"
+
 #### Item
 
 ```ts
 interface TemplateContext {
-	mode: 'build' | 'dev'
+	compilerMode: 'build' | 'dev'
 	create: (
 		template: any,
 		location?: string,
@@ -90,6 +113,8 @@ interface TemplateContext {
 	) => void
 	location: string
 	identifier: string
+	projectNamespace: string
+	sourceItem: () => any
 	player: {
 		create: (
 			template: any,
@@ -109,6 +134,9 @@ interface TemplateContext {
 }
 ```
 
+-	`sourceItem(): any`
+	Access the source item that your component currently gets applied to.
+
 The `player` object gives access to these functions:
 
 -   `animation(animation: any, condition?: string | false): void`
@@ -124,7 +152,7 @@ The `player` object gives access to these functions:
 
 ```ts
 interface TemplateContext {
-	mode: 'build' | 'dev'
+	compilerMode: 'build' | 'dev'
 	create: (
 		template: any,
 		location?: string,
@@ -134,20 +162,35 @@ interface TemplateContext {
 			newData: any
 		) => any
 	) => void
+	sourceBlock: () => any
 	location: string
 	identifier: string
+	projectNamespace: string
+	onActivated: (eventResponse: any) => void
+	onDeactivated: (eventResponse: any) => void
 }
 ```
+
+-	`sourceBlock(): any`
+	Access the source block that your component currently gets applied to.
+
+-	`onActivated(eventResponse: any): void`
+	Trigger an event reponse whenever your component gets applied to this block
+
+-	`onDeactivated(eventResponse: any): void`
+	Trigger an event reponse whenever your component gets removed from this block
 
 ### Creating Files
 
 Files can also be automatically created with custom components. Functions that can be called to create files are:
 
--   `animation(animation: any, condition: string | false) => string` which returns the name of the animation
+-   `animation(animation: any, condition: string | false): string` which returns the name of the animation
 
--   `animationController(animationController: any, condition: string | false) => string` which returns the name of the animation controller
+-   `animationController(animationController: any, condition: string | false): string` which returns the name of the animation controller
 
-Other undocumented functions that can also create files such as dialouge and client entity files.
+-	`client.create(clientEntity: any, formatVersion?: string): void`
+
+-	`dialogueScene(sceneDefinition: any, openDialogue?: boolean): void`
 
 ## Extension Manifest
 
