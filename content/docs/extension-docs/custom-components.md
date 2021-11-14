@@ -32,7 +32,7 @@ Arguments:
 
 #### Common
 
--   `mode: 'build' | 'dev'`
+-   `compilerMode: 'build' | 'dev'`
     Gives you access to read the current compiler mode.
 
 -   `create(template: any, location?: string, operation?: (deepMerge: (oldData: any, newData: any) => any, oldData: any, newData: any) => any): void`
