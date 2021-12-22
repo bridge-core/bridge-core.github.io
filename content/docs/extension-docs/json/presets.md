@@ -305,7 +305,7 @@ module.exports = async ({ createFile, loadPresetFile, models, expandFile }) => {
 }
 ```
 
-### More Examples:
+### More Examples
 
 -   [`bridge. Vanilla Presets`](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/preset)
 -   [`More Vanilla Entity Presets`](https://github.com/bridge-core/plugins/tree/master/plugins/MoreVanillaEntityPresets)
