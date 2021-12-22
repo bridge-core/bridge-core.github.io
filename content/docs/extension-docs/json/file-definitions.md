@@ -1,5 +1,5 @@
 ---
-description: 'Documentation on how to register new file types to bridge..'
+description: 'Documentation on how to register new file types to bridge.'
 sidebar: 'extensions'
 ---
 

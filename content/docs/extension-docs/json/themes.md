@@ -1,5 +1,5 @@
 ---
-description: ''
+description: 'Theme documentation.'
 sidebar: 'extensions'
 next: '/extensions-docs/modules/'
 ---

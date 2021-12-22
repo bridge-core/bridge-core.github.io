@@ -1,5 +1,5 @@
 ---
-description: 'Documentation for the bridge. v2 preset api'
+description: 'Documentation for the bridge. preset api'
 sidebar: 'extensions'
 ---
 
@@ -9,9 +9,9 @@ sidebar: 'extensions'
 
 Presets are groups of files which can be created through the preset interface by only entering an identifier and clicking "CREATE!". They help quickly setting up new items, entities or similiar features. This page covers the presets in version 2 of the API.
 
-## Plugin Integration
+## Extension Integration
 
-Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/presets` folder. Create a folder per preset you want to add. Each folder should contain a manifest.json file and templates of all files your preset should create.
+Extensions can also add new presets by providing them inside a `<EXTENSION NAME>/presets` folder. Create a folder per preset you want to add. Each folder should contain a `manifest.json` file and templates of all files your preset should create.
 
 ## Manifest Format
 
@@ -24,10 +24,10 @@ Plugins can also add new presets by providing them inside a `<PLUGIN NAME>/prese
 | `icon`             | `String`                                 | Icon to show inside of the preset window     |
 | `category`         | `String`                                 | Category of the preset entity, item, ect     |
 | `packTypes`        | `Array`                                  | Which packs are needed for the preset        |
-| `additionalModels` | `object`                                 | Advanced Optional Feature for preset scripts |
+| `additionalModels` | `Object`                                 | Advanced Optional Feature for preset scripts |
 | `targetVersion`    | `Array`                                  | Conditionally change preset availability     |
-| `createFiles`      | `Array<string, string, ICreateFileOpts>  | string`                                      | JSON files to create or the name of a presetScript to execute |
-| `expandFles`       | `Array<string, string, ICreateFileOpts>` | Files to add data to or expand               |
+| `createFiles`      | `Array<string, string, IPresetFileOpts>  | string`                                      | JSON files to create or the name of a presetScript to execute |
+| `expandFles`       | `Array<string, string, IPresetFileOpts>` | Files to add data to or expand               |
 | `fields`           | `Array`                                  | Creates new input boxes                      |
 
 ### Create, Expand Files
@@ -45,7 +45,7 @@ The variables that will be included in the specified template file will also nee
 ## Options
 
 ```ts
-interface ICreateFileOpts {
+interface IPresetFileOpts {
 	/*
 	 *	Variables to inject into the file.
 	 */
@@ -54,6 +54,10 @@ interface ICreateFileOpts {
 	 *	Whether to open the file when the preset is created.
 	 */
 	openFile?: boolean
+	/**
+	 * Pack type to create the file in.
+	 */
+	packPath?: 'behaviorPack' | 'resourcePack' | 'skinPack' | 'worldTemplate'
 }
 ```
 
@@ -113,11 +117,35 @@ Variables are able to be used in the `createFiles` and `expandFile` components o
 
 Variables can be referenced by using them inside of two curly brackets: `{{VARIABLE}}`. bridge. automatically replaces variables with the current corresponding variable value.
 
-Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespace of the project (colon is not included).
+Note: The variable `PROJECT_PREFIX` is already pre-defined and contains the namespace of the project (colon is not included).
+
+## Preset Scripts
+
+### Usage
+
+Preset scripts are JavaScript files which can handle file creation upon preset creation.
+
+They can be referenced in presets by adding its file path to the `createFiles` array. If you create your own they can be put in the preset's folder and referenced using a relative path, e.g. `<EXTENSION_NAME>/presets/<PRESET_NAME>/myScript.js` can be referenced with `./myScript.js`, from the same preset folder.
+
+Alternativley, you can reference [built-in preset scripts](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/presetScript) with `presetScript/<SCRIPT_NAME>`.
+
+## Creating
+
+To create a preset script, create a JavaScript file in your `presets` folder. Inside should assign `module.exports` as a function to run on preset creation.
+
+This function has the following passed into it:
+
+| Identifier     | Type                                                                              | Description                                                                                           |
+| -------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| createFile     | (filePath: string, data: any, opts: [IPresetFileOpts](#Options)) => Promise<void> | Creates a file at the given path                                                                      |
+| expandFile     | (filePath: string, data: any, opts: [IPresetFileOpts](#Options)) => Promise<void> | Adds data to a file at the given path                                                                 |
+| createJSONFile | (filePath: string, data: any, opts: [IPresetFileOpts](#Options)) => Promise<void> | Creates a JSON file at the given path. Should take data as an object to be converted to a json string |
+| loadPresetFile | (filePath: string) => Promise<File>                                               | Returns the specified file from the preset's folder                                                   |
+| models         | Object                                                                            | An object representing models input by the user or defined in `additionalModels`                      |
 
 ## Examples
 
-### Manifest Example
+### Manifest
 
 ```json
 {
@@ -132,6 +160,7 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 	],
 
 	"createFiles": [
+		"./myPresetScript.js",
 		[
 			"entity.json",
 			"BP/entities/{{IDENTIFIER}}.json",
@@ -153,7 +182,7 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 }
 ```
 
-### Variable Example
+### Variable
 
 ```json
 {
@@ -165,7 +194,7 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 }
 ```
 
-### Field Exaples
+### Fields
 
 ```json
 ["Text", "TEXT"]
@@ -245,6 +274,35 @@ Note: The variable `PROJ_PREFIX` is already pre-defined and contains the namespa
 		"type": "switch"
 	}
 ]
+```
+
+### Preset script
+
+```js
+module.exports = async ({ createFile, loadPresetFile, models, expandFile }) => {
+	let { TEXTURE, IDENTIFIER, PROJECT_PREFIX, DEFAULT_TEXTURE, PRESET_PATH } =
+		models
+	let fileName = `${IDENTIFIER}.png`
+
+	if (!TEXTURE) TEXTURE = await loadPresetFile(DEFAULT_TEXTURE)
+	else fileName = TEXTURE.name
+	const fileNameNoExtension = fileName.replace(/.png|.tga|.jpg|.jpeg/gi, '')
+
+	await createFile(`textures/blocks/${PRESET_PATH}${fileName}`, TEXTURE, {
+		packPath: 'resourcePack',
+	})
+	await expandFile(
+		'textures/terrain_texture.json',
+		{
+			texture_data: {
+				[`${PROJECT_PREFIX}_${IDENTIFIER}`]: {
+					textures: `textures/blocks/${PRESET_PATH}${fileNameNoExtension}`,
+				},
+			},
+		},
+		{ packPath: 'resourcePack' }
+	)
+}
 ```
 
 ### More Examples:
