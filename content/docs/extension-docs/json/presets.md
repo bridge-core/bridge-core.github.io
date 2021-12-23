@@ -47,11 +47,11 @@ The variables that will be included in the specified template file will also nee
 ```ts
 interface IPresetFileOpts {
 	/*
-	 *	Variables to inject into the file.
+	 * Variables to inject into the file.
 	 */
 	inject: string[]
 	/*
-	 *	Whether to open the file when the preset is created.
+	 * Whether to open the file when the preset is created.
 	 */
 	openFile?: boolean
 	/**
@@ -135,13 +135,13 @@ To create a preset script, create a JavaScript file in your `presets` folder. In
 
 This function has the following passed into it:
 
-| Identifier     | Type                                                                              | Description                                                                                           |
-| -------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| createFile     | (filePath: string, data: any, opts: [IPresetFileOpts](#Options)) => Promise<void> | Creates a file at the given path                                                                      |
-| expandFile     | (filePath: string, data: any, opts: [IPresetFileOpts](#Options)) => Promise<void> | Adds data to a file at the given path                                                                 |
-| createJSONFile | (filePath: string, data: any, opts: [IPresetFileOpts](#Options)) => Promise<void> | Creates a JSON file at the given path. Should take data as an object to be converted to a json string |
-| loadPresetFile | (filePath: string) => Promise<File>                                               | Returns the specified file from the preset's folder                                                   |
-| models         | Object                                                                            | An object representing models input by the user or defined in `additionalModels`                      |
+| Identifier     | Type                                                                                | Description                                                                                           |
+| -------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| createFile     | (filePath: string, data: any, opts: [IPresetFileOpts](#options)) => Promise\<void\> | Creates a file at the given path                                                                      |
+| expandFile     | (filePath: string, data: any, opts: [IPresetFileOpts](#options)) => Promise\<void\> | Adds data to a file at the given path                                                                 |
+| createJSONFile | (filePath: string, data: any, opts: [IPresetFileOpts](#options)) => Promise\<void\> | Creates a JSON file at the given path. Should take data as an object to be converted to a json string |
+| loadPresetFile | (filePath: string) => Promise<File>                                                 | Returns the specified file from the preset's folder                                                   |
+| models         | Object                                                                              | An object representing models input by the user or defined in `additionalModels`                      |
 
 ## Examples
 
