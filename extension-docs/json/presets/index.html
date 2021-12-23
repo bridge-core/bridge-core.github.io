@@ -158,11 +158,11 @@ The variables that will be included in the specified template file will also nee
 <h2 id="options"><a href="#options" aria-hidden="true"><span class="icon icon-link"></span></a>Options</h2>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">IPresetFileOpts</span> <span class="token punctuation">{</span>
 	<span class="token comment">/*
-	 *	Variables to inject into the file.
+	 * Variables to inject into the file.
 	 */</span>
 	inject<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
 	<span class="token comment">/*
-	 *	Whether to open the file when the preset is created.
+	 * Whether to open the file when the preset is created.
 	 */</span>
 	openFile<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span>
 	<span class="token doc-comment comment">/**
@@ -245,17 +245,17 @@ The variables that will be included in the specified template file will also nee
 <tbody>
 <tr>
 <td>createFile</td>
-<td>(filePath: string, data: any, opts: <a href="#Options">IPresetFileOpts</a>) => Promise<void></td>
+<td>(filePath: string, data: any, opts: <a href="#options">IPresetFileOpts</a>) => Promise\&#x3C;void></td>
 <td>Creates a file at the given path</td>
 </tr>
 <tr>
 <td>expandFile</td>
-<td>(filePath: string, data: any, opts: <a href="#Options">IPresetFileOpts</a>) => Promise<void></td>
+<td>(filePath: string, data: any, opts: <a href="#options">IPresetFileOpts</a>) => Promise\&#x3C;void></td>
 <td>Adds data to a file at the given path</td>
 </tr>
 <tr>
 <td>createJSONFile</td>
-<td>(filePath: string, data: any, opts: <a href="#Options">IPresetFileOpts</a>) => Promise<void></td>
+<td>(filePath: string, data: any, opts: <a href="#options">IPresetFileOpts</a>) => Promise\&#x3C;void></td>
 <td>Creates a JSON file at the given path. Should take data as an object to be converted to a json string</td>
 </tr>
 <tr>
