@@ -9,7 +9,7 @@ const GitHub = require('github-api')
 const uuid = require('uuid').v4
 const marked = require('marked')
 
-module.exports = function(api) {
+module.exports = function (api) {
 	api.loadSource(
 		async ({
 			addCollection,
@@ -32,7 +32,7 @@ module.exports = function(api) {
 
 			const contributorData = (await bridgeRepo.getContributors()).data
 				.concat(
-					(await pluginRepo.getContributors()).data.map(d => ({
+					(await pluginRepo.getContributors()).data.map((d) => ({
 						...d,
 						isPluginAuthor: true,
 					}))
@@ -41,7 +41,7 @@ module.exports = function(api) {
 				.concat((await editorRepo.getContributors()).data)
 
 			const filteredContributors = []
-			contributorData.forEach(d => {
+			contributorData.forEach((d) => {
 				if (
 					!filteredContributors.find(({ login }) => d.login === login)
 				)
@@ -53,7 +53,7 @@ module.exports = function(api) {
 				typeName: 'Release',
 			})
 			const releaseData = (await editorRepo.listReleases()).data
-			releaseData.forEach(release => {
+			releaseData.forEach((release) => {
 				if (release.body) release.content = marked(release.body)
 				releases.addNode(release)
 			})
@@ -78,27 +78,35 @@ module.exports = function(api) {
 			})
 			const tagCollection = getCollection('Tag')
 			const authorCollection = getCollection('Author')
-			const ghPluginData = (await pluginRepo.getContents(
-				'master',
-				'plugins.json',
-				true
-			)).data.concat(
-				(await pluginRepo.getContents(
-					'master',
-					'extensions.json',
-					true
-				)).data
+			const ghPluginData = (
+				await pluginRepo.getContents('master', 'plugins.json', true)
+			).data.concat(
+				(
+					await pluginRepo.getContents(
+						'master',
+						'extensions.json',
+						true
+					)
+				).data
 			)
 
 			await Promise.all(
 				ghPluginData.map(
-					async ({ author, tags = [], target = 'v1', ...other }) => {
+					async ({
+						author,
+						tags = [],
+						target = 'v1',
+						contributeFiles,
+						...other
+					}) => {
 						let readmeLink = other.link.split(/\\|\//g)
 						readmeLink.pop()
 						readmeLink = readmeLink.concat(['README.md']).join('/')
-						const readme = (await pluginRepo
-							.getContents('master', readmeLink, true)
-							.catch(() => ({}))).data
+						const readme = (
+							await pluginRepo
+								.getContents('master', readmeLink, true)
+								.catch(() => ({}))
+						).data
 
 						tags.unshift(`v${other.version.replace(/\./g, '-')}`)
 						tags.unshift(
@@ -107,7 +115,7 @@ module.exports = function(api) {
 								: ['bridge-' + target])
 						)
 						tags.forEach(
-							t =>
+							(t) =>
 								tagCollection.findNode({
 									title: t.toLowerCase(),
 								}) ||
@@ -137,7 +145,7 @@ module.exports = function(api) {
 								author: store.createReference(contributor),
 								tags: store.createReference(
 									'Tag',
-									tags.map(t => t.toLowerCase())
+									tags.map((t) => t.toLowerCase())
 								),
 							})
 					}
