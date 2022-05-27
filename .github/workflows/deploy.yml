@@ -5,6 +5,7 @@ on:
             - master
     schedule:
         - cron: '0 4 * * *'
+    workflow_dispatch:
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
