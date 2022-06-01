@@ -23,7 +23,7 @@ Arguments:
     The name of the custom component that will show up in auto-completions.
 
 -   `schema(schema: any): void`
-    The schema of the component. This is used to create auto-completions for custom component arguments and should be written in [standard JSON schema](https://json-schema.org). You can also access bridge.'s built-in auto-completions with the `$ref` property. They can be found [here](https://github.com/bridge-core/editor/blob/main/data/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `$ref: '/data/packages/minecraftBedrock/schema/general/slotType.json'` would access slot type auto-completions.
+    The schema of the component. This is used to create auto-completions for custom component arguments and should be written in [standard JSON schema](https://json-schema.org). You can also access bridge.'s built-in auto-completions with the `$ref` property. They can be found [here](https://github.com/bridge-core/editor-packages/tree/main/packages/minecraftBedrock/schema) and should be referenced from the `data` folder root, for example `$ref: '/data/packages/minecraftBedrock/schema/general/slotType.json'` would access slot type auto-completions.
 
 -   `template(templateFunction: (componentArgs: any, opts: TemplateContext) => void): void`
     The `templateFunction` receives `componentArgs` which is the component arguments defined by the user, and the `opts` provides functions to allow you to merge data with the file that the component is created on and allows you to create animations and animation controllers.
