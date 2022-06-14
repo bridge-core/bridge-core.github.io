@@ -93,6 +93,9 @@ Gives you access to the identifier of the entity/block/item that the component i
 	<span class="token function-variable function">dialogueScene</span><span class="token operator">:</span> <span class="token punctuation">(</span>sceneDefinition<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> openDialogue <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 	<span class="token function-variable function">onActivated</span><span class="token operator">:</span> <span class="token punctuation">(</span>eventResponse<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 	<span class="token function-variable function">onDeactivated</span><span class="token operator">:</span> <span class="token punctuation">(</span>eventResponse<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+	<span class="token function-variable function">lootTable</span><span class="token operator">:</span> <span class="token punctuation">(</span>lootTable<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span>
+	<span class="token function-variable function">tradeTable</span><span class="token operator">:</span> <span class="token punctuation">(</span>tradeTable<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span>
+	<span class="token function-variable function">spawnRule</span><span class="token operator">:</span> <span class="token punctuation">(</span>spawnRule<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 <span class="token punctuation">}</span></code></pre>
 <ul>
 <li><code>sourceEntity(): any</code>
@@ -109,6 +112,12 @@ Trigger an event reponse whenever your component gets applied to this entity</li
 Trigger an event reponse whenever your component gets removed from this entity</li>
 <li><code>dialogueScene(sceneDefinition: any, openDialogue?: boolean): void</code>
 Creates a new dialogue scene to be used within your add-on. This function is only available if your project target version is at least "1.17.40"</li>
+<li><code>lootTable(lootTable: any): string</code>
+Returns a string that points to your defined loot table</li>
+<li><code>tradeTable(tradeTable: any): string</code>
+Returns a string that points to your defined trade table</li>
+<li><code>spawnRule(spawnRule: any): void</code>
+Creates a new spawn rule file for entities that use the custom component</li>
 </ul>
 <h4 id="item"><a href="#item" aria-hidden="true"><span class="icon icon-link"></span></a>Item</h4>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">TemplateContext</span> <span class="token punctuation">{</span>
@@ -142,6 +151,8 @@ Creates a new dialogue scene to be used within your add-on. This function is onl
 			condition<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token boolean">false</span>
 		<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 	<span class="token punctuation">}</span>
+	<span class="token function-variable function">lootTable</span><span class="token operator">:</span> <span class="token punctuation">(</span>lootTable<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span>
+	<span class="token function-variable function">recipe</span><span class="token operator">:</span> <span class="token punctuation">(</span>recipe<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 <span class="token punctuation">}</span></code></pre>
 <ul>
 <li><code>sourceItem(): any</code>
@@ -155,6 +166,10 @@ Allows you to create a BP animation that is automatically linked to the player. 
 Allows you to create a BP animation controller that is automatically linked to the player. <code>animationController</code> should be a JavaScript object containing the animation controller data that should be added to the animation controller name. <code>condition</code> is an optional parameter that allows you to set a molang condition for the animation controller to be run.</li>
 <li><code>create(template: any, location?: string): void</code>
 Allows you to create data inside of the player. <code>template</code> should be a JavaScript object of the data to merge into the player behavior file at the given <code>location</code>. <code>location</code> should be a path separated by <code>'/'</code> to where you want the <code>template</code> to be created. For example: <code>minecraft:entity/description</code>. The default merge behaviour can optionally be overridden with <code>operation</code> which should be a function that takes default merge function <code>deepMerge</code>, the data at <code>location</code> (<code>oldData</code>) and the new data being merged in (<code>newData</code>). It should return the result of the custom merge. For example: <code>(deepMerge, oldData, newData) => newData</code> will overwrite the data at <code>location</code>.</li>
+<li><code>lootTable(lootTable: any): string</code>
+Returns a string that points to your defined loot table</li>
+<li><code>recipe(recipe: any): void</code>
+Creates a new recipe for items that use the custom component</li>
 </ul>
 <h4 id="block"><a href="#block" aria-hidden="true"><span class="icon icon-link"></span></a>Block</h4>
 <pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">TemplateContext</span> <span class="token punctuation">{</span>
@@ -174,6 +189,8 @@ Allows you to create data inside of the player. <code>template</code> should be 
 	projectNamespace<span class="token operator">:</span> <span class="token builtin">string</span>
 	<span class="token function-variable function">onActivated</span><span class="token operator">:</span> <span class="token punctuation">(</span>eventResponse<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 	<span class="token function-variable function">onDeactivated</span><span class="token operator">:</span> <span class="token punctuation">(</span>eventResponse<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
+	<span class="token function-variable function">lootTable</span><span class="token operator">:</span> <span class="token punctuation">(</span>lootTable<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span>
+	<span class="token function-variable function">recipe</span><span class="token operator">:</span> <span class="token punctuation">(</span>recipe<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span>
 <span class="token punctuation">}</span></code></pre>
 <ul>
 <li><code>sourceBlock(): any</code>
@@ -182,6 +199,10 @@ Access the source block that your component currently gets applied to.</li>
 Trigger an event reponse whenever your component gets applied to this block</li>
 <li><code>onDeactivated(eventResponse: any): void</code>
 Trigger an event reponse whenever your component gets removed from this block</li>
+<li><code>lootTable(lootTable: any): string</code>
+Returns a string that points to your defined loot table</li>
+<li><code>recipe(recipe: any): void</code>
+Creates a new recipe for blocks that use the custom component</li>
 </ul>
 <h3 id="creating-files"><a href="#creating-files" aria-hidden="true"><span class="icon icon-link"></span></a>Creating Files</h3>
 <p>Files can also be automatically created with custom components. Functions that can be called to create files are:</p>
