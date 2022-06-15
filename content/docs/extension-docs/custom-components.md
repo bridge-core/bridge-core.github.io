@@ -101,13 +101,13 @@ interface TemplateContext {
 	Creates a new dialogue scene to be used within your add-on. This function is only available if your project target version is at least "1.17.40"
 
 -	`lootTable(lootTable: any): string`
-     Returns a string that points to your defined loot table
+     Creates a loot table for the entity and returns a string that points to this loot table
 
 -	`tradeTable(tradeTable: any): string`
-     Returns a string that points to your defined trade table
+     Creates a trade table for the entity and returns a string that points to this trade table
 
 -	`spawnRule(spawnRule: any): void`
-     Creates a new spawn rule file for entities that use the custom component
+     Creates a new spawn rule file for entities that uses the custom component
 
 #### Item
 
@@ -127,6 +127,8 @@ interface TemplateContext {
 	identifier: string
 	projectNamespace: string
 	sourceItem: () => any
+	lootTable: (lootTable: any) => string
+	recipe: (recipe: any) => void
 	player: {
 		create: (
 			template: any,
@@ -143,13 +145,17 @@ interface TemplateContext {
 			condition?: string | false
 		) => void
 	}
-	lootTable: (lootTable: any) => string
-	recipe: (recipe: any) => void
 }
 ```
 
 -	`sourceItem(): any`
 	Access the source item that your component currently gets applied to.
+
+-	`lootTable(lootTable: any): string`
+     Creates a loot table for the item and returns a string that points to this loot table
+
+-	`recipe(recipe: any): void`
+     Creates a new recipe for items that uses the custom component
 
 The `player` object gives access to these functions:
 
@@ -161,12 +167,6 @@ The `player` object gives access to these functions:
 
 -   `create(template: any, location?: string): void`
     Allows you to create data inside of the player. `template` should be a JavaScript object of the data to merge into the player behavior file at the given `location`. `location` should be a path separated by `'/'` to where you want the `template` to be created. For example: `minecraft:entity/description`. The default merge behaviour can optionally be overridden with `operation` which should be a function that takes default merge function `deepMerge`, the data at `location` (`oldData`) and the new data being merged in (`newData`). It should return the result of the custom merge. For example: `(deepMerge, oldData, newData) => newData` will overwrite the data at `location`.
-
--	`lootTable(lootTable: any): string`
-     Returns a string that points to your defined loot table
-
--	`recipe(recipe: any): void`
-     Creates a new recipe for items that use the custom component
 
 #### Block
 
@@ -203,10 +203,10 @@ interface TemplateContext {
 	Trigger an event reponse whenever your component gets removed from this block
 
 -	`lootTable(lootTable: any): string`
-     Returns a string that points to your defined loot table
+     Creates a loot table for the block and returns a string that points to this loot table
 
 -	`recipe(recipe: any): void`
-     Creates a new recipe for blocks that use the custom component
+     Creates a new recipe for blocks that uses the custom component
 
 ### Creating Files
 
