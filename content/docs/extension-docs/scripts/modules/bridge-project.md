@@ -17,15 +17,15 @@ Force compilation of the project using the specified compiler config.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type     | Description                                                                                                                |
+| :----------- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
 | `configFile` | `string` | The name of the compiler config to compiler with. The config should be in the "<projectName>/.bridge/compiler/" directory. |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### compileFiles
 
@@ -35,15 +35,15 @@ Force the compilation of specified files.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type       | Description                                                      |
+| :------ | :--------- | :--------------------------------------------------------------- |
 | `paths` | `string`[] | The paths of the files to compile, relative to the project root. |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### hasPack
 
@@ -53,15 +53,15 @@ Check whether the current project contains the specified packs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type                                      | Description                |
+| :------ | :---------------------------------------- | :------------------------- |
 | `packs` | [`PackTypeId`](../README.md#packtypeid)[] | The pack ids to check for. |
 
 #### Returns
 
 `boolean`
 
-___
+---
 
 ### registerExporter
 
@@ -71,15 +71,15 @@ Register a pack exporter to be used to export the project.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                      | Description                          |
+| :--------- | :---------------------------------------- | :----------------------------------- |
 | `exporter` | [`IExporter`](../interfaces/iexporter.md) | The exporter definition to register. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### unlinkFile
 
@@ -89,10 +89,28 @@ Remove a file from the fileSystem, compiler and packIndexer.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description                     |
+| :----- | :------- | :------------------------------ |
 | `path` | `string` | The path to the file to unlink. |
 
 #### Returns
 
 `Promise`<`void`\>
+
+---
+
+### onProjectChanged
+
+▸ **onProjectChanged**(`cb`): `IDisposable`
+
+Get notified when the current project changes.
+
+#### Parameters
+
+| Name | Type                                | Description                                   |
+| :--- | :---------------------------------- | :-------------------------------------------- |
+| `cb` | (`projectName`: `string`) => `void` | The function to call when the project changes |
+
+#### Returns
+
+`IDisposable`
