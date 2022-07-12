@@ -103,7 +103,7 @@ Example:
 
 **Type: Object**
 
-The contribute files field is used to install files or folders into the project when the extension is installed. This should be used to install custom components and commands to the `BP/commands` and `BP/components` folder.
+The contribute files field is used to install files or folders into the project when the extension is installed. This can be used to install custom components and commands to the `BP/commands` and `BP/components` folder.
 
 You can add individual files like this:
 
@@ -140,6 +140,18 @@ and add folders like this:
 	}
 }
 ```
+
+### `readme`
+
+**Type: string**
+
+A url to a readme for your extension. Creates a button in the extension store on your extension to go to the url you have set.
+
+### `compatibleAppVersions`
+
+**Type: Object**
+
+An object with `min` and `max` fields to specify which range of bridge. versions your extension supports.
 
 ## Example
 
