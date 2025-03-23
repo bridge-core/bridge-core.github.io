@@ -61,6 +61,7 @@ query {
 import Sidebar from '@/components/Sidebar'
 import LayoutHeader from '@/components/LayoutHeader'
 import { MenuIcon, XIcon } from 'vue-feather-icons'
+import { onMounted } from 'vue'
 
 export default {
 	components: {
@@ -134,6 +135,10 @@ export default {
 		}
 	},
 }
+
+onMounted(() => {
+	window.location.replace('https://bridge-core.app/')
+})
 </script>
 
 <style lang="scss">
