@@ -31,5 +31,7 @@ jobs:
                   path: './dist'
 
             - name: Deploy to GitHub Pages 🚀
+              env:
+                  GITHUB_TOKEN: ${{ secrets.secrets.GA_ID }}
               id: deployment
               uses: actions/deploy-pages@v1
