@@ -21,14 +21,14 @@ jobs:
                   cache: 'npm'
 
             - name: Install and Build 🔧
-              env:
-                  GITHUB_TOKEN: ${{ secrets.secrets.GA_ID }}
               run: |
                   npm install
                   NODE_OPTIONS=--max_old_space_size=4096 npm run build
 
             - name: Upload artifact ⬆️
               uses: actions/upload-artifact@v4
+              env:
+                  GITHUB_TOKEN: ${{ secrets.secrets.GA_ID }}
               with:
                   path: './dist'
 
